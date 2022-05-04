@@ -1,13 +1,39 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import-normalize;
+
+:root {
+	--lines-color: #1e2d3d;
+
+	--gradients-color-purple: #4d5bce;
+	--gradients-color-green: #43d9ad;
+
+	--primary-color-black: #01080e;
+	--primary-color-blue: #011627;
+	--primary-color-dark-blue: #011221;
+
+	--secondary-color-gray: #607b96;
+	--secondary-color-green: #3c9d93;
+	--secondary-color-purple: #4d5bce;
+	--secondary-color-white: #E5E9F0;
+
+	--accent-color-orange: #fea55f;
+	--accent-color-green: #43d9ad;
+	--accent-color-cream: #e99287;
+	--accent-color-purple: #c98bdf;
+
+	--size-headline: 62px;
+	--size-subheadline: 32px;
+	--size-body: 18px;
+	--size-lables: 16px;
+	--size-code: 14px;
+
+	--width-explorer: 350px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: "Fira Code", monospace;
 }
