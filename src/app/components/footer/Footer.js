@@ -5,6 +5,7 @@ import { RiInstagramFill, RiLinkedinFill, RiGithubFill } from "react-icons/ri";
 const FooterContainer = styled.footer`
 	width: 100%;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 
 	section {
@@ -54,7 +55,7 @@ const Footer = () => {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<span>@username</span>
+					{/* <span>@ricardogenaro99</span> */}
 					<RiGithubFill />
 				</a>
 			</section>

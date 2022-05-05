@@ -9,8 +9,8 @@ function App() {
 		<HashRouter>
 			<div className="App">
 				<Header />
-        <Main/>
-        <Footer/>
+				<Main />
+				<Footer />
 			</div>
 		</HashRouter>
 	);

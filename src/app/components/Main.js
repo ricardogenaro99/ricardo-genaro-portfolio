@@ -9,6 +9,8 @@ import SobreMi from "../pages/SobreMi";
 const MainContainer = styled.main`
 	border: 1px solid var(--lines-color);
 	display: flex;
+	justify-content: center;
+	align-items: center;
 `;
 const Main = () => {
 	return (

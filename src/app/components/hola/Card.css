@@ -1,0 +1,77 @@
+/* From uiverse.io by @Codewithvinay */
+.box {
+	--skewx: -15deg;
+	--transition-transform-time: 0.5s;
+	--border-radius: 8px;
+	position: relative;
+	max-width: 380px;
+	width: 90%;
+	height: 550px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: var(--transition-transform-time);
+	z-index: 1;
+}
+
+.box::before {
+	content: " ";
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	text-decoration: none;
+	background: #ffffff;
+	border-radius: var(--border-radius);
+	transform: skewX(var(--skewx));
+	transition: var(--transition-transform-time);
+}
+
+.box::after {
+	content: "";
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	background: #ffffff;
+	border-radius: var(--border-radius);
+	transform: skewX(var(--skewx));
+	transition: var(--transition-transform-time);
+	filter: blur(30px);
+	transform-style: preserve-3d;
+}
+
+.box:before,
+.box:after {
+	background: linear-gradient(
+		315deg,
+		var(--gradients-color-purple),
+		var(--gradients-color-green)
+	);
+}
+
+.box:hover:before,
+.box:hover:after {
+	transform: skewX(0deg) scaleX(1.6);
+}
+
+.box .content {
+	position: relative;
+	width: 90%;
+	height: 90%;
+	padding: 15px;
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(10px);
+	box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.3);
+	border-radius: var(--border-radius);
+	z-index: 1;
+	transform: var(--transition-transform-time);
+	color: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box .content h2 {
+	font-size: 20px;
+	color: #fff;
+	margin-bottom: 10px;
+}

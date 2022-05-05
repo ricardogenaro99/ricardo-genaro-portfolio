@@ -2,15 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const Container = styled.div`
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
-
 const NavLinkStyle = styled(NavLink)`
-	width: 100%;
 	height: 100%;
 	text-decoration: none;
 	display: flex;
@@ -25,14 +17,12 @@ const NavLinkStyle = styled(NavLink)`
 
 const NavLinkComponent = ({ path = "/", name }) => {
 	return (
-		<Container>
-			<NavLinkStyle
-				className={(navData) => (navData.isActive ? "active" : "")}
-				to={path}
-			>
-				{name}
-			</NavLinkStyle>
-		</Container>
+		<NavLinkStyle
+			className={(navData) => (navData.isActive ? "active" : "")}
+			to={path}
+		>
+			{name}
+		</NavLinkStyle>
 	);
 };
 

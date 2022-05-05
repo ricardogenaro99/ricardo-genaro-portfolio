@@ -13,7 +13,7 @@
 	--secondary-color-gray: #607b96;
 	--secondary-color-green: #3c9d93;
 	--secondary-color-purple: #4d5bce;
-	--secondary-color-white: #E5E9F0;
+	--secondary-color-white: #e5e9f0;
 
 	--accent-color-orange: #fea55f;
 	--accent-color-green: #43d9ad;
@@ -26,7 +26,10 @@
 	--size-lables: 16px;
 	--size-code: 14px;
 
-	--width-explorer: 350px;
+	--max-width-explorer: 350px;
+	--min-width-explorer: 220px;
+
+	--padding-global: 40px 3.7%;
 }
 
 * {
