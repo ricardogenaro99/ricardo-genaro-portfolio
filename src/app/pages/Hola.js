@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Coment } from "../components/Coments";
 import avatar from "../assets/avatar-profile.png";
+import { Coment } from "../components/Coments";
 import Card from "../components/hola/Card";
 
 const Container = styled.div`
@@ -93,7 +93,9 @@ const Hola = () => {
 					<h2> {">"} Front-end developer</h2>
 				</div>
 				<div className="section-left-code">
-					<Coment>{"// piensa, relajate, inspirate y <codealo/>"}</Coment>
+					<Coment>
+						{"// piensa, relajate, inspirate y <codealo/>"}
+					</Coment>
 					<Coment>
 						{"// apoyate de mi código en mi página de Github"}
 					</Coment>

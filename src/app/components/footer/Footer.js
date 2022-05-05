@@ -1,6 +1,7 @@
 import React from "react";
+import { RiGithubFill, RiInstagramFill, RiLinkedinFill } from "react-icons/ri";
 import styled from "styled-components";
-import { RiInstagramFill, RiLinkedinFill, RiGithubFill } from "react-icons/ri";
+import { device } from "../../styles/Breakpoints";
 
 const FooterContainer = styled.footer`
 	width: 100%;
@@ -14,9 +15,24 @@ const FooterContainer = styled.footer`
 		&.social-footer {
 			grid-template-columns: repeat(3, max-content);
 		}
+		&.github-footer {
+			a {
+				display: flex;
+				gap: 7px;
+				span {
+					@media ${device.mobileL} {
+						display: none;
+					}
+				}
+			}
+		}
 		a {
 			text-decoration: none;
 			color: var(--secondary-color-gray);
+			transition: var(--transition);
+			&:hover {
+				background: var(--primary-color-blue);
+			}
 		}
 		> * {
 			padding: 0 15px;
@@ -55,7 +71,7 @@ const Footer = () => {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					{/* <span>@ricardogenaro99</span> */}
+					<span>@ricardogenaro99</span>
 					<RiGithubFill />
 				</a>
 			</section>

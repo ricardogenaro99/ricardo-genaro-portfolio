@@ -9,6 +9,10 @@ const NavLinkStyle = styled(NavLink)`
 	justify-content: center;
 	align-items: center;
 	padding: 0 25px;
+	transition: var(--transition);
+	&:hover {
+		background: var(--primary-color-blue);
+	}
 	&.active {
 		border-bottom: 2px solid var(--accent-color-orange);
 		color: var(--secondary-color-white);

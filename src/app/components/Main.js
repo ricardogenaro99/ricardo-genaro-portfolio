@@ -17,7 +17,7 @@ const Main = () => {
 		<MainContainer>
 			<Routes>
 				<Route path="/">
-					<Route index element={<Hola/>} />
+					<Route index element={<Hola />} />
 					<Route path="/sobre-mi" element={<SobreMi />} />
 					<Route path="/proyectos" element={<Proyectos />} />
 					<Route path="/contactame" element={<Contactame />} />

@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "./Navbar";
 import styled from "styled-components";
+import Navbar from "./Navbar";
 
 const HeaderContainer = styled.header`
 	display: flex;
@@ -23,7 +23,7 @@ const Header = () => {
 	return (
 		<HeaderContainer>
 			<div className="name-portfolio">ricardo-genaro</div>
-			<Navbar/>
+			<Navbar />
 		</HeaderContainer>
 	);
 };

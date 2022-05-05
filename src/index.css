@@ -30,6 +30,9 @@
 	--min-width-explorer: 220px;
 
 	--padding-global: 40px 3.7%;
+
+	--transition-time: 0.15s;
+	--transition: ease-in-out var(--transition-time);
 }
 
 * {
