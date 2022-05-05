@@ -93,9 +93,9 @@ const Hola = () => {
 					<h2> {">"} Front-end developer</h2>
 				</div>
 				<div className="section-left-code">
-					<Coment>{"// complete the game to continue"}</Coment>
+					<Coment>{"// piensa, relajate, inspirate y <codealo/>"}</Coment>
 					<Coment>
-						{"// you can also see it on my Github page"}
+						{"// apoyate de mi código en mi página de Github"}
 					</Coment>
 					<code>
 						<span className="code-const">const</span>
