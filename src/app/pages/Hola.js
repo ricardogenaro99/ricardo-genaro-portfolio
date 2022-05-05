@@ -44,20 +44,27 @@ const Container = styled.div`
 					flex-wrap: wrap;
 					gap: 0.5em;
 
-					.code-const {
+					.code-purple {
 						color: var(--secondary-color-purple);
 					}
 
-					.code-name {
+					.code-green {
 						color: var(--accent-color-green);
 					}
 
-					.code-assignment {
-						color: var(--secondary-color-white);
+					.code-simb {
+						color: var(--secondary-color-yellow);
+					}
+
+					.code-cream {
+						color: var(--accent-color-cream);
+					}
+
+					.code-orange {
+						color: var(--accent-color-orange);
 					}
 
 					.code-url {
-						color: var(--accent-color-cream);
 						text-decoration: underline;
 						-ms-word-break: break-word;
 						word-break: break-word;
@@ -79,11 +86,14 @@ const Container = styled.div`
 		img {
 			width: 100%;
 			object-fit: cover;
+			filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.8));
 		}
 	}
 `;
 const Hola = () => {
-	const URL_GITHUB_EXAMPLED = "https://github.com/ricardogenaro99";
+	const URL_GITHUB = "https://github.com/ricardogenaro99";
+	const URL_GITHUB_PORTFOLIO = "/ricardo-genaro-portfolio";
+
 	return (
 		<Container>
 			<section className="section-left">
@@ -100,16 +110,21 @@ const Hola = () => {
 						{"// apoyate de mi código en mi página de Github"}
 					</Coment>
 					<code>
-						<span className="code-const">const</span>
-						<span className="code-name">githubLink</span>
-						<span className="code-assignment">{"="}</span>
+						<span className="code-purple">const</span>
+						<span className="code-green">githubLink</span>
+						<span className="code-simb">{"="}</span>
+						<span className="code-orange">URL</span>
+						<span className="code-simb">{"=>"}</span>
 						<a
-							className="code-url"
-							href={URL_GITHUB_EXAMPLED}
+							className="code-url code-cream"
+							href={URL_GITHUB + URL_GITHUB_PORTFOLIO}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							"{URL_GITHUB_EXAMPLED}"
+							`{URL_GITHUB + "/"}
+							<span className="code-simb">{"${"}</span>
+							<span className="code-orange">URL</span>
+							<span className="code-simb">{"}"}</span>`
 						</a>
 					</code>
 				</div>

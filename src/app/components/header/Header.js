@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../../styles/Breakpoints";
 import Navbar from "./Navbar";
-
 const HeaderContainer = styled.header`
 	display: flex;
 	.name-portfolio {
@@ -12,7 +12,12 @@ const HeaderContainer = styled.header`
 		display: flex;
 		align-items: center;
 		padding: 0 25px;
+		
+		@media ${device.tablet} {
+			max-width: none;
+		}
 	}
+
 	* {
 		font-size: var(--size-lables);
 		color: var(--secondary-color-gray);

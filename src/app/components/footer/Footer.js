@@ -47,7 +47,7 @@ const Footer = () => {
 	return (
 		<FooterContainer>
 			<section className="social-footer">
-				<div>find me in:</div>
+				<div>encuéntrame en:</div>
 
 				<a
 					href="https://www.linkedin.com/in/ricardogenaro/"
