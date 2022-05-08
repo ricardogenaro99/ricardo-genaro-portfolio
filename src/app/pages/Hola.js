@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import avatar from "../assets/avatar-profile.png";
-import { Coment } from "../components/Coments";
 import Card from "../components/hola/Card";
+import { Coment } from "../components/shared/Coments";
 
 const Container = styled.div`
 	display: flex;
@@ -86,7 +86,7 @@ const Container = styled.div`
 		img {
 			width: 100%;
 			object-fit: cover;
-			filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.8));
+			filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.8)) brightness(63%);
 		}
 	}
 `;

@@ -9,6 +9,7 @@ const Nav = styled.nav`
 	width: 100%;
 	> section {
 		display: flex;
+		outline: 1px solid var(--lines-color);
 		> * {
 			outline: 1px solid var(--lines-color);
 		}

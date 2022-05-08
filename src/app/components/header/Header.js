@@ -3,24 +3,24 @@ import styled from "styled-components";
 import { device } from "../../styles/Breakpoints";
 import Navbar from "./Navbar";
 const HeaderContainer = styled.header`
-	display: flex;
+	display: grid;
+	grid-template-columns: var(--max-width-explorer) 1fr;
+	outline: 1px solid var(--lines-color);
 	.name-portfolio {
-		max-width: var(--max-width-explorer);
-		min-width: var(--min-width-explorer);
 		width: 100%;
-		outline: 1px solid var(--lines-color);
 		display: flex;
 		align-items: center;
 		padding: 0 25px;
-		
-		@media ${device.tablet} {
-			max-width: none;
-		}
+		outline: 1px solid var(--lines-color);
 	}
 
 	* {
 		font-size: var(--size-lables);
 		color: var(--secondary-color-gray);
+	}
+
+	@media ${device.tablet} {
+		display: flex;
 	}
 `;
 

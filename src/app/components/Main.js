@@ -7,7 +7,8 @@ import Proyectos from "../pages/Proyectos";
 import SobreMi from "../pages/SobreMi";
 
 const MainContainer = styled.main`
-	border: 1px solid var(--lines-color);
+	border-top: 1px solid var(--lines-color);
+	border-bottom: 1px solid var(--lines-color);
 	display: flex;
 	justify-content: center;
 	align-items: center;

@@ -6,14 +6,19 @@ import { device } from "../../styles/Breakpoints";
 const FooterContainer = styled.footer`
 	width: 100%;
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-between;
 
 	section {
 		display: grid;
-
+		outline: 1px solid var(--lines-color);
 		&.social-footer {
 			grid-template-columns: repeat(3, max-content);
+
+			@media ${device.mobileS} {
+				div {
+					display: none;
+				}
+			}
 		}
 		&.github-footer {
 			a {
@@ -40,6 +45,15 @@ const FooterContainer = styled.footer`
 			display: flex;
 			justify-content: center;
 			align-items: center;
+		}
+	}
+
+	@media ${device.mobileS} {
+		justify-content: center;
+
+		section,
+		a {
+			outline: none;
 		}
 	}
 `;
