@@ -10,7 +10,7 @@ const FooterContainer = styled.footer`
 
 	section {
 		display: grid;
-		outline: 1px solid var(--lines-color);
+		outline: var(--outline);
 		&.social-footer {
 			grid-template-columns: repeat(3, max-content);
 
@@ -41,11 +41,17 @@ const FooterContainer = styled.footer`
 		}
 		> * {
 			padding: 0 15px;
-			outline: 1px solid var(--lines-color);
+			outline: var(--outline);
 			display: flex;
 			justify-content: center;
 			align-items: center;
 		}
+	}
+
+	font-size: var(--size-labels);
+
+	* {
+		font-size: var(--size-labels);
 	}
 
 	@media ${device.mobileS} {

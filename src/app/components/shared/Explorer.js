@@ -5,21 +5,28 @@ import Acordion from "./accordion/Accordion";
 
 const Container = styled.aside`
 	width: 100%;
-	> section > * {
-		outline: 1px solid var(--lines-color);
+	> div {
+		> section > * {
+			outline: var(--outline);
+		}
+		@media ${device.tabletS} {
+			display: none;
+		}
 	}
 
-	@media ${device.tabletS} {
-		opacity: 0;
+	font-size: var(--size-labels) !important;
+	* {
+		font-size: var(--size-labels) !important;
 	}
 `;
 const Explorer = ({ sections = [] }) => {
-
 	return (
 		<Container>
-			{sections.map((e, i) => (
-				<Acordion key={i} title={e.title} content={e.content}/>
-			))}
+			<div>
+				{sections.map((e, i) => (
+					<Acordion key={i} title={e.title} content={e.content} />
+				))}
+			</div>
 		</Container>
 	);
 };

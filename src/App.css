@@ -5,5 +5,5 @@
 	color: var(--secondary-color-gray);
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 56px 1fr 50px;
+	grid-template-rows: var(--height-header) 1fr var(--height-footer);
 }

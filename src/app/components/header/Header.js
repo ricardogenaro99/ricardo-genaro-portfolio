@@ -5,17 +5,17 @@ import Navbar from "./Navbar";
 const HeaderContainer = styled.header`
 	display: grid;
 	grid-template-columns: var(--max-width-explorer) 1fr;
-	outline: 1px solid var(--lines-color);
+	outline: var(--outline);
 	.name-portfolio {
 		width: 100%;
 		display: flex;
 		align-items: center;
 		padding: 0 25px;
-		outline: 1px solid var(--lines-color);
+		outline: var(--outline);
 	}
 
 	* {
-		font-size: var(--size-lables);
+		font-size: var(--size-labels);
 		color: var(--secondary-color-gray);
 	}
 

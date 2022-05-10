@@ -27,17 +27,24 @@
 	--size-headline: 62px;
 	--size-subheadline: 32px;
 	--size-body: 18px;
-	--size-lables: 16px;
+	--size-labels: 16px;
 	--size-code: 14px;
 
-	/* --max-width-explorer: 350px; */
 	--max-width-explorer: 347px;
 	--min-width-explorer: 220px;
 
 	--padding-global: 40px 3.7%;
+	--padding-work-station: 20px;
 
-	--transition-time: 0.09s;
+	--transition-time: 0.11s;
 	--transition: ease-out var(--transition-time);
+
+	--outline: 1px solid var(--lines-color);
+
+	--height-header: 56px;
+	--height-footer: 50px;
+
+	--line-height-work-station: 25px;
 }
 
 * {
@@ -47,6 +54,25 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	font-family: "Fira Code", monospace;
+}
+
+*::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: var(--secondary-color-gray);
+	border-radius: 1px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+	outline: var(--outline);
 }
 
 button {

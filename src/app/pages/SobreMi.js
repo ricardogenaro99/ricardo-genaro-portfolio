@@ -3,11 +3,21 @@ import {
 	RiFolder3Fill,
 	RiMailFill,
 	RiMarkdownFill,
-	RiPhoneFill,
+	RiWhatsappFill
 } from "react-icons/ri";
+import { Link, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import Explorer from "../components/shared/Explorer";
+import WorkStationSection from "../components/shared/WorkStationSection";
+import SobreMiAnalitico from "../components/sobre-mi/SobreMiAnalitico";
+import SobreMiAutodidacta from "../components/sobre-mi/SobreMiAutodidacta";
+import SobreMiCreativo from "../components/sobre-mi/SobreMiCreativo";
+import SobreMiIndex from "../components/sobre-mi/SobreMiIndex";
+import SobreMiProactivo from "../components/sobre-mi/SobreMiProactivo";
+import SobreMiResponsable from "../components/sobre-mi/SobreMiResponsable";
+import SobreMiUniversidad from "../components/sobre-mi/SobreMiUniversidad";
 import { device } from "../styles/Breakpoints";
+import Error404 from "./Error404";
 
 const Container = styled.div`
 	width: 100%;
@@ -15,7 +25,7 @@ const Container = styled.div`
 	display: grid;
 	grid-template-columns: var(--max-width-explorer) 1fr;
 	> * {
-		outline: 1px solid var(--lines-color);
+		outline: var(--outline);
 	}
 
 	@media ${device.tabletS} {
@@ -74,11 +84,30 @@ const SectionExplorer = styled.div`
 	}
 `;
 
+const Content = styled.div`
+	display: grid;
+	grid-template-columns: 1.3fr 1fr;
+
+	> section {
+		outline: var(--outline);
+	}
+`;
+
+const removeAccents = (str) => {
+	return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+};
+
 const ItemListSpanDefault = ({ name }) => {
 	return (
-		<span className="section_explorer-flex item-list-span">
-			<RiMarkdownFill />
-			{name}
+		<span className=" item-list-span">
+			<Link
+				to={removeAccents(name) === "index" ? "" : removeAccents(name)}
+			>
+				<span className="section_explorer-flex">
+					<RiMarkdownFill />
+					{name}
+				</span>
+			</Link>
 		</span>
 	);
 };
@@ -87,7 +116,7 @@ const SobreMi = () => {
 	const URL_WSP =
 		"https://api.whatsapp.com/send?phone=51933124563&text=Hola,%20estoy%20interesado%20en%20tu%20trabajo...";
 
-	const sectionsExplorer = [
+	const SectionsExplorer = [
 		{
 			title: "información-personal",
 			content: (
@@ -147,17 +176,17 @@ const SobreMi = () => {
 					<span className="section_explorer-flex item-list-span">
 						<RiMailFill />
 						<a href="mailto:genaro.choquehuanca.palli@gmail.com?Subject=SERVICIO%20DESARROLLO%20WEB">
-							genaro.choquehuanca.palli@gmail.com
+							mandame_un_correo
 						</a>
 					</span>
 					<span className="section_explorer-flex item-list-span">
-						<RiPhoneFill />
+						<RiWhatsappFill />
 						<a
 							href={URL_WSP}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							+51 933124563
+							mandame_un_whatsapp
 						</a>
 					</span>
 				</SectionExplorer>
@@ -167,15 +196,53 @@ const SobreMi = () => {
 
 	return (
 		<Container>
-			<Explorer sections={sectionsExplorer} />
-			<section>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-				Ducimus dignissimos aspernatur molestiae beatae itaque
-				consectetur neque omnis quaerat laborum possimus impedit atque
-				eaque necessitatibus corporis pariatur, reiciendis aut est
-				facere?
-				<h3>AUN FALTA RESPONSIVE DESIGN, NO SEAS DESESPERADA PE UWU</h3>
-			</section>
+			<Explorer sections={SectionsExplorer} />
+			<Content>
+				<WorkStationSection>
+					<Routes>
+						<Route path="/">
+							<Route index element={<SobreMiIndex />} />
+							<Route
+								path="/creativo"
+								element={<SobreMiCreativo />}
+							/>
+							<Route
+								path="/analitico"
+								element={<SobreMiAnalitico />}
+							/>
+							<Route
+								path="/proactivo"
+								element={<SobreMiProactivo />}
+							/>
+							<Route
+								path="/responsable"
+								element={<SobreMiResponsable />}
+							/>
+							<Route
+								path="/universidad"
+								element={<SobreMiUniversidad />}
+							/>
+							<Route
+								path="/autodidacta"
+								element={<SobreMiAutodidacta />}
+							/>
+						</Route>
+						<Route
+							path="*"
+							element={
+								<Error404 message="Seleccione un archivo." />
+							}
+						/>
+					</Routes>
+				</WorkStationSection>
+				<WorkStationSection>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Iste eius nesciunt, voluptatibus asperiores sit, ipsa ipsam,
+					dignissimos omnis maiores reprehenderit harum nisi officiis
+					necessitatibus amet accusamus provident repudiandae
+					veritatis autem?
+				</WorkStationSection>
+			</Content>
 		</Container>
 	);
 };

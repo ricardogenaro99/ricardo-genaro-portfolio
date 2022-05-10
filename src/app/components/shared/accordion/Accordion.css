@@ -4,11 +4,6 @@
 	flex-direction: column;
 }
 
-/* .accordion__section > * {
-	width: 100%;
-	outline: 1px solid var(--lines-color);
-} */
-
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
 	background-color: var(--primary-color-dark-blue);
@@ -29,7 +24,7 @@
 /* Style the accordion content title */
 .accordion__title {
 	font-weight: 600;
-	font-size: 14px;
+	font-size: var(--size-labels);
 	text-align: left;
 }
 
@@ -46,7 +41,6 @@
 
 /* Style the accordion content panel. Note: hidden by default */
 .accordion__content {
-	/* overflow: auto; */
 	overflow: hidden;
 	transition: max-height var(--transition);
 }
@@ -54,6 +48,6 @@
 /* Style the accordion content text */
 .accordion__text {
 	font-weight: 400;
-	font-size: 14px;
+	font-size: var(--size-labels);
 	padding: 15px;
 }
