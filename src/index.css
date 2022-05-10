@@ -7,7 +7,8 @@
 	--gradients-color-green: #43d9ad;
 
 	--primary-color-black: #01080e;
-	--primary-color-blue: #011627;
+	/* --primary-color-blue: #011627; */
+	--primary-color-blue: #021729;
 	--primary-color-dark-blue: #011221;
 
 	--secondary-color-gray: #607b96;
@@ -71,7 +72,7 @@
 }
 
 *::-webkit-scrollbar-track {
-	background: transparent;
+	background: var(--primary-color-blue);
 	outline: var(--outline);
 }
 

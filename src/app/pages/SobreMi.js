@@ -237,10 +237,9 @@ const SobreMi = () => {
 				</WorkStationSection>
 				<WorkStationSection>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Iste eius nesciunt, voluptatibus asperiores sit, ipsa ipsam,
-					dignissimos omnis maiores reprehenderit harum nisi officiis
-					necessitatibus amet accusamus provident repudiandae
-					veritatis autem?
+					Libero blanditiis nulla odio voluptas ex, vero voluptatum
+					excepturi labore ipsa ut quia doloribus ullam. Numquam
+					voluptatem sunt modi quod ipsum voluptatum.
 				</WorkStationSection>
 			</Content>
 		</Container>

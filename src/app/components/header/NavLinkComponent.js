@@ -15,6 +15,7 @@ const NavLinkStyle = styled(NavLink)`
 	}
 	&.active {
 		border-bottom: 2px solid var(--accent-color-orange);
+		background: var(--primary-color-blue);
 		color: var(--secondary-color-white);
 	}
 `;
