@@ -146,7 +146,9 @@ const SobreMi = () => {
 				<SectionExplorer>
 					<span className="section_explorer-flex item-list-span">
 						<RiMailFill />
-						genaro.choquehuanca.palli@gmail.com
+						<a href="mailto:genaro.choquehuanca.palli@gmail.com?Subject=SERVICIO%20DESARROLLO%20WEB">
+							genaro.choquehuanca.palli@gmail.com
+						</a>
 					</span>
 					<span className="section_explorer-flex item-list-span">
 						<RiPhoneFill />
