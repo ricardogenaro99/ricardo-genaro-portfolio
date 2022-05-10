@@ -1,6 +1,9 @@
 import React from "react";
 import {
-	RiFolder3Fill, RiMailFill, RiMarkdownFill, RiPhoneFill
+	RiFolder3Fill,
+	RiMailFill,
+	RiMarkdownFill,
+	RiPhoneFill,
 } from "react-icons/ri";
 import styled from "styled-components";
 import Explorer from "../components/shared/Explorer";
@@ -22,7 +25,7 @@ const Container = styled.div`
 
 const SectionExplorer = styled.div`
 	display: grid;
-	gap: 8px;
+	gap: 10px;
 	span {
 		-ms-word-break: break-word;
 		word-break: break-word;
@@ -39,18 +42,54 @@ const SectionExplorer = styled.div`
 
 		&.section_explorer-tree {
 			display: grid;
+			gap: 5px;
 		}
 	}
 
 	ul {
 		padding-left: 18px;
+		display: grid;
+		gap: 5px;
+
+		li {
+			display: flex;
+			justify-content: flex-start;
+		}
+	}
+
+	.item-list-span {
+		transition: var(--transition);
+		cursor: pointer;
+		a {
+			color: var(--secondary-color-gray);
+			text-decoration: none;
+			transition: var(--transition);
+		}
+		&:hover {
+			color: var(--secondary-color-gray-hover-item);
+			a {
+				color: var(--secondary-color-gray-hover-item);
+			}
+		}
 	}
 `;
 
+const ItemListSpanDefault = ({ name }) => {
+	return (
+		<span className="section_explorer-flex item-list-span">
+			<RiMarkdownFill />
+			{name}
+		</span>
+	);
+};
+
 const SobreMi = () => {
+	const URL_WSP =
+		"https://api.whatsapp.com/send?phone=51933124563&text=Hola,%20estoy%20interesado%20en%20tu%20trabajo...";
+
 	const sectionsExplorer = [
 		{
-			title: "informacion-personal",
+			title: "información-personal",
 			content: (
 				<SectionExplorer>
 					<span className="section_explorer-tree">
@@ -59,32 +98,42 @@ const SobreMi = () => {
 							bio
 						</span>
 						<ul>
-							<li></li>
+							<li>
+								<ItemListSpanDefault name="index" />
+							</li>
 						</ul>
 					</span>
 					<span className="section_explorer-tree">
 						<span className="section_explorer-flex">
 							<RiFolder3Fill color="var(--accent-color-green)" />
-							intereses
+							aptitudes
 						</span>
+						<ul>
+							<li>
+								<ItemListSpanDefault name="creativo" />
+							</li>
+							<li>
+								<ItemListSpanDefault name="analítico" />
+							</li>
+							<li>
+								<ItemListSpanDefault name="proactivo" />
+							</li>
+							<li>
+								<ItemListSpanDefault name="responsable" />
+							</li>
+						</ul>
 					</span>
 					<span className="section_explorer-tree">
 						<span className="section_explorer-flex">
 							<RiFolder3Fill color="var(--accent-color-dark-purple)" />
-							educación
+							formación
 						</span>
 						<ul>
 							<li>
-								<span className="section_explorer-flex">
-									<RiMarkdownFill />
-									universidad
-								</span>
+								<ItemListSpanDefault name="universidad" />
 							</li>
 							<li>
-								<span className="section_explorer-flex">
-									<RiMarkdownFill />
-									autodidacta
-								</span>
+								<ItemListSpanDefault name="autodidacta" />
 							</li>
 						</ul>
 					</span>
@@ -95,13 +144,19 @@ const SobreMi = () => {
 			title: "contacto",
 			content: (
 				<SectionExplorer>
-					<span className="section_explorer-flex">
+					<span className="section_explorer-flex item-list-span">
 						<RiMailFill />
 						genaro.choquehuanca.palli@gmail.com
 					</span>
-					<span className="section_explorer-flex">
+					<span className="section_explorer-flex item-list-span">
 						<RiPhoneFill />
-						+51 933124563
+						<a
+							href={URL_WSP}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							+51 933124563
+						</a>
 					</span>
 				</SectionExplorer>
 			),

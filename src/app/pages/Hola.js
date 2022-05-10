@@ -86,7 +86,7 @@ const Container = styled.div`
 		img {
 			width: 100%;
 			object-fit: cover;
-			filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.8)) brightness(63%);
+			filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.8)) brightness(73%);
 		}
 	}
 `;
@@ -104,7 +104,8 @@ const Hola = () => {
 				</div>
 				<div className="section-left-code">
 					<Coment>
-						{"// piensa, relajate, inspirate y <codealo/>"}
+						{"// piensa, relájate, inspíate y"}{" "}
+						<b>{"<Codealo/>"}</b>
 					</Coment>
 					<Coment>
 						{"// apoyate de mi código en mi página de Github"}

@@ -1,14 +1,17 @@
-import React, { useState, useRef } from "react";
+import React, {  useRef, useState } from "react";
+import "./Accordion.css";
 import Chevron from "./Chevron";
 
-import "./Accordion.css";
 
 const Accordion = (props) => {
-	const [active, setActiveState] = useState("");
-	const [height, setHeightState] = useState("0px");
-	const [rotate, setRotateState] = useState("accordion__icon");
 
 	const content = useRef(null);
+
+	const [active, setActiveState] = useState("active_accordion");
+	const [height, setHeightState] = useState(`600px`);
+	const [rotate, setRotateState] = useState("accordion__icon rotate");
+
+	
 
 	const toggleAccordion = () => {
 		setActiveState(active === "" ? "active_accordion" : "");
