@@ -31,7 +31,8 @@
 	--size-labels: 15.7px;
 	--size-code: 14px;
 
-	--max-width-explorer: 347px;
+	/* --max-width-explorer: 347px; */
+	--max-width-explorer: 300px;
 	--min-width-explorer: 220px;
 
 	--padding-global: 40px 3.7%;

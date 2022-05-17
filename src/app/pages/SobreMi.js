@@ -87,9 +87,15 @@ const SectionExplorer = styled.div`
 const Content = styled.div`
 	display: grid;
 	grid-template-columns: 1.3fr 1fr;
+	grid-auto-rows: auto;
+	/* max-height: calc(100vh - var(--height-header) - var(--height-footer) - 2px); */
 
 	> section {
 		outline: var(--outline);
+	}
+
+	@media ${device.laptop} {
+		grid-template-columns: 1fr;
 	}
 `;
 

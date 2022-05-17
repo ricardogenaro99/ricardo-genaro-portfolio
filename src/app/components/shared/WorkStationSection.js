@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Container = styled.section`
 	padding: var(--padding-work-station);
-	max-height: calc(100vh - var(--height-header) - var(--height-footer) - 2px);
+	/* max-height: calc(100vh - var(--height-header) - var(--height-footer) - 2px); */
 	overflow-y: auto;
 	line-height: var(--line-height-work-station);
 	* {
