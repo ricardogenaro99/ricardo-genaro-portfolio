@@ -7,31 +7,22 @@ import {
 } from "react-icons/ri";
 import { Link, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
-import Explorer from "../components/shared/Explorer";
-import WorkStationSection from "../components/shared/WorkStationSection";
-import SobreMiAnalitico from "../components/sobre-mi/SobreMiAnalitico";
-import SobreMiAutodidacta from "../components/sobre-mi/SobreMiAutodidacta";
-import SobreMiCreativo from "../components/sobre-mi/SobreMiCreativo";
-import SobreMiIndex from "../components/sobre-mi/SobreMiIndex";
-import SobreMiProactivo from "../components/sobre-mi/SobreMiProactivo";
-import SobreMiResponsable from "../components/sobre-mi/SobreMiResponsable";
-import SobreMiUniversidad from "../components/sobre-mi/SobreMiUniversidad";
+import Explorer from "../shared/Explorer";
+import {
+	SobreMiAnalitico,
+	SobreMiAutodidacta,
+	SobreMiCreativo,
+	SobreMiIndex,
+	SobreMiProactivo,
+	SobreMiResponsable,
+	SobreMiUniversidad
+} from "../components/sobre-mi";
 import { device } from "../styles/Breakpoints";
+import {
+	ContainerExplorerAndContentTemplate,
+	WorkStationSection
+} from "../templates/Templates";
 import Error404 from "./Error404";
-
-const Container = styled.div`
-	width: 100%;
-	height: 100%;
-	display: grid;
-	grid-template-columns: var(--max-width-explorer) 1fr;
-	> * {
-		outline: var(--outline);
-	}
-
-	@media ${device.tabletS} {
-		grid-template-columns: 50px 1fr;
-	}
-`;
 
 const SectionExplorer = styled.div`
 	display: grid;
@@ -68,12 +59,10 @@ const SectionExplorer = styled.div`
 	}
 
 	.item-list-span {
-		transition: var(--transition);
 		cursor: pointer;
 		a {
 			color: var(--secondary-color-gray);
 			text-decoration: none;
-			transition: var(--transition);
 		}
 		&:hover {
 			color: var(--secondary-color-gray-hover-item);
@@ -88,8 +77,6 @@ const Content = styled.div`
 	display: grid;
 	grid-template-columns: 1.3fr 1fr;
 	grid-auto-rows: auto;
-	/* max-height: calc(100vh - var(--height-header) - var(--height-footer) - 2px); */
-
 	> section {
 		outline: var(--outline);
 	}
@@ -201,7 +188,7 @@ const SobreMi = () => {
 	];
 
 	return (
-		<Container>
+		<ContainerExplorerAndContentTemplate>
 			<Explorer sections={SectionsExplorer} />
 			<Content>
 				<WorkStationSection>
@@ -248,7 +235,7 @@ const SobreMi = () => {
 					voluptatem sunt modi quod ipsum voluptatum.
 				</WorkStationSection>
 			</Content>
-		</Container>
+		</ContainerExplorerAndContentTemplate>
 	);
 };
 

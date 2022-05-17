@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { device } from "../../styles/Breakpoints";
 
 const FooterContainer = styled.footer`
-	width: 100%;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -23,7 +22,6 @@ const FooterContainer = styled.footer`
 			outline: var(--outline);
 			&.social-footer {
 				grid-template-columns: repeat(3, max-content);
-
 				@media ${device.mobileL} {
 					div {
 						display: none;
@@ -44,7 +42,6 @@ const FooterContainer = styled.footer`
 			a {
 				text-decoration: none;
 				color: var(--secondary-color-gray);
-				transition: var(--transition);
 				&:hover {
 					background: var(--primary-color-blue);
 				}
@@ -59,14 +56,11 @@ const FooterContainer = styled.footer`
 		}
 
 		font-size: var(--size-labels);
-
 		* {
 			font-size: var(--size-labels);
 		}
-
 		@media ${device.mobileL} {
 			justify-content: center;
-
 			section,
 			a {
 				outline: none;
@@ -74,6 +68,7 @@ const FooterContainer = styled.footer`
 		}
 	}
 `;
+
 const Footer = () => {
 	return (
 		<FooterContainer>
