@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
 	RiAngularjsFill,
 	RiCss3Fill,
@@ -64,7 +64,7 @@ const initialProjects = [
 	{
 		id: uuid(),
 		name: "proyecto1",
-		linkProject: "https://www.youtube.com/watch?v=IkxtDjPSc-4",
+		linkProject: "https://www.instagram.com/ricardogenaro99/",
 		linkImage:
 			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
 		tags: ["react", "html", "css"],
@@ -72,7 +72,7 @@ const initialProjects = [
 	{
 		id: uuid(),
 		name: "proyecto2",
-		linkProject: "https://www.youtube.com/watch?v=IkxtDjPSc-4",
+		linkProject: "https://www.instagram.com/ricardogenaro99/",
 		linkImage:
 			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
 		tags: ["angular", "html", "css"],
@@ -80,7 +80,7 @@ const initialProjects = [
 	{
 		id: uuid(),
 		name: "proyecto1",
-		linkProject: "https://www.youtube.com/watch?v=IkxtDjPSc-4",
+		linkProject: "https://www.instagram.com/ricardogenaro99/",
 		linkImage:
 			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
 		tags: ["css", "html"],
@@ -88,7 +88,7 @@ const initialProjects = [
 	{
 		id: uuid(),
 		name: "proyecto2",
-		linkProject: "https://www.youtube.com/watch?v=IkxtDjPSc-4",
+		linkProject: "https://www.instagram.com/ricardogenaro99/",
 		linkImage:
 			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
 		tags: ["vue", "html", "css"],
@@ -108,20 +108,22 @@ const Proyectos = () => {
 			return element;
 		});
 		setFilters(array);
+		reloadProjects();
 	};
 
-	useEffect(() => {
-		const obj = {};
-		filters.forEach((e) => {
-			obj[e.name] = e.active;
+	const reloadProjects = () => {
+		const filtersActive = filters.filter((filter) => filter.active);
+		const projectsActive = initialProjects.filter((project) => {
+			let count = 0;
+			for (let index = 0; index < filtersActive.length; index++) {
+				if (project.tags.includes(filtersActive[index].name)) {
+					count++;
+				}
+			}
+			return count > 0;
 		});
-
-		// projects.map((e) => {
-		// 	if (obj[e.tags]) {
-
-		// 	}
-		// });
-	}, [filters]);
+		setProjects(projectsActive);
+	};
 
 	const SectionsExplorer = [
 		{

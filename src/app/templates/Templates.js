@@ -37,6 +37,5 @@ export const GridAutoFitTemplate = styled.div`
 
 	@media ${device.mobileL} {
 		grid-template-columns:  1fr;
-		background: green;
 	}
 `;
