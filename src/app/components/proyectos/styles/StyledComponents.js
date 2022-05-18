@@ -17,7 +17,7 @@ export const ContainerCardProyecto = styled.article`
 
 export const CardModelStyle = styled.div`
 	display: grid;
-	grid-template-rows: auto 1fr;
+	grid-template-rows: 1fr 1fr;
 	border-radius: 15px;
 	overflow: hidden;
 	outline: 1px solid var(--lines-color);
@@ -28,22 +28,20 @@ export const CardModelStyle = styled.div`
 
 		.icons-tag {
 			position: absolute;
-			border-radius: 3px;
-			width: ${iconTagSize};
-			height: ${iconTagSize};
 			top: 10px;
 			right: 10px;
-			display: grid;
+			display: flex;
+			flex-wrap: wrap;
 			overflow: hidden;
-
 			.icon-tag {
+				border-radius: 4px;
 				position: relative;
 				width: ${iconTagSize};
 				height: ${iconTagSize};
 			}
 		}
 		.img-project {
-			height: 145px;
+			height: 140px;
 			width: 100%;
 			object-fit: cover;
 		}
