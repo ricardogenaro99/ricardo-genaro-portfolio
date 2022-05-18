@@ -1,11 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { device } from "../../styles/Breakpoints";
+import { device } from "../styles/Breakpoints";
 import Acordion from "./accordion/Accordion";
 
 const Container = styled.aside`
 	width: 100%;
+	position: relative;
+	top: 0;
 	> div {
+		position: fixed;
+		height: 100%;
+		width: var(--max-width-explorer);
 		> section > * {
 			outline: var(--outline);
 		}

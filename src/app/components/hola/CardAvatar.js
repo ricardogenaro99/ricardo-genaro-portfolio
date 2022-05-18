@@ -1,6 +1,7 @@
 import React from "react";
-import "./Card.css";
-const Card = ({ children }) => {
+import "./CardAvatar.css";
+
+const CardAvatar = ({ children }) => {
 	return (
 		<div className="box">
 			<div className="content">{children}</div>
@@ -8,4 +9,4 @@ const Card = ({ children }) => {
 	);
 };
 
-export default Card;
+export default CardAvatar;

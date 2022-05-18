@@ -3,35 +3,27 @@ import {
 	RiFolder3Fill,
 	RiMailFill,
 	RiMarkdownFill,
-	RiWhatsappFill
+	RiWhatsappFill,
 } from "react-icons/ri";
 import { Link, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
-import Explorer from "../components/shared/Explorer";
-import WorkStationSection from "../components/shared/WorkStationSection";
-import SobreMiAnalitico from "../components/sobre-mi/SobreMiAnalitico";
-import SobreMiAutodidacta from "../components/sobre-mi/SobreMiAutodidacta";
-import SobreMiCreativo from "../components/sobre-mi/SobreMiCreativo";
-import SobreMiIndex from "../components/sobre-mi/SobreMiIndex";
-import SobreMiProactivo from "../components/sobre-mi/SobreMiProactivo";
-import SobreMiResponsable from "../components/sobre-mi/SobreMiResponsable";
-import SobreMiUniversidad from "../components/sobre-mi/SobreMiUniversidad";
+import Explorer from "../shared/Explorer";
+import {
+	SobreMiAnalitico,
+	SobreMiAutodidacta,
+	SobreMiCreativo,
+	SobreMiIndex,
+	SobreMiProactivo,
+	SobreMiResponsable,
+	SobreMiUniversidad,
+} from "../components/sobre-mi";
 import { device } from "../styles/Breakpoints";
+import {
+	ContainerExplorerAndContentTemplate,
+	WorkStationSectionTemplate,
+} from "../templates/Templates";
 import Error404 from "./Error404";
-
-const Container = styled.div`
-	width: 100%;
-	height: 100%;
-	display: grid;
-	grid-template-columns: var(--max-width-explorer) 1fr;
-	> * {
-		outline: var(--outline);
-	}
-
-	@media ${device.tabletS} {
-		grid-template-columns: 50px 1fr;
-	}
-`;
+import { removeAccents } from "../shared/Funtions";
 
 const SectionExplorer = styled.div`
 	display: grid;
@@ -68,12 +60,10 @@ const SectionExplorer = styled.div`
 	}
 
 	.item-list-span {
-		transition: var(--transition);
 		cursor: pointer;
 		a {
 			color: var(--secondary-color-gray);
 			text-decoration: none;
-			transition: var(--transition);
 		}
 		&:hover {
 			color: var(--secondary-color-gray-hover-item);
@@ -87,19 +77,19 @@ const SectionExplorer = styled.div`
 const Content = styled.div`
 	display: grid;
 	grid-template-columns: 1.3fr 1fr;
-
+	grid-auto-rows: auto;
 	> section {
 		outline: var(--outline);
 	}
-`;
 
-const removeAccents = (str) => {
-	return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-};
+	@media ${device.laptop} {
+		grid-template-columns: 1fr;
+	}
+`;
 
 const ItemListSpanDefault = ({ name }) => {
 	return (
-		<span className=" item-list-span">
+		<span className="item-list-span">
 			<Link
 				to={removeAccents(name) === "index" ? "" : removeAccents(name)}
 			>
@@ -195,10 +185,10 @@ const SobreMi = () => {
 	];
 
 	return (
-		<Container>
+		<ContainerExplorerAndContentTemplate>
 			<Explorer sections={SectionsExplorer} />
 			<Content>
-				<WorkStationSection>
+				<WorkStationSectionTemplate>
 					<Routes>
 						<Route path="/">
 							<Route index element={<SobreMiIndex />} />
@@ -234,15 +224,15 @@ const SobreMi = () => {
 							}
 						/>
 					</Routes>
-				</WorkStationSection>
-				<WorkStationSection>
+				</WorkStationSectionTemplate>
+				<WorkStationSectionTemplate>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Libero blanditiis nulla odio voluptas ex, vero voluptatum
 					excepturi labore ipsa ut quia doloribus ullam. Numquam
 					voluptatem sunt modi quod ipsum voluptatum.
-				</WorkStationSection>
+				</WorkStationSectionTemplate>
 			</Content>
-		</Container>
+		</ContainerExplorerAndContentTemplate>
 	);
 };
 

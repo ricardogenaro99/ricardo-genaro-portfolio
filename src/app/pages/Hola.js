@@ -1,16 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import avatar from "../assets/avatar-profile.png";
-import Card from "../components/hola/Card";
-import { Coment } from "../components/shared/Coments";
+import CardAvatar from "../components/hola/CardAvatar";
+import { Coment } from "../shared/Coments";
+import { device } from "../styles/Breakpoints";
 
 const Container = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 3em;
+	gap: 6em 3em;
 	padding: var(--padding-global);
+	@media ${device.laptopM} {
+		padding: var(--padding-page-inicio);
+	}
 
 	.section-left {
 		display: grid;
@@ -23,10 +27,17 @@ const Container = styled.div`
 				h1 {
 					font-size: var(--size-headline);
 					font-weight: 400;
+
+					@media ${device.mobileS} {
+						font-size: calc(var(--size-headline) - 10px);
+					}
 				}
 				h2 {
 					font-size: var(--size-subheadline);
 					color: var(--secondary-color-purple);
+					@media ${device.mobileS} {
+						font-size: calc(var(--size-subheadline) - 5px);
+					}
 				}
 				span,
 				h2 {
@@ -131,9 +142,9 @@ const Hola = () => {
 				</div>
 			</section>
 			<section className="section-right">
-				<Card>
+				<CardAvatar>
 					<img src={avatar} alt="avatar-profile" />
-				</Card>
+				</CardAvatar>
 			</section>
 		</Container>
 	);

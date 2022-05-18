@@ -1,21 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
-import Contactame from "../pages/Contactame";
-import Error404 from "../pages/Error404";
-import Hola from "../pages/Hola";
-import Proyectos from "../pages/Proyectos";
-import SobreMi from "../pages/SobreMi";
-
+import { SobreMi, Proyectos, Hola, Error404, Contactame } from "../../pages";
 const MainContainer = styled.main`
 	border-top: 1px solid var(--lines-color);
 	border-bottom: 1px solid var(--lines-color);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
 	font-size: var(--size-body);
-
 	*{
 		font-size: var(--size-body);
 	}

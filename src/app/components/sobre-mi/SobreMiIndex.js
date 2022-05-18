@@ -1,6 +1,6 @@
 import React from "react";
-import { ComentMultiple } from "../shared/Coments";
-import { Enumeracion } from "../shared/Enumeracion";
+import { ComentMultiple } from "../../shared/Coments";
+import { Enumeracion } from "../../shared/Enumeracion";
 
 const SobreMiIndex = () => {
 	return (

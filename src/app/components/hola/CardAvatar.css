@@ -1,12 +1,12 @@
 /* From uiverse.io by @Codewithvinay */
 .box {
 	--skewx: -15deg;
-	--transition-transform-time: 0.5s;
+	--transition-transform-time: 0.4s;
 	--border-radius: 8px;
 	position: relative;
 	max-width: 380px;
 	width: 90%;
-	height: 550px;
+	height: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -14,38 +14,29 @@
 	z-index: 1;
 }
 
-.box::before {
+.box:before,
+.box:after {
 	content: " ";
 	position: absolute;
 	width: 50%;
-	height: 100%;
+	height: 130%;
 	text-decoration: none;
 	background: #ffffff;
 	border-radius: var(--border-radius);
 	transform: skewX(var(--skewx));
 	transition: var(--transition-transform-time);
-}
 
-.box::after {
-	content: "";
-	position: absolute;
-	width: 50%;
-	height: 100%;
-	background: #ffffff;
-	border-radius: var(--border-radius);
-	transform: skewX(var(--skewx));
-	transition: var(--transition-transform-time);
-	filter: blur(80px);
-	transform-style: preserve-3d;
-}
-
-.box:before,
-.box:after {
 	background: linear-gradient(
 		315deg,
 		var(--gradients-color-purple),
 		var(--gradients-color-green)
 	);
+}
+
+.box::after {
+	content: " ";
+	filter: blur(80px);
+	transform-style: preserve-3d;
 }
 
 .box:hover:before,
@@ -57,7 +48,7 @@
 	position: relative;
 	width: 90%;
 	height: 90%;
-	padding: 15px;
+	padding: 16% 15px;
 	background: rgba(255, 255, 255, 0.05);
 	backdrop-filter: blur(10px);
 	box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.3);
