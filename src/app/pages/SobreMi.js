@@ -3,7 +3,7 @@ import {
 	RiFolder3Fill,
 	RiMailFill,
 	RiMarkdownFill,
-	RiWhatsappFill
+	RiWhatsappFill,
 } from "react-icons/ri";
 import { Link, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
@@ -15,14 +15,15 @@ import {
 	SobreMiIndex,
 	SobreMiProactivo,
 	SobreMiResponsable,
-	SobreMiUniversidad
+	SobreMiUniversidad,
 } from "../components/sobre-mi";
 import { device } from "../styles/Breakpoints";
 import {
 	ContainerExplorerAndContentTemplate,
-	WorkStationSection
+	WorkStationSectionTemplate,
 } from "../templates/Templates";
 import Error404 from "./Error404";
+import { removeAccents } from "../shared/Funtions";
 
 const SectionExplorer = styled.div`
 	display: grid;
@@ -86,13 +87,9 @@ const Content = styled.div`
 	}
 `;
 
-const removeAccents = (str) => {
-	return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-};
-
 const ItemListSpanDefault = ({ name }) => {
 	return (
-		<span className=" item-list-span">
+		<span className="item-list-span">
 			<Link
 				to={removeAccents(name) === "index" ? "" : removeAccents(name)}
 			>
@@ -191,7 +188,7 @@ const SobreMi = () => {
 		<ContainerExplorerAndContentTemplate>
 			<Explorer sections={SectionsExplorer} />
 			<Content>
-				<WorkStationSection>
+				<WorkStationSectionTemplate>
 					<Routes>
 						<Route path="/">
 							<Route index element={<SobreMiIndex />} />
@@ -227,13 +224,13 @@ const SobreMi = () => {
 							}
 						/>
 					</Routes>
-				</WorkStationSection>
-				<WorkStationSection>
+				</WorkStationSectionTemplate>
+				<WorkStationSectionTemplate>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Libero blanditiis nulla odio voluptas ex, vero voluptatum
 					excepturi labore ipsa ut quia doloribus ullam. Numquam
 					voluptatem sunt modi quod ipsum voluptatum.
-				</WorkStationSection>
+				</WorkStationSectionTemplate>
 			</Content>
 		</ContainerExplorerAndContentTemplate>
 	);

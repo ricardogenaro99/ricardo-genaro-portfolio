@@ -1,28 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import {
-	RiFolder3Fill,
-	RiMailFill,
-	RiMarkdownFill,
-	RiWhatsappFill,
+	RiAngularjsFill,
+	RiCss3Fill,
+	RiHtml5Fill,
+	RiReactjsFill,
+	RiVuejsFill,
 } from "react-icons/ri";
-import { Link, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
+import { v4 as uuid } from "uuid";
+import CardProyecto from "../components/proyectos/CardProyecto";
+import Checked from "../shared/checked/Checked";
 import Explorer from "../shared/Explorer";
-import {
-	SobreMiAnalitico,
-	SobreMiAutodidacta,
-	SobreMiCreativo,
-	SobreMiIndex,
-	SobreMiProactivo,
-	SobreMiResponsable,
-	SobreMiUniversidad,
-} from "../components/sobre-mi";
+import { convertSizeCss } from "../shared/Funtions";
 import { device } from "../styles/Breakpoints";
 import {
 	ContainerExplorerAndContentTemplate,
-	WorkStationSection,
+	GridAutoFitTemplate,
+	WorkStationSectionTemplate,
 } from "../templates/Templates";
-import Error404 from "./Error404";
 
 const SectionExplorer = styled.div`
 	display: grid;
@@ -41,9 +36,19 @@ const SectionExplorer = styled.div`
 			gap: 8px;
 		}
 
-		&.section_explorer-tree {
-			display: grid;
-			gap: 5px;
+		&.check-label-filter {
+			.check-filter,
+			.label-filter {
+				display: flex;
+				align-items: center;
+				cursor: pointer;
+			}
+			&:hover {
+				color: var(--secondary-color-gray-hover-item);
+				.cbx {
+					border-color: var(--secondary-color-gray-hover-item);
+				}
+			}
 		}
 	}
 
@@ -55,20 +60,6 @@ const SectionExplorer = styled.div`
 		li {
 			display: flex;
 			justify-content: flex-start;
-		}
-	}
-
-	.item-list-span {
-		cursor: pointer;
-		a {
-			color: var(--secondary-color-gray);
-			text-decoration: none;
-		}
-		&:hover {
-			color: var(--secondary-color-gray-hover-item);
-			a {
-				color: var(--secondary-color-gray-hover-item);
-			}
 		}
 	}
 `;
@@ -84,102 +75,134 @@ const Content = styled.div`
 	}
 `;
 
-const removeAccents = (str) => {
-	return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-};
+const Container = styled.div`
+	max-width: ${device.laptop};
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	padding: var(--padding-global);
+`;
 
-const ItemListSpanDefault = ({ name }) => {
+const ItemCheckSpanDefault = ({ label, name, active, logo, setActive }) => {
 	return (
-		<span className=" item-list-span">
-			<Link
-				to={removeAccents(name) === "index" ? "" : removeAccents(name)}
-			>
-				<span className="section_explorer-flex">
-					<RiMarkdownFill />
-					{name}
-				</span>
-			</Link>
+		<span className="item-list-span">
+			<span className="section_explorer-flex check-label-filter">
+				<Checked name={name} active={active} setActive={setActive} />
+				<label className="label-filter" htmlFor={name}>
+					{logo}
+					<span>{label}</span>
+				</label>
+			</span>
 		</span>
 	);
 };
 
+const initialFilters = [
+	{
+		id: uuid(),
+		name: "react",
+		label: "React",
+		active: true,
+		logo: <RiReactjsFill />,
+	},
+	{
+		id: uuid(),
+		name: "angular",
+		label: "Angular",
+		active: true,
+		logo: <RiAngularjsFill />,
+	},
+	{
+		id: uuid(),
+		name: "html",
+		label: "HTML",
+		active: true,
+		logo: <RiHtml5Fill />,
+	},
+	{
+		id: uuid(),
+		name: "css",
+		label: "CSS",
+		active: true,
+		logo: <RiCss3Fill />,
+	},
+	{
+		id: uuid(),
+		name: "vue",
+		label: "Vue",
+		active: true,
+		logo: <RiVuejsFill />,
+	},
+];
+
+const initialProjects = [
+	{
+		id: uuid(),
+		name: "proyecto1",
+		linkProject: "https://www.youtube.com/watch?v=IkxtDjPSc-4",
+		linkImage:
+			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
+		tag: ["react", "angular", "html", "css", "vue"],
+	},
+	{
+		id: uuid(),
+		name: "proyecto2",
+		linkProject: "https://www.youtube.com/watch?v=IkxtDjPSc-4",
+		linkImage:
+			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
+		tag: ["react", "angular", "html", "css", "vue"],
+	},
+	{
+		id: uuid(),
+		name: "proyecto1",
+		linkProject: "https://www.youtube.com/watch?v=IkxtDjPSc-4",
+		linkImage:
+			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
+		tag: ["react", "angular", "html", "css", "vue"],
+	},
+	{
+		id: uuid(),
+		name: "proyecto2",
+		linkProject: "https://www.youtube.com/watch?v=IkxtDjPSc-4",
+		linkImage:
+			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
+		tag: ["react", "angular", "html", "css", "vue"],
+	},
+];
+
 const Proyectos = () => {
-	const URL_WSP =
-		"https://api.whatsapp.com/send?phone=51933124563&text=Hola,%20estoy%20interesado%20en%20tu%20trabajo...";
+	const [filters, setFilters] = useState(initialFilters);
+	const [projects, setProjects] = useState(initialProjects);
+	const maxWidth = 400;
+
+	const setFiltersParams = (data) => {
+		const array = filters.map((element) => {
+			if (element.id === data.id) {
+				element.active = !element.active;
+			}
+			return element;
+		});
+		setFilters(array);
+	};
 
 	const SectionsExplorer = [
 		{
-			title: "información-personal",
+			title: "proyectos",
 			content: (
 				<SectionExplorer>
-					<span className="section_explorer-tree">
-						<span className="section_explorer-flex">
-							<RiFolder3Fill color="var(--accent-color-cream)" />
-							bio
+					{filters.map((data) => (
+						<span key={data.id} className="section_explorer-flex">
+							<ItemCheckSpanDefault
+								label={data.label}
+								name={data.name}
+								active={data.active}
+								logo={data.logo}
+								setActive={() => setFiltersParams(data)}
+							/>
 						</span>
-						<ul>
-							<li>
-								<ItemListSpanDefault name="index" />
-							</li>
-						</ul>
-					</span>
-					<span className="section_explorer-tree">
-						<span className="section_explorer-flex">
-							<RiFolder3Fill color="var(--accent-color-green)" />
-							aptitudes
-						</span>
-						<ul>
-							<li>
-								<ItemListSpanDefault name="creativo" />
-							</li>
-							<li>
-								<ItemListSpanDefault name="analítico" />
-							</li>
-							<li>
-								<ItemListSpanDefault name="proactivo" />
-							</li>
-							<li>
-								<ItemListSpanDefault name="responsable" />
-							</li>
-						</ul>
-					</span>
-					<span className="section_explorer-tree">
-						<span className="section_explorer-flex">
-							<RiFolder3Fill color="var(--accent-color-dark-purple)" />
-							formación
-						</span>
-						<ul>
-							<li>
-								<ItemListSpanDefault name="universidad" />
-							</li>
-							<li>
-								<ItemListSpanDefault name="autodidacta" />
-							</li>
-						</ul>
-					</span>
-				</SectionExplorer>
-			),
-		},
-		{
-			title: "contacto",
-			content: (
-				<SectionExplorer>
-					<span className="section_explorer-flex item-list-span">
-						<RiMailFill />
-						<a href="mailto:genaro.choquehuanca.palli@gmail.com?Subject=SERVICIO%20DESARROLLO%20WEB">
-							mandame_un_correo
-						</a>
-					</span>
-					<span className="section_explorer-flex item-list-span">
-						<RiWhatsappFill />
-						<a
-							href={URL_WSP}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							mandame_un_whatsapp
-						</a>
-					</span>
+					))}
 				</SectionExplorer>
 			),
 		},
@@ -189,43 +212,23 @@ const Proyectos = () => {
 		<ContainerExplorerAndContentTemplate>
 			<Explorer sections={SectionsExplorer} />
 			<Content>
-				<WorkStationSection>
-					<Routes>
-						<Route path="/">
-							<Route index element={<SobreMiIndex />} />
-							<Route
-								path="/creativo"
-								element={<SobreMiCreativo />}
-							/>
-							<Route
-								path="/analitico"
-								element={<SobreMiAnalitico />}
-							/>
-							<Route
-								path="/proactivo"
-								element={<SobreMiProactivo />}
-							/>
-							<Route
-								path="/responsable"
-								element={<SobreMiResponsable />}
-							/>
-							<Route
-								path="/universidad"
-								element={<SobreMiUniversidad />}
-							/>
-							<Route
-								path="/autodidacta"
-								element={<SobreMiAutodidacta />}
-							/>
-						</Route>
-						<Route
-							path="*"
-							element={
-								<Error404 message="Seleccione un archivo." />
-							}
-						/>
-					</Routes>
-				</WorkStationSection>
+				<WorkStationSectionTemplate>
+					<Container>
+						<GridAutoFitTemplate
+							minmax={convertSizeCss(maxWidth - 100)}
+						>
+							{projects.map((project) => (
+								<CardProyecto
+									key={project.id}
+									maxWidth={convertSizeCss(maxWidth)}
+									name={project.name}
+									srcImage={project.linkImage}
+									linkProject={project.linkProject}
+								/>
+							))}
+						</GridAutoFitTemplate>
+					</Container>
+				</WorkStationSectionTemplate>
 			</Content>
 		</ContainerExplorerAndContentTemplate>
 	);

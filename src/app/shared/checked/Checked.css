@@ -1,0 +1,69 @@
+/* From uiverse.io by @SharpTH */
+
+.cbx {
+    --size: 15px; 
+
+	border: 2px solid var(--secondary-color-gray);
+	background: var(--primary-color-dark-blue);
+	border-radius: 4px;
+	transform: translate3d(0, 0, 0);
+	cursor: pointer;
+}
+
+.flip {
+	display: block;
+	transition: all 0.4s ease;
+	transform-style: preserve-3d;
+	position: relative;
+	width: var(--size);
+	height: var(--size);
+}
+
+.cbx-input {
+	display: none;
+}
+
+.cbx-input:checked + .cbx {
+	border-color: var(--secondary-color-gray);
+}
+
+.cbx-input:checked + .flip {
+	transform: rotateY(180deg);
+}
+
+.front,
+.back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: var(--size);
+	height: var(--size);
+	border-radius: 2px;
+}
+
+.front {
+	background: var(--primary-color-dark-blue);
+	z-index: 1;
+}
+
+.back {
+	transform: rotateY(180deg);
+	background: var(--secondary-color-gray);
+	text-align: center;
+	color: #fff;
+	line-height: var(--size);
+	box-shadow: 0 0 0 1px var(--secondary-color-gray);
+}
+
+.back svg {
+	margin-top: 3px;
+	fill: none;
+}
+
+.back svg path {
+	stroke: #fff;
+	stroke-width: 2.5;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import avatar from "../assets/avatar-profile.png";
-import Card from "../components/hola/Card";
+import CardAvatar from "../components/hola/CardAvatar";
 import { Coment } from "../shared/Coments";
 import { device } from "../styles/Breakpoints";
 
@@ -142,9 +142,9 @@ const Hola = () => {
 				</div>
 			</section>
 			<section className="section-right">
-				<Card>
+				<CardAvatar>
 					<img src={avatar} alt="avatar-profile" />
-				</Card>
+				</CardAvatar>
 			</section>
 		</Container>
 	);

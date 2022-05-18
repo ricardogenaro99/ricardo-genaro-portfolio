@@ -3,13 +3,13 @@ import { RiGithubFill, RiInstagramFill, RiLinkedinFill } from "react-icons/ri";
 import styled from "styled-components";
 import { device } from "../../styles/Breakpoints";
 
-const FooterContainer = styled.footer`
+const FooterContainer = styled.div`
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	position: fixed;
 	z-index: 1000;
-	background: var(--primary-color-dark-blue);
+	background: var(--primary-color-blue);
 	.container-fixed {
 		height: var(--height-footer);
 		width: 100%;
@@ -39,11 +39,11 @@ const FooterContainer = styled.footer`
 					}
 				}
 			}
-			a {
+			a {background: var(--primary-color-blue);
 				text-decoration: none;
 				color: var(--secondary-color-gray);
 				&:hover {
-					background: var(--primary-color-blue);
+					background: var(--primary-color-blue-active);
 				}
 			}
 			> * {

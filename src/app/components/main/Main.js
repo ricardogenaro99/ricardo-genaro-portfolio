@@ -8,11 +8,7 @@ const MainContainer = styled.main`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
-	/* overflow: hidden; */
-
 	font-size: var(--size-body);
-
 	*{
 		font-size: var(--size-body);
 	}
