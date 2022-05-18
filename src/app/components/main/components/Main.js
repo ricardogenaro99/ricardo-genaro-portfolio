@@ -1,18 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import styled from "styled-components";
-import { SobreMi, Proyectos, Hola, Error404, Contactame } from "../../pages";
-const MainContainer = styled.main`
-	border-top: 1px solid var(--lines-color);
-	border-bottom: 1px solid var(--lines-color);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: var(--size-body);
-	*{
-		font-size: var(--size-body);
-	}
-`;
+import { Contactame, Error404, Hola, Proyectos, SobreMi } from "../../../pages";
+import { MainContainer } from "../styles/StyledComponents";
+
 const Main = () => {
 	return (
 		<MainContainer>
@@ -23,7 +13,7 @@ const Main = () => {
 					<Route path="/proyectos" element={<Proyectos />} />
 					<Route path="/contactame" element={<Contactame />} />
 				</Route>
-				<Route path="*" element={<Error404/>} />
+				<Route path="*" element={<Error404 />} />
 			</Routes>
 		</MainContainer>
 	);

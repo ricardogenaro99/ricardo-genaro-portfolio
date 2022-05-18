@@ -1,9 +1,7 @@
-import React from "react";
-import { RiGithubFill, RiInstagramFill, RiLinkedinFill } from "react-icons/ri";
 import styled from "styled-components";
-import { device } from "../../styles/Breakpoints";
+import { device } from "../../../styles/Breakpoints";
 
-const FooterContainer = styled.div`
+export const FooterContainer = styled.div`
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -39,7 +37,8 @@ const FooterContainer = styled.div`
 					}
 				}
 			}
-			a {background: var(--primary-color-blue);
+			a {
+				background: var(--primary-color-blue);
 				text-decoration: none;
 				color: var(--secondary-color-gray);
 				&:hover {
@@ -68,43 +67,3 @@ const FooterContainer = styled.div`
 		}
 	}
 `;
-
-const Footer = () => {
-	return (
-		<FooterContainer>
-			<div className="container-fixed">
-				<section className="social-footer">
-					<div>encuéntrame en:</div>
-
-					<a
-						href="https://www.linkedin.com/in/ricardogenaro/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<RiLinkedinFill />
-					</a>
-
-					<a
-						href="https://www.instagram.com/ricardogenaro99/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<RiInstagramFill />
-					</a>
-				</section>
-				<section className="github-footer">
-					<a
-						href="https://github.com/ricardogenaro99"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<span>@ricardogenaro99</span>
-						<RiGithubFill />
-					</a>
-				</section>
-			</div>
-		</FooterContainer>
-	);
-};
-
-export default Footer;

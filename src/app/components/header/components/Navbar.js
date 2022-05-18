@@ -1,23 +1,7 @@
 import React from "react";
-import styled from "styled-components";
-import { device } from "../../styles/Breakpoints";
 import NavLinkComponent from "./NavLinkComponent";
+import { Nav } from "../styles/StyledComponents";
 
-const Nav = styled.nav`
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	> section {
-		display: flex;
-		outline: var(--outline);
-		> * {
-			outline: var(--outline);
-		}
-	}
-	@media ${device.tablet} {
-		display: none;
-	}
-`;
 const Navbar = () => {
 	return (
 		<Nav>

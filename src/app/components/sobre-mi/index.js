@@ -1,10 +1,14 @@
-import SobreMiAnalitico from "./SobreMiAnalitico";
-import SobreMiAutodidacta from "./SobreMiAutodidacta";
-import SobreMiCreativo from "./SobreMiCreativo";
-import SobreMiIndex from "./SobreMiIndex";
-import SobreMiProactivo from "./SobreMiProactivo";
-import SobreMiResponsable from "./SobreMiResponsable";
-import SobreMiUniversidad from "./SobreMiUniversidad";
+import SobreMiAnalitico from "./components/SobreMiAnalitico";
+import SobreMiAutodidacta from "./components/SobreMiAutodidacta";
+import SobreMiCreativo from "./components/SobreMiCreativo";
+import SobreMiIndex from "./components/SobreMiIndex";
+import SobreMiProactivo from "./components/SobreMiProactivo";
+import SobreMiResponsable from "./components/SobreMiResponsable";
+import SobreMiUniversidad from "./components/SobreMiUniversidad";
+import {
+	ContentSobreMi,
+	SectionExplorerSobreMi
+} from "./styles/StyledComponents";
 
 export {
 	SobreMiAnalitico,
@@ -14,4 +18,7 @@ export {
 	SobreMiProactivo,
 	SobreMiResponsable,
 	SobreMiUniversidad,
+	ContentSobreMi,
+	SectionExplorerSobreMi,
 };
+
