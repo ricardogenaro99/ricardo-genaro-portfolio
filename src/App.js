@@ -1,8 +1,8 @@
-import "./App.css";
-import Header from "./app/components/header/Header";
 import { HashRouter } from "react-router-dom";
-import Footer from "./app/components/footer/Footer";
-import Main from "./app/components/main/Main";
+import "./App.css";
+import { Footer } from "./app/components/footer";
+import { Header } from "./app/components/header";
+import { Main } from "./app/components/main";
 
 function App() {
 	return (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
 	RiAngularjsFill,
 	RiCss3Fill,
@@ -6,98 +6,21 @@ import {
 	RiReactjsFill,
 	RiVuejsFill,
 } from "react-icons/ri";
-import styled from "styled-components";
 import { v4 as uuid } from "uuid";
-import CardProyecto from "../components/proyectos/CardProyecto";
-import Checked from "../shared/checked/Checked";
-import Explorer from "../shared/Explorer";
-import { convertSizeCss } from "../shared/Funtions";
-import { device } from "../styles/Breakpoints";
+import {
+	CardProyecto,
+	ContainerProyectos,
+	ContentProyectos,
+	ItemCheckSpanDefault,
+	SectionExplorerProyectos,
+} from "../components/proyectos";
+import { Explorer } from "../shared/components";
+import { convertSizeCss } from "../shared/utils/Funtions";
 import {
 	ContainerExplorerAndContentTemplate,
 	GridAutoFitTemplate,
 	WorkStationSectionTemplate,
 } from "../templates/Templates";
-
-const SectionExplorer = styled.div`
-	display: grid;
-	gap: 10px;
-	span {
-		-ms-word-break: break-word;
-		word-break: break-word;
-		word-break: break-word;
-		-ms-hyphens: auto;
-		-moz-hyphens: auto;
-		-webkit-hyphens: auto;
-		hyphens: auto;
-		&.section_explorer-flex {
-			display: flex;
-			align-items: center;
-			gap: 8px;
-		}
-
-		&.check-label-filter {
-			.check-filter,
-			.label-filter {
-				display: flex;
-				align-items: center;
-				cursor: pointer;
-			}
-			&:hover {
-				color: var(--secondary-color-gray-hover-item);
-				.cbx {
-					border-color: var(--secondary-color-gray-hover-item);
-				}
-			}
-		}
-	}
-
-	ul {
-		padding-left: 18px;
-		display: grid;
-		gap: 5px;
-
-		li {
-			display: flex;
-			justify-content: flex-start;
-		}
-	}
-`;
-
-const Content = styled.div`
-	display: grid;
-	> section {
-		outline: var(--outline);
-	}
-
-	@media ${device.laptop} {
-		grid-template-columns: 1fr;
-	}
-`;
-
-const Container = styled.div`
-	max-width: ${device.laptop};
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: auto;
-	padding: var(--padding-global);
-`;
-
-const ItemCheckSpanDefault = ({ label, name, active, logo, setActive }) => {
-	return (
-		<span className="item-list-span">
-			<span className="section_explorer-flex check-label-filter">
-				<Checked name={name} active={active} setActive={setActive} />
-				<label className="label-filter" htmlFor={name}>
-					{logo}
-					<span>{label}</span>
-				</label>
-			</span>
-		</span>
-	);
-};
 
 const initialFilters = [
 	{
@@ -144,7 +67,7 @@ const initialProjects = [
 		linkProject: "https://www.youtube.com/watch?v=IkxtDjPSc-4",
 		linkImage:
 			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
-		tag: ["react", "angular", "html", "css", "vue"],
+		tags: ["react", "html", "css"],
 	},
 	{
 		id: uuid(),
@@ -152,7 +75,7 @@ const initialProjects = [
 		linkProject: "https://www.youtube.com/watch?v=IkxtDjPSc-4",
 		linkImage:
 			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
-		tag: ["react", "angular", "html", "css", "vue"],
+		tags: ["angular", "html", "css"],
 	},
 	{
 		id: uuid(),
@@ -160,7 +83,7 @@ const initialProjects = [
 		linkProject: "https://www.youtube.com/watch?v=IkxtDjPSc-4",
 		linkImage:
 			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
-		tag: ["react", "angular", "html", "css", "vue"],
+		tags: ["css", "html"],
 	},
 	{
 		id: uuid(),
@@ -168,7 +91,7 @@ const initialProjects = [
 		linkProject: "https://www.youtube.com/watch?v=IkxtDjPSc-4",
 		linkImage:
 			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
-		tag: ["react", "angular", "html", "css", "vue"],
+		tags: ["vue", "html", "css"],
 	},
 ];
 
@@ -187,11 +110,24 @@ const Proyectos = () => {
 		setFilters(array);
 	};
 
+	useEffect(() => {
+		const obj = {};
+		filters.forEach((e) => {
+			obj[e.name] = e.active;
+		});
+
+		// projects.map((e) => {
+		// 	if (obj[e.tags]) {
+
+		// 	}
+		// });
+	}, [filters]);
+
 	const SectionsExplorer = [
 		{
 			title: "proyectos",
 			content: (
-				<SectionExplorer>
+				<SectionExplorerProyectos>
 					{filters.map((data) => (
 						<span key={data.id} className="section_explorer-flex">
 							<ItemCheckSpanDefault
@@ -203,7 +139,7 @@ const Proyectos = () => {
 							/>
 						</span>
 					))}
-				</SectionExplorer>
+				</SectionExplorerProyectos>
 			),
 		},
 	];
@@ -211,9 +147,9 @@ const Proyectos = () => {
 	return (
 		<ContainerExplorerAndContentTemplate>
 			<Explorer sections={SectionsExplorer} />
-			<Content>
+			<ContentProyectos>
 				<WorkStationSectionTemplate>
-					<Container>
+					<ContainerProyectos>
 						<GridAutoFitTemplate
 							minmax={convertSizeCss(maxWidth - 100)}
 						>
@@ -224,12 +160,13 @@ const Proyectos = () => {
 									name={project.name}
 									srcImage={project.linkImage}
 									linkProject={project.linkProject}
+									tags={project.tags}
 								/>
 							))}
 						</GridAutoFitTemplate>
-					</Container>
+					</ContainerProyectos>
 				</WorkStationSectionTemplate>
-			</Content>
+			</ContentProyectos>
 		</ContainerExplorerAndContentTemplate>
 	);
 };

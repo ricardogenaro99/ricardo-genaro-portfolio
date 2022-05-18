@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { device } from "../styles/Breakpoints";
-import Acordion from "./accordion/Accordion";
+import { device } from "../../styles/Breakpoints";
+import Accordion from "./accordion/Accordion";
 
 const Container = styled.aside`
 	width: 100%;
@@ -29,7 +29,7 @@ const Explorer = ({ sections = [] }) => {
 		<Container>
 			<div>
 				{sections.map((e, i) => (
-					<Acordion key={i} title={e.title} content={e.content} />
+					<Accordion key={i} title={e.title} content={e.content} />
 				))}
 			</div>
 		</Container>

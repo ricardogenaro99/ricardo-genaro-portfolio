@@ -3,89 +3,27 @@ import {
 	RiFolder3Fill,
 	RiMailFill,
 	RiMarkdownFill,
-	RiWhatsappFill,
+	RiWhatsappFill
 } from "react-icons/ri";
 import { Link, Route, Routes } from "react-router-dom";
-import styled from "styled-components";
-import Explorer from "../shared/Explorer";
 import {
+	ContentSobreMi,
+	SectionExplorerSobreMi,
 	SobreMiAnalitico,
 	SobreMiAutodidacta,
 	SobreMiCreativo,
 	SobreMiIndex,
 	SobreMiProactivo,
 	SobreMiResponsable,
-	SobreMiUniversidad,
+	SobreMiUniversidad
 } from "../components/sobre-mi";
-import { device } from "../styles/Breakpoints";
+import { Explorer } from "../shared/components";
+import { removeAccents } from "../shared/utils/Funtions";
 import {
 	ContainerExplorerAndContentTemplate,
-	WorkStationSectionTemplate,
+	WorkStationSectionTemplate
 } from "../templates/Templates";
 import Error404 from "./Error404";
-import { removeAccents } from "../shared/Funtions";
-
-const SectionExplorer = styled.div`
-	display: grid;
-	gap: 10px;
-	span {
-		-ms-word-break: break-word;
-		word-break: break-word;
-		word-break: break-word;
-		-ms-hyphens: auto;
-		-moz-hyphens: auto;
-		-webkit-hyphens: auto;
-		hyphens: auto;
-		&.section_explorer-flex {
-			display: flex;
-			align-items: center;
-			gap: 8px;
-		}
-
-		&.section_explorer-tree {
-			display: grid;
-			gap: 5px;
-		}
-	}
-
-	ul {
-		padding-left: 18px;
-		display: grid;
-		gap: 5px;
-
-		li {
-			display: flex;
-			justify-content: flex-start;
-		}
-	}
-
-	.item-list-span {
-		cursor: pointer;
-		a {
-			color: var(--secondary-color-gray);
-			text-decoration: none;
-		}
-		&:hover {
-			color: var(--secondary-color-gray-hover-item);
-			a {
-				color: var(--secondary-color-gray-hover-item);
-			}
-		}
-	}
-`;
-
-const Content = styled.div`
-	display: grid;
-	grid-template-columns: 1.3fr 1fr;
-	grid-auto-rows: auto;
-	> section {
-		outline: var(--outline);
-	}
-
-	@media ${device.laptop} {
-		grid-template-columns: 1fr;
-	}
-`;
 
 const ItemListSpanDefault = ({ name }) => {
 	return (
@@ -110,7 +48,7 @@ const SobreMi = () => {
 		{
 			title: "información-personal",
 			content: (
-				<SectionExplorer>
+				<SectionExplorerSobreMi>
 					<span className="section_explorer-tree">
 						<span className="section_explorer-flex">
 							<RiFolder3Fill color="var(--accent-color-cream)" />
@@ -156,13 +94,13 @@ const SobreMi = () => {
 							</li>
 						</ul>
 					</span>
-				</SectionExplorer>
+				</SectionExplorerSobreMi>
 			),
 		},
 		{
 			title: "contacto",
 			content: (
-				<SectionExplorer>
+				<SectionExplorerSobreMi>
 					<span className="section_explorer-flex item-list-span">
 						<RiMailFill />
 						<a href="mailto:genaro.choquehuanca.palli@gmail.com?Subject=SERVICIO%20DESARROLLO%20WEB">
@@ -179,7 +117,7 @@ const SobreMi = () => {
 							mandame_un_whatsapp
 						</a>
 					</span>
-				</SectionExplorer>
+				</SectionExplorerSobreMi>
 			),
 		},
 	];
@@ -187,7 +125,7 @@ const SobreMi = () => {
 	return (
 		<ContainerExplorerAndContentTemplate>
 			<Explorer sections={SectionsExplorer} />
-			<Content>
+			<ContentSobreMi>
 				<WorkStationSectionTemplate>
 					<Routes>
 						<Route path="/">
@@ -231,7 +169,7 @@ const SobreMi = () => {
 					excepturi labore ipsa ut quia doloribus ullam. Numquam
 					voluptatem sunt modi quod ipsum voluptatum.
 				</WorkStationSectionTemplate>
-			</Content>
+			</ContentSobreMi>
 		</ContainerExplorerAndContentTemplate>
 	);
 };
