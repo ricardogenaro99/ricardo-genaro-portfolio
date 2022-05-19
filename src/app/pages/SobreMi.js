@@ -7,7 +7,6 @@ import {
 } from "react-icons/ri";
 import { Link, Route, Routes } from "react-router-dom";
 import {
-	ContentSobreMi,
 	SectionExplorerSobreMi,
 	SobreMiAnalitico,
 	SobreMiAutodidacta,
@@ -19,8 +18,10 @@ import {
 } from "../components/sobre-mi";
 import { Explorer } from "../shared/components";
 import { removeAccents } from "../shared/utils/Funtions";
+import { URL_MAIL, URL_WSP } from "../shared/utils/Urls";
 import {
 	ContainerExplorerAndContentTemplate,
+	ContentGridTemplate,
 	WorkStationSectionTemplate
 } from "../templates/Templates";
 import Error404 from "./Error404";
@@ -40,92 +41,83 @@ const ItemListSpanDefault = ({ name }) => {
 	);
 };
 
+const SectionsExplorer = [
+	{
+		title: "información-personal",
+		content: (
+			<SectionExplorerSobreMi>
+				<span className="section_explorer-tree">
+					<span className="section_explorer-flex">
+						<RiFolder3Fill color="var(--accent-color-cream)" />
+						bio
+					</span>
+					<ul>
+						<li>
+							<ItemListSpanDefault name="index" />
+						</li>
+					</ul>
+				</span>
+				<span className="section_explorer-tree">
+					<span className="section_explorer-flex">
+						<RiFolder3Fill color="var(--accent-color-green)" />
+						aptitudes
+					</span>
+					<ul>
+						<li>
+							<ItemListSpanDefault name="creativo" />
+						</li>
+						<li>
+							<ItemListSpanDefault name="analítico" />
+						</li>
+						<li>
+							<ItemListSpanDefault name="proactivo" />
+						</li>
+						<li>
+							<ItemListSpanDefault name="responsable" />
+						</li>
+					</ul>
+				</span>
+				<span className="section_explorer-tree">
+					<span className="section_explorer-flex">
+						<RiFolder3Fill color="var(--accent-color-dark-purple)" />
+						formación
+					</span>
+					<ul>
+						<li>
+							<ItemListSpanDefault name="universidad" />
+						</li>
+						<li>
+							<ItemListSpanDefault name="autodidacta" />
+						</li>
+					</ul>
+				</span>
+			</SectionExplorerSobreMi>
+		),
+	},
+	{
+		title: "contacto",
+		content: (
+			<SectionExplorerSobreMi>
+				<span className="section_explorer-flex item-list-span">
+					<RiMailFill />
+					<a href={URL_MAIL}>mandame_un_correo</a>
+				</span>
+				<span className="section_explorer-flex item-list-span">
+					<RiWhatsappFill />
+					<a href={URL_WSP} target="_blank" rel="noopener noreferrer">
+						mandame_un_whatsapp
+					</a>
+				</span>
+			</SectionExplorerSobreMi>
+		),
+	},
+];
+
 const SobreMi = () => {
-	const URL_WSP =
-		"https://api.whatsapp.com/send?phone=51933124563&text=Hola,%20estoy%20interesado%20en%20tu%20trabajo...";
-
-	const SectionsExplorer = [
-		{
-			title: "información-personal",
-			content: (
-				<SectionExplorerSobreMi>
-					<span className="section_explorer-tree">
-						<span className="section_explorer-flex">
-							<RiFolder3Fill color="var(--accent-color-cream)" />
-							bio
-						</span>
-						<ul>
-							<li>
-								<ItemListSpanDefault name="index" />
-							</li>
-						</ul>
-					</span>
-					<span className="section_explorer-tree">
-						<span className="section_explorer-flex">
-							<RiFolder3Fill color="var(--accent-color-green)" />
-							aptitudes
-						</span>
-						<ul>
-							<li>
-								<ItemListSpanDefault name="creativo" />
-							</li>
-							<li>
-								<ItemListSpanDefault name="analítico" />
-							</li>
-							<li>
-								<ItemListSpanDefault name="proactivo" />
-							</li>
-							<li>
-								<ItemListSpanDefault name="responsable" />
-							</li>
-						</ul>
-					</span>
-					<span className="section_explorer-tree">
-						<span className="section_explorer-flex">
-							<RiFolder3Fill color="var(--accent-color-dark-purple)" />
-							formación
-						</span>
-						<ul>
-							<li>
-								<ItemListSpanDefault name="universidad" />
-							</li>
-							<li>
-								<ItemListSpanDefault name="autodidacta" />
-							</li>
-						</ul>
-					</span>
-				</SectionExplorerSobreMi>
-			),
-		},
-		{
-			title: "contacto",
-			content: (
-				<SectionExplorerSobreMi>
-					<span className="section_explorer-flex item-list-span">
-						<RiMailFill />
-						<a href="mailto:genaro.choquehuanca.palli@gmail.com?Subject=SERVICIO%20DESARROLLO%20WEB">
-							mandame_un_correo
-						</a>
-					</span>
-					<span className="section_explorer-flex item-list-span">
-						<RiWhatsappFill />
-						<a
-							href={URL_WSP}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							mandame_un_whatsapp
-						</a>
-					</span>
-				</SectionExplorerSobreMi>
-			),
-		},
-	];
-
 	return (
 		<ContainerExplorerAndContentTemplate>
 			<Explorer sections={SectionsExplorer} />
-			<ContentSobreMi>
+			<ContentGridTemplate>
 				<WorkStationSectionTemplate>
 					<Routes>
 						<Route path="/">
@@ -169,7 +161,7 @@ const SobreMi = () => {
 					excepturi labore ipsa ut quia doloribus ullam. Numquam
 					voluptatem sunt modi quod ipsum voluptatum.
 				</WorkStationSectionTemplate>
-			</ContentSobreMi>
+			</ContentGridTemplate>
 		</ContainerExplorerAndContentTemplate>
 	);
 };

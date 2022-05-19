@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { device } from "../../../styles/Breakpoints";
+import { device } from "../../../shared/styles/Breakpoints";
 
 export const HeaderContainer = styled.div`
 	position: absolute;
