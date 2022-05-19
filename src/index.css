@@ -8,14 +8,15 @@
 
 	--primary-color-black: #01080e;
 	--primary-color-blue: #011627;
-	/* --primary-color-blue-active: #021729; */
 	--primary-color-blue-active: #011221;
+	/* --primary-color-blue-active: #021729; */
 
 	--secondary-color-gray: #607b96;
 	--secondary-color-gray-hover-item: #8da0b3;
 	--secondary-color-green: #3c9d93;
 	--secondary-color-purple: #5b69d6;
 	--secondary-color-white: #e5e9f0;
+	--secondary-color-yellow: #ffd900;
 
 	--accent-color-orange: #fea55f;
 	--accent-color-green: #43d9ad;
@@ -23,7 +24,7 @@
 	--accent-color-cream: #e99287;
 	--accent-color-purple: #c98bdf;
 
-	--secondary-color-yellow: #ffd900;
+	--accent-color-error: #cc6767;
 
 	--size-headline: 62px;
 	--size-subheadline: 32px;
@@ -48,6 +49,10 @@
 	--height-footer: 50px;
 
 	--line-height-work-station: 25px;
+}
+
+body {
+	background: var(--primary-color-blue);
 }
 
 * {

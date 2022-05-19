@@ -4,7 +4,13 @@ export const LabelTextAreaInputContainer = styled.div`
 	display: grid;
 	width: 100%;
 	margin: auto;
-	gap: 5px;
+	gap: 10px;
+
+	.error-msg {
+		color: var(--accent-color-error);
+		font-size: 0.74em;
+		line-height: 1.2em;
+	}
 
 	input,
 	textarea {

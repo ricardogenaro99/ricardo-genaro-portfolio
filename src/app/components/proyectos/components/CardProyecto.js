@@ -51,7 +51,7 @@ const CardModel = ({ srcImage, linkProject, alt, tags = [] }) => {
 						</span>
 					))}
 				</span>
-				<img className="img-project" src={srcImage} alt={alt} />
+				<img className="img-project" src={srcImage} alt={alt} loading="eager" />
 			</div>
 			<section className="body-card">
 				<p>Lorem ipsum dolor sit amet.</p>

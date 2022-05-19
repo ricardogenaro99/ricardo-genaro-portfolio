@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { RiExternalLinkFill, RiMailFill, RiWhatsappFill } from "react-icons/ri";
 import { FormContactame } from "../components/contactame";
 import ValuesContactame from "../components/contactame/components/ValuesContactame";
 import { SectionExplorerSobreMi } from "../components/sobre-mi";
+import { useForm } from "../hooks/useForm";
 import { Explorer } from "../shared/components";
 import { URL_MAIL, URL_WSP } from "../shared/utils/Urls";
+import { validationsForm } from "../shared/validators/ValidationsForm";
 import {
 	ContainerCenterTemplate,
 	ContainerExplorerAndContentTemplate,
@@ -66,16 +68,15 @@ const initialForm = {
 };
 
 const Contactame = () => {
-	const [form, setForm] = useState(initialForm);
+	const {
+		form,
+		errors,
+		loading,
+		response,
+		handleChange,
+		handleSubmit,
+	} = useForm(initialForm, validationsForm);
 
-	const handleChange = (e) => {
-		const { name, value } = e.target;
-		setForm({ ...form, [name]: value });
-	};
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-	};
 
 	return (
 		<ContainerExplorerAndContentTemplate>
@@ -86,7 +87,8 @@ const Contactame = () => {
 						<FormContactame
 							onChange={handleChange}
 							onSubmit={handleSubmit}
-							value={form}
+							form={form}
+							errors={errors}
 						/>
 					</ContainerCenterTemplate>
 				</WorkStationSectionTemplate>
