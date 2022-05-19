@@ -2,24 +2,30 @@ import React from "react";
 import { FormContactameContainer } from "../styles/StyledComponents";
 import { LabelInput, LabelTextArea } from "./LabelTextAreaInput";
 
-const FormContactame = ({ value, onChange, onSubmit }) => {
+const FormContactame = ({ form, onChange, onSubmit, errors, onBlur }) => {
 	return (
-		<FormContactameContainer onSubmit={onSubmit}>
+		<FormContactameContainer onSubmit={onSubmit} noValidate>
 			<LabelInput
 				name="nombre"
-				value={value.nombre}
+				form={form}
 				onChange={onChange}
+				onBlur={onBlur}
+				errors={errors}
 			/>
 			<LabelInput
 				type="email"
 				name="email"
-				value={value.email}
+				form={form}
 				onChange={onChange}
+				onBlur={onBlur}
+				errors={errors}
 			/>
 			<LabelTextArea
 				name="mensaje"
-				value={value.mensaje}
+				form={form}
 				onChange={onChange}
+				onBlur={onBlur}
+				errors={errors}
 				rows={5}
 			/>
 			<div>

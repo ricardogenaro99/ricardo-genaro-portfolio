@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../../../shared/styles/Breakpoints";
+import { device, size } from "../../../shared/styles/Breakpoints";
 
 const gapPadding = "20px";
 const iconTagSize = "30px";
@@ -131,4 +131,5 @@ export const ContainerProyectos = styled.div`
 	align-items: center;
 	margin: auto;
 	padding: var(--padding-global);
+	max-width: ${size.desktop};
 `;

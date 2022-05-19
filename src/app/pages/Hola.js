@@ -45,7 +45,7 @@ const Hola = () => {
 			</section>
 			<section className="section-right">
 				<CardAvatar>
-					<img src={avatar} alt="avatar-profile" />
+					<img src={avatar} alt="avatar-profile" loading="lazy" />
 				</CardAvatar>
 			</section>
 		</HolaContainer>
