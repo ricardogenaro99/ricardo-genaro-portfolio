@@ -52,6 +52,11 @@
 }
 
 body {
+	/* background: linear-gradient(
+		20deg,
+		var(--primary-color-black) 0%,
+		var(--primary-color-blue) 17%
+	); */
 	background: var(--primary-color-blue);
 }
 

@@ -1,5 +1,4 @@
 .App {
-	background-color: var(--primary-color-blue);
 	min-height: 100vh;
 	font-size: var(--size-lables);
 	color: var(--secondary-color-gray);
