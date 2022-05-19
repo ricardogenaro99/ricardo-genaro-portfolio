@@ -3,11 +3,10 @@ import avatar from "../assets/avatar-profile.png";
 import { CardAvatar } from "../components/hola";
 import { HolaContainer } from "../components/hola/styles/StyledComponents";
 import { Coment } from "../shared/components";
+import { CodeStyleContainer } from "../shared/styles/CodeStyle";
+import { URL_GITHUB, URL_GITHUB_PORTFOLIO } from "../shared/utils/Urls";
 
 const Hola = () => {
-	const URL_GITHUB = "https://github.com/ricardogenaro99";
-	const URL_GITHUB_PORTFOLIO = "/ricardo-genaro-portfolio";
-
 	return (
 		<HolaContainer>
 			<section className="section-left">
@@ -24,7 +23,7 @@ const Hola = () => {
 					<Coment>
 						{"// apoyate de mi código en mi página de Github"}
 					</Coment>
-					<code>
+					<CodeStyleContainer>
 						<span className="code-purple">const</span>
 						<span className="code-green">githubLink</span>
 						<span className="code-simb">{"="}</span>
@@ -41,7 +40,7 @@ const Hola = () => {
 							<span className="code-orange">URL</span>
 							<span className="code-simb">{"}"}</span>`
 						</a>
-					</code>
+					</CodeStyleContainer>
 				</div>
 			</section>
 			<section className="section-right">

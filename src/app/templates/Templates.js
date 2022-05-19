@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../styles/Breakpoints";
+import { device } from "../shared/styles/Breakpoints";
 
 export const ContainerExplorerAndContentTemplate = styled.div`
 	width: 100%;
@@ -11,7 +11,7 @@ export const ContainerExplorerAndContentTemplate = styled.div`
 	}
 
 	@media ${device.tabletS} {
-		grid-template-columns: 50px 1fr;
+		grid-template-columns: 0px 1fr;
 	}
 `;
 
@@ -36,6 +36,33 @@ export const GridAutoFitTemplate = styled.div`
 	gap: 40px 25px;
 
 	@media ${device.mobileL} {
-		grid-template-columns:  1fr;
+		grid-template-columns: 1fr;
+	}
+`;
+
+export const ContainerCenterTemplate = styled.section`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+`;
+
+export const ContainerOneColumnGapTemplate = styled.div`
+	display: grid;
+	gap: ${(props) => props.gap || "20px"};
+`;
+
+
+export const ContentGridTemplate = styled.div`
+	display: grid;
+	grid-template-columns: ${(props) => props.gridTemplateColumns || "1.3fr 1fr"};
+	grid-auto-rows: auto;
+	> section {
+		outline: var(--outline);
+	}
+
+	@media ${device.laptop} {
+		grid-template-columns: 1fr;
 	}
 `;

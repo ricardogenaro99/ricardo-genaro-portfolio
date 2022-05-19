@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../../../styles/Breakpoints";
+import { device } from "../../../shared/styles/Breakpoints";
 
 export const SectionExplorerSobreMi = styled.div`
 	display: grid;

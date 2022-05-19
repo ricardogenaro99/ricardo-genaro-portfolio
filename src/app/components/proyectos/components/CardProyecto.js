@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
 	RiAngularjsFill,
 	RiCss3Fill,
@@ -37,7 +37,6 @@ const iconsTech = {
 };
 
 const CardModel = ({ srcImage, linkProject, alt, tags = [] }) => {
-
 	return (
 		<CardModelStyle>
 			<div className="img-project-container">
@@ -58,6 +57,7 @@ const CardModel = ({ srcImage, linkProject, alt, tags = [] }) => {
 				<p>Lorem ipsum dolor sit amet.</p>
 				<div>
 					<a
+						className="button-a-form-project"
 						href={linkProject}
 						target="_blank"
 						rel="noopener noreferrer"

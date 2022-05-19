@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../../../styles/Breakpoints";
+import { device } from "../../../shared/styles/Breakpoints";
 
 const gapPadding = "20px";
 const iconTagSize = "30px";
@@ -60,13 +60,6 @@ export const CardModelStyle = styled.div`
 		}
 		div {
 			display: flex;
-			a {
-				padding: 10px;
-				background: #1c2b3a;
-				text-decoration: none;
-				border-radius: 8px;
-				color: #fff;
-			}
 		}
 	}
 

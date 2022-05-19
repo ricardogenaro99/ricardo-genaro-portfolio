@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../../../styles/Breakpoints";
+import { device } from "../../../shared/styles/Breakpoints";
 
 export const FooterContainer = styled.div`
 	position: absolute;

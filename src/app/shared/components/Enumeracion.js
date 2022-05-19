@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../styles/Breakpoints";
 
 export const Coment = styled.span`
 	color: var(--secondary-color-gray);
 `;
 
 export const ComentMultipleStyle = styled.div`
+	width: 100%;
 	> .content {
 		color: var(--secondary-color-gray);
 		display: grid;
@@ -16,6 +18,7 @@ export const ComentMultipleStyle = styled.div`
 			> div {
 				position: absolute;
 				height: 100%;
+				width: 50%;
 				user-select: none;
 				> span {
 					display: flex;
@@ -27,6 +30,10 @@ export const ComentMultipleStyle = styled.div`
 
 		.text {
 			padding: 0 2px;
+		}
+
+		@media ${device.mobileM} {
+			grid-template-columns: 0px 1fr;
 		}
 	}
 `;
