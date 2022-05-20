@@ -23,8 +23,10 @@
 	--accent-color-dark-purple: #3a49a4;
 	--accent-color-cream: #e99287;
 	--accent-color-purple: #c98bdf;
-
 	--accent-color-error: #cc6767;
+
+	--button-gray: #192735;
+	--button-gray-hover: #243241;
 
 	--size-headline: 62px;
 	--size-subheadline: 32px;
@@ -97,4 +99,8 @@ button {
 
 ul {
 	list-style: none;
+}
+
+a {
+	text-decoration: none;
 }

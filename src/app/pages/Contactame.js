@@ -1,10 +1,10 @@
 import React from "react";
 import { RiExternalLinkFill, RiMailFill, RiWhatsappFill } from "react-icons/ri";
-import { FormContactame } from "../components/contactame";
+import { FormContactame, MensajeEnviado } from "../components/contactame";
 import ValuesContactame from "../components/contactame/components/ValuesContactame";
 import { SectionExplorerSobreMi } from "../components/sobre-mi";
 import { useForm } from "../hooks/useForm";
-import { Explorer } from "../shared/components";
+import { Explorer, Loader } from "../shared/components";
 import { URL_MAIL, URL_WSP } from "../shared/utils/Urls";
 import { validationsForm } from "../shared/validators/ValidationsForm";
 import {
@@ -75,8 +75,8 @@ const Contactame = () => {
 		response,
 		handleChange,
 		handleSubmit,
+		resetForm,
 	} = useForm(initialForm, validationsForm);
-
 
 	return (
 		<ContainerExplorerAndContentTemplate>
@@ -84,12 +84,18 @@ const Contactame = () => {
 			<ContentGridTemplate gridTemplateColumns="1fr 1fr">
 				<WorkStationSectionTemplate>
 					<ContainerCenterTemplate>
-						<FormContactame
-							onChange={handleChange}
-							onSubmit={handleSubmit}
-							form={form}
-							errors={errors}
-						/>
+						{!loading && !response && (
+							<FormContactame
+								onChange={handleChange}
+								onSubmit={handleSubmit}
+								form={form}
+								errors={errors}
+							/>
+						)}
+						{loading && <Loader />}
+						{response && (
+							<MensajeEnviado clickNuevoMensaje={resetForm} />
+						)}
 					</ContainerCenterTemplate>
 				</WorkStationSectionTemplate>
 				<WorkStationSectionTemplate>

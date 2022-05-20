@@ -26,7 +26,7 @@ export const LabelTextAreaInputContainer = styled.div`
 		&:focus {
 			background: var(--primary-color-blue-active);
 			color: var(--secondary-color-gray-hover-item);
-			outline-width: 2.5px;
+			outline-width: 2.7px;
 		}
 	}
 `;
@@ -37,4 +37,35 @@ export const FormContactameContainer = styled.form`
 	margin: auto;
 	display: grid;
 	gap: 28px;
+`;
+
+export const MensajeEnviadoContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 30px;
+	max-width: 400px;
+
+	* {
+		text-align: center;
+	}
+
+	div {
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		flex-wrap: wrap;
+
+		span {
+			font-size: 1.8em;
+			font-weight: 450;
+			color: var(--secondary-color-white);
+		}
+
+		img {
+			height: 50px;
+			width: 50px;
+		}
+	}
 `;
