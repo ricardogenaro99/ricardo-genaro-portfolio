@@ -6,22 +6,3 @@
 	grid-template-columns: 1fr;
 	grid-template-rows: var(--height-header) 1fr var(--height-footer);
 }
-
-.button-a-form-project {
-	--bg-button-a-form-project: #192735;
-	--bg-button-a-form-project-hover: #243241;
-	cursor: pointer;
-	padding: 10px;
-	background: var(--bg-button-a-form-project);
-	text-decoration: none;
-	border-radius: 8px;
-	color: #fff;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.button-a-form-project:hover {
-	background: var(--bg-button-a-form-project-hover);
-}

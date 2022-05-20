@@ -1,4 +1,5 @@
 import React from "react";
+import { ButtonGray } from "../../../shared/components";
 import { FormContactameContainer } from "../styles/StyledComponents";
 import { LabelInput, LabelTextArea } from "./LabelTextAreaInput";
 
@@ -29,9 +30,9 @@ const FormContactame = ({ form, onChange, onSubmit, errors, onBlur }) => {
 				rows={5}
 			/>
 			<div>
-				<button className="button-a-form-project" type="submit">
+				<ButtonGray className="button-a-form-project" type="submit">
 					enviar-mensaje
-				</button>
+				</ButtonGray>
 			</div>
 		</FormContactameContainer>
 	);

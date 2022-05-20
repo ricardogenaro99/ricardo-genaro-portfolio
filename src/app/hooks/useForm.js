@@ -18,16 +18,20 @@ export const useForm = (initialForm, validateForm) => {
 		setErrors(validateForm(form, name));
 	};
 
+	const resetForm = () => {
+		setForm(initialForm);
+		setErrors({});
+		setLoading(false);
+		setResponse(null);
+	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setErrors(validateForm(form));
 		setForm(form);
 
 		if (Object.keys(validateForm(form)).length === 0) {
-			console.log(1);
-			alert("Formulario enviado");
 			setLoading(true);
-
 			helpHttp()
 				.post(
 					"https://formsubmit.co/ajax/genaro.choquehuanca.palli@gmail.com",
@@ -42,11 +46,6 @@ export const useForm = (initialForm, validateForm) => {
 				.then((res) => {
 					setLoading(false);
 					setResponse(true);
-					setForm(initialForm);
-					setTimeout(() => {
-						setResponse(false);
-					}, 3000);
-					console.log(res);
 				});
 		} else {
 			return;
@@ -61,5 +60,6 @@ export const useForm = (initialForm, validateForm) => {
 		handleChange,
 		handleBlur,
 		handleSubmit,
+		resetForm,
 	};
 };

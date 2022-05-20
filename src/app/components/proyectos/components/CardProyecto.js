@@ -6,6 +6,7 @@ import {
 	RiReactjsFill,
 	RiVuejsFill
 } from "react-icons/ri";
+import { ButtonGray } from "../../../shared/components";
 import {
 	CardModelStyle,
 	ContainerCardProyecto
@@ -51,18 +52,22 @@ const CardModel = ({ srcImage, linkProject, alt, tags = [] }) => {
 						</span>
 					))}
 				</span>
-				<img className="img-project" src={srcImage} alt={alt} loading="eager" />
+				<img
+					className="img-project"
+					src={srcImage}
+					alt={alt}
+					loading="eager"
+				/>
 			</div>
 			<section className="body-card">
 				<p>Lorem ipsum dolor sit amet.</p>
 				<div>
 					<a
-						className="button-a-form-project"
 						href={linkProject}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						ver-proyecto
+						<ButtonGray>ver-proyecto</ButtonGray>
 					</a>
 				</div>
 			</section>

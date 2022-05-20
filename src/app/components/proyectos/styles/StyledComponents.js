@@ -17,7 +17,7 @@ export const ContainerCardProyecto = styled.article`
 
 export const CardModelStyle = styled.div`
 	display: grid;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: auto 1fr;
 	border-radius: 15px;
 	overflow: hidden;
 	outline: 1px solid var(--lines-color);

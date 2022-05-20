@@ -63,7 +63,7 @@ const initialFilters = [
 const initialProjects = [
 	{
 		id: uuid(),
-		name: "proyecto1",
+		name: "proyecto 1",
 		linkProject: "https://www.instagram.com/ricardogenaro99/",
 		linkImage:
 			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
@@ -71,7 +71,7 @@ const initialProjects = [
 	},
 	{
 		id: uuid(),
-		name: "proyecto2",
+		name: "proyecto 2",
 		linkProject: "https://www.instagram.com/ricardogenaro99/",
 		linkImage:
 			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
@@ -79,7 +79,7 @@ const initialProjects = [
 	},
 	{
 		id: uuid(),
-		name: "proyecto1",
+		name: "proyecto 3",
 		linkProject: "https://www.instagram.com/ricardogenaro99/",
 		linkImage:
 			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
@@ -87,7 +87,7 @@ const initialProjects = [
 	},
 	{
 		id: uuid(),
-		name: "proyecto2",
+		name: "proyecto 4",
 		linkProject: "https://www.instagram.com/ricardogenaro99/",
 		linkImage:
 			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
