@@ -62,22 +62,14 @@ const SectionsExplorer = [
 ];
 
 const initialForm = {
-	nombre: "",
-	email: "",
-	mensaje: "",
+	nombre: null,
+	email: null,
+	mensaje: null,
 };
 
 const Contactame = () => {
-	const {
-		form,
-		errors,
-		loading,
-		response,
-		handleChange,
-		handleSubmit,
-		resetForm,
-	} = useForm(initialForm, validationsForm);
-
+	const { form, loading, response, handleChange, handleSubmit, resetForm } =
+		useForm(initialForm, validationsForm);
 	return (
 		<ContainerExplorerAndContentTemplate>
 			<Explorer sections={SectionsExplorer} />
@@ -89,7 +81,6 @@ const Contactame = () => {
 								onChange={handleChange}
 								onSubmit={handleSubmit}
 								form={form}
-								errors={errors}
 							/>
 						)}
 						{loading && <Loader />}

@@ -5,28 +5,64 @@ import {
 	CAMPO_REQUERIDO
 } from "./Messages";
 
+const regexNombre = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+const regexMensaje = /^.{1,255}$/;
+
+const validarNombre = (value) => {
+	value = value.trim();
+	if (!value) {
+		return CAMPO_REQUERIDO;
+	} else if (!regexNombre.test(value)) {
+		return CAMPO_LETRAS_ESPACIOS;
+	}
+};
+
+const validarEmail = (value) => {
+	value = value.trim();
+	if (!value) {
+		return CAMPO_REQUERIDO;
+	} else if (!regexEmail.test(value)) {
+		return CAMPO_EMAIL;
+	}
+};
+
+const validarMensaje = (value) => {
+	value = value.trim();
+	if (!value) {
+		return CAMPO_REQUERIDO;
+	} else if (!regexMensaje.test(value)) {
+		return CAMPO_MAX_CARACTERES("Mensaje", 255);
+	}
+};
+
 export const validationsForm = (form) => {
 	const errors = {};
-	const regexNombre = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-	const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
-	const regexMensaje = /^.{1,255}$/;
 
-	if (!form.nombre.trim()) {
-		errors.nombre = CAMPO_REQUERIDO;
-	} else if (!regexNombre.test(form.nombre.trim())) {
-		errors.nombre = CAMPO_LETRAS_ESPACIOS;
-	}
+	if (!form.nombre) form.nombre = "";
+	if (!form.email) form.email = "";
+	if (!form.mensaje) form.mensaje = "";
 
-	if (!form.email.trim()) {
-		errors.email = CAMPO_REQUERIDO;
-	} else if (!regexEmail.test(form.email.trim())) {
-		errors.email = CAMPO_EMAIL;
-	}
+	errors.nombre = validarNombre(form.nombre);
+	errors.email = validarEmail(form.email);
+	errors.mensaje = validarMensaje(form.mensaje);
 
-	if (!form.mensaje.trim()) {
-		errors.mensaje = CAMPO_REQUERIDO;
-	} else if (!regexMensaje.test(form.mensaje.trim())) {
-		errors.mensaje = CAMPO_MAX_CARACTERES("Mensaje", 255);
-	}
 	return errors;
+};
+
+export const validateInputWhitName = (form, name) => {
+	if (form[name] == null) {
+		return;
+	}
+
+	switch (name) {
+		case "nombre":
+			return validarNombre(form.nombre);
+		case "email":
+			return validarEmail(form.email);
+		case "mensaje":
+			return validarMensaje(form.mensaje);
+		default:
+			return;
+	}
 };
