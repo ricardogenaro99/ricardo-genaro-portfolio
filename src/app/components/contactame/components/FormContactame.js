@@ -3,7 +3,7 @@ import { ButtonGray } from "../../../shared/components";
 import { FormContactameContainer } from "../styles/StyledComponents";
 import { LabelInput, LabelTextArea } from "./LabelTextAreaInput";
 
-const FormContactame = ({ form, onChange, onSubmit, errors, onBlur }) => {
+const FormContactame = ({ form, onChange, onSubmit,  onBlur }) => {
 	return (
 		<FormContactameContainer onSubmit={onSubmit} noValidate>
 			<LabelInput
@@ -11,7 +11,6 @@ const FormContactame = ({ form, onChange, onSubmit, errors, onBlur }) => {
 				form={form}
 				onChange={onChange}
 				onBlur={onBlur}
-				errors={errors}
 			/>
 			<LabelInput
 				type="email"
@@ -19,14 +18,12 @@ const FormContactame = ({ form, onChange, onSubmit, errors, onBlur }) => {
 				form={form}
 				onChange={onChange}
 				onBlur={onBlur}
-				errors={errors}
 			/>
 			<LabelTextArea
 				name="mensaje"
 				form={form}
 				onChange={onChange}
 				onBlur={onBlur}
-				errors={errors}
 				rows={5}
 			/>
 			<div>
