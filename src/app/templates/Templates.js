@@ -17,10 +17,15 @@ export const ContainerExplorerAndContentTemplate = styled.div`
 
 export const WorkStationSectionTemplate = styled.section`
 	padding: var(--padding-work-station);
+	max-height: var(--height-main);
 	overflow-y: auto;
 	line-height: var(--line-height-work-station);
 	* {
 		line-height: var(--line-height-work-station);
+	}
+
+	@media ${device.laptop} {
+		max-height: none;
 	}
 `;
 
