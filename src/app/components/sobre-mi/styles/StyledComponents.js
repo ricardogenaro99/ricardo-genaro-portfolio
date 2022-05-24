@@ -62,3 +62,26 @@ export const ContentSobreMi = styled.div`
 		grid-template-columns: 1fr;
 	}
 `;
+
+export const ContainerItemSectionPage = styled.div`
+	background: transparent;
+	padding-left: 30px;
+	padding-right: 20px;
+	border-radius: var(--border-radius-card);
+	outline: 1px solid var(--lines-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	transition: var(--transition);
+	width: 97%;
+	&.active-item-page {
+		background: var(--primary-color-blue-active);
+		outline: 1px solid var(--secondary-color-gray-hover-item);
+	}
+
+	.itemName {
+		font-weight: 600;
+		font-size: 1.05em;
+	}
+`;

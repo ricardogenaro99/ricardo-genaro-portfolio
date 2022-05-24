@@ -42,7 +42,7 @@
 
 	--padding-work-station: 20px;
 
-	--transition-time: 0.15s;
+	--transition-time: 0.18s;
 	--transition: ease var(--transition-time);
 
 	--outline: 1px solid var(--lines-color);
@@ -50,7 +50,11 @@
 	--height-header: 56px;
 	--height-footer: 50px;
 
+	--height-main: calc(100vh - var(--height-header) - var(--height-footer));
+
 	--line-height-work-station: 25px;
+
+	--border-radius-card: 12px;
 }
 
 body {
