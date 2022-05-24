@@ -68,7 +68,7 @@ export const ContainerItemSectionPage = styled.div`
 	padding-left: 30px;
 	padding-right: 20px;
 	border-radius: var(--border-radius-card);
-	outline: 1px solid var(--lines-color);
+	outline: var(--outline);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -77,7 +77,7 @@ export const ContainerItemSectionPage = styled.div`
 	width: 97%;
 	&.active-item-page {
 		background: var(--primary-color-blue-active);
-		outline: 1px solid var(--secondary-color-gray-hover-item);
+		outline-width: 2.7px;
 	}
 
 	.itemName {
