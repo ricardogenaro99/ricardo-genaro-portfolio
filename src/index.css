@@ -99,6 +99,7 @@ body {
 button {
 	border: none;
 	outline: none;
+	cursor: pointer;
 }
 
 ul {

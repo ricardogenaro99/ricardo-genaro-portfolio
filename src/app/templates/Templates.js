@@ -51,6 +51,7 @@ export const ContainerCenterTemplate = styled.section`
 	align-items: center;
 	width: 100%;
 	height: 100%;
+	padding: 6% 0;
 `;
 
 export const ContainerOneColumnGapTemplate = styled.div`

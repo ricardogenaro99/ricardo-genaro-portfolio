@@ -1,17 +1,29 @@
 import React from "react";
-import NavLinkComponent from "./NavLinkComponent";
 import { Nav } from "../styles/StyledComponents";
+import NavLinkComponent from "./NavLinkComponent";
 
-const Navbar = () => {
+const Navbar = ({ watchMenu, clickItemMenu }) => {
 	return (
-		<Nav>
+		<Nav watchMenu={watchMenu}>
 			<section>
-				<NavLinkComponent name="_hola" />
-				<NavLinkComponent path="/sobre-mi" name="_sobre_mi" />
-				<NavLinkComponent path="/proyectos" name="_proyectos" />
+				<NavLinkComponent clickItemMenu={clickItemMenu} name="_hola" />
+				<NavLinkComponent
+					clickItemMenu={clickItemMenu}
+					path="/sobre-mi"
+					name="_sobre_mi"
+				/>
+				<NavLinkComponent
+					clickItemMenu={clickItemMenu}
+					path="/proyectos"
+					name="_proyectos"
+				/>
 			</section>
 			<section>
-				<NavLinkComponent path="/contactame" name="_contactame" />
+				<NavLinkComponent
+					clickItemMenu={clickItemMenu}
+					path="/contactame"
+					name="_contactame"
+				/>
 			</section>
 		</Nav>
 	);
