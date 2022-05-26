@@ -78,7 +78,7 @@ export const Nav = styled.nav`
 		top: var(--height-header);
 		height: calc(100vh - var(--height-header));
 		transform: ${(props) =>
-			props.watchMenu ? "translateX(0)" : "translateX(150vw)"};
+			props.watchMenu ? "translateX(0)" : "translateX(110vw)"};
 		> section {
 			display: grid;
 			grid-auto-rows: var(--height-header);
