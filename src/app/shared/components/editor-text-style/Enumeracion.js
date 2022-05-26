@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { device } from "../styles/Breakpoints";
+import { device } from "../../styles/Breakpoints";
+import { maxRowsCodeEffect } from "./const";
 
 export const Coment = styled.span`
 	color: var(--secondary-color-gray);
@@ -41,7 +42,7 @@ export const ComentMultipleStyle = styled.div`
 export const Enumeracion = ({ children }) => {
 	const insertarNumeros = () => {
 		const arr = [];
-		for (let index = 0; index < 1000; index++) {
+		for (let index = 0; index < maxRowsCodeEffect * 2; index++) {
 			arr.push(<span key={index}>{index + 1}</span>);
 		}
 		return arr;

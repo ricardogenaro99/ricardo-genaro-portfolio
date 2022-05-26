@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { maxRowsCodeEffect } from "./const";
 
 const paddingCommentL = "10px";
 
@@ -41,7 +42,7 @@ export const ComentMultipleStyle = styled.div`
 
 export const ComentMultiple = ({ children }) => {
 	const insertarAsterisco = () => {
-		const pattern = "*".repeat(children.split(" ").length).split("");
+		const pattern = "*".repeat(maxRowsCodeEffect).split("");
 		return pattern.map((e, i) => <span key={i}>{e}</span>);
 	};
 

@@ -4,16 +4,12 @@ import { ComentMultiple } from "../../../shared/components";
 const SobreMiIndex = () => {
 	return (
 		<ComentMultiple>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-			fugiat saepe esse blanditiis optio similique, fuga molestiae
-			deserunt! Quae magnam labore, quasi ad rem aperiam illo ullam in?
-			Autem, minima! Lorem ipsum dolor sit amet consectetur adipisicing
-			elit. Facilis, deserunt. Alias obcaecati minima nam fugit animi
-			numquam quo fugiat consequatur nesciunt! Ex ipsum perferendis
-			praesentium rem optio officiis, sit possimus? Lorem ipsum dolor sit
-			amet consectetur adipisicing elit. Dicta fugiat saepe esse
-			blanditiis optio similique, fuga molestiae deserunt! Quae magnam
-			labore, quasi ad rem aperiam illo ullam in?
+			¡Hola! ツ Soy Genaro, <br />
+			estudiante de Ingeniería de Sistemas <br />
+			de la Universidad Nacional Mayor de San Marcos, <br />
+			me entusiasma los desafíos, soy muy comprometido, con gran capacidad
+			de trabajo, muchas ganas de aprender y forjar mi carrera como
+			Desarrollador Web!
 		</ComentMultiple>
 	);
 };
