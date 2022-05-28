@@ -6,7 +6,7 @@ import {
 } from "./Messages";
 
 const regexNombre = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+const regexEmail = /^(\w+[/./-]?){1,}@[A-Za-z]+[/.]\w{2,}$/;
 const regexMensaje = /^.{1,255}$/;
 
 const validarNombre = (value) => {
