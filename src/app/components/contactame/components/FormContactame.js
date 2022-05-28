@@ -27,7 +27,7 @@ const FormContactame = ({ form, onChange, onSubmit,  onBlur }) => {
 				rows={5}
 			/>
 			<div>
-				<ButtonGray className="button-a-form-project" type="submit">
+				<ButtonGray onClick={onSubmit} className="button-a-form-project" type="submit">
 					enviar-mensaje
 				</ButtonGray>
 			</div>

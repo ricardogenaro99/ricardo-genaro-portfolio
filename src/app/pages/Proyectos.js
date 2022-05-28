@@ -4,7 +4,7 @@ import {
 	RiCss3Fill,
 	RiHtml5Fill,
 	RiReactjsFill,
-	RiVuejsFill,
+	RiVuejsFill
 } from "react-icons/ri";
 import { v4 as uuid } from "uuid";
 import {
@@ -12,14 +12,14 @@ import {
 	ContainerProyectos,
 	ContentProyectos,
 	ItemCheckSpanDefault,
-	SectionExplorerProyectos,
+	SectionExplorerProyectos
 } from "../components/proyectos";
 import { Explorer } from "../shared/components";
 import { convertSizeCss } from "../shared/utils/Funtions";
 import {
 	ContainerExplorerAndContentTemplate,
 	GridAutoFitTemplate,
-	WorkStationSectionTemplate,
+	WorkStationSectionTemplate
 } from "../templates/Templates";
 
 const initialFilters = [
