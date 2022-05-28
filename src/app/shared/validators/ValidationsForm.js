@@ -2,7 +2,7 @@ import {
 	CAMPO_EMAIL,
 	CAMPO_LETRAS_ESPACIOS,
 	CAMPO_MAX_CARACTERES,
-	CAMPO_REQUERIDO
+	CAMPO_REQUERIDO,
 } from "./Messages";
 
 const regexNombre = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
@@ -16,6 +16,7 @@ const validarNombre = (value) => {
 	} else if (!regexNombre.test(value)) {
 		return CAMPO_LETRAS_ESPACIOS;
 	}
+	return null;
 };
 
 const validarEmail = (value) => {
@@ -25,6 +26,7 @@ const validarEmail = (value) => {
 	} else if (!regexEmail.test(value)) {
 		return CAMPO_EMAIL;
 	}
+	return null;
 };
 
 const validarMensaje = (value) => {
@@ -34,6 +36,7 @@ const validarMensaje = (value) => {
 	} else if (!regexMensaje.test(value)) {
 		return CAMPO_MAX_CARACTERES("Mensaje", 255);
 	}
+	return null;
 };
 
 export const validationsForm = (form) => {
@@ -43,9 +46,13 @@ export const validationsForm = (form) => {
 	if (!form.email) form.email = "";
 	if (!form.mensaje) form.mensaje = "";
 
-	errors.nombre = validarNombre(form.nombre);
-	errors.email = validarEmail(form.email);
-	errors.mensaje = validarMensaje(form.mensaje);
+	const nombre = validarNombre(form.nombre);
+	const email = validarEmail(form.email);
+	const mensaje = validarMensaje(form.mensaje);
+
+	if (nombre) errors.nombre = nombre;
+	if (email) errors.nombre = email;
+	if (mensaje) errors.nombre = mensaje;
 
 	return errors;
 };
