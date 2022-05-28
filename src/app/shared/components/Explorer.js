@@ -9,19 +9,27 @@ const Container = styled.aside`
 	top: 0;
 	> div {
 		position: fixed;
-		height: 100%;
+		height: calc(100% - var(--height-footer));
 		width: var(--max-width-explorer);
 		> section > * {
 			outline: var(--outline);
-		}
-		@media ${device.tabletS} {
-			display: none;
 		}
 	}
 
 	font-size: var(--size-labels) !important;
 	* {
 		font-size: var(--size-labels) !important;
+	}
+
+	@media ${device.tabletS} {
+		> div {
+			position: relative;
+			width: 100%;
+			@media ${device.tabletS} {
+				display: flex;
+				flex-direction: column;
+			}
+		}
 	}
 `;
 const Explorer = ({ sections = [] }) => {

@@ -1,14 +1,26 @@
+export const valuePx = {
+	mobileS: 309,
+	mobileM: 375,
+	mobileL: 463,
+	tabletS: 750,
+	tablet: 830,
+	// laptop: 1024,
+	laptop: 1124,
+	laptopM: 1248,
+	laptopL: 1440,
+	desktop: 2560,
+};
+
 export const size = {
-	mobileS: "309px",
-	mobileM: "375px",
-	mobileL: "463px",
-	tabletS: "750px",
-	tablet: "830px",
-	// laptop: "1024px",
-	laptop: "1124px",
-	laptopM: "1248px",
-	laptopL: "1440px",
-	desktop: "2560px",
+	mobileS: `${valuePx.mobileS}px`,
+	mobileM: `${valuePx.mobileM}px`,
+	mobileL: `${valuePx.mobileL}px`,
+	tabletS: `${valuePx.tabletS}px`,
+	tablet: `${valuePx.tablet}px`,
+	laptop: `${valuePx.laptop}px`,
+	laptopM: `${valuePx.laptopM}px`,
+	laptopL: `${valuePx.laptopL}px`,
+	desktop: `${valuePx.desktop}px`,
 };
 
 export const device = {

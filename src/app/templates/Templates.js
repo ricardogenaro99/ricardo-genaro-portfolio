@@ -6,12 +6,14 @@ export const ContainerExplorerAndContentTemplate = styled.div`
 	height: 100%;
 	display: grid;
 	grid-template-columns: var(--max-width-explorer) 1fr;
+	
 	> * {
 		outline: var(--outline);
 	}
 
 	@media ${device.tabletS} {
-		grid-template-columns: 0px 1fr;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto 1fr;
 	}
 `;
 
@@ -59,10 +61,10 @@ export const ContainerOneColumnGapTemplate = styled.div`
 	gap: ${(props) => props.gap || "20px"};
 `;
 
-
 export const ContentGridTemplate = styled.div`
 	display: grid;
-	grid-template-columns: ${(props) => props.gridTemplateColumns || "1.3fr 1fr"};
+	grid-template-columns: ${(props) =>
+		props.gridTemplateColumns || "1.3fr 1fr"};
 	grid-auto-rows: auto;
 	> section {
 		outline: var(--outline);
