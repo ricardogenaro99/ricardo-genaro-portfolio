@@ -1,4 +1,3 @@
-import React from "react";
 import {
 	RiAngularjsFill,
 	RiCss3Fill,
@@ -37,7 +36,7 @@ const iconsTech = {
 	},
 };
 
-const CardModel = ({ srcImage, linkProject, alt, tags = [] }) => {
+const CardModel = ({ srcImage, linkProject, description, alt, tags = [] }) => {
 	return (
 		<CardModelStyle>
 			<div className="img-project-container">
@@ -60,7 +59,7 @@ const CardModel = ({ srcImage, linkProject, alt, tags = [] }) => {
 				/>
 			</div>
 			<section className="body-card">
-				<p>Lorem ipsum dolor sit amet.</p>
+				<p>{description}</p>
 				<div>
 					<a
 						href={linkProject}
@@ -75,13 +74,21 @@ const CardModel = ({ srcImage, linkProject, alt, tags = [] }) => {
 	);
 };
 
-const CardProyecto = ({ name, srcImage, linkProject, maxWidth, tags }) => {
+const CardProyecto = ({
+	name,
+	srcImage,
+	linkProject,
+	maxWidth,
+	tags,
+	description,
+}) => {
 	return (
 		<ContainerCardProyecto maxWidth={maxWidth}>
 			<h3 className="name-project">{name}</h3>
 			<CardModel
 				srcImage={srcImage}
 				linkProject={linkProject}
+				description={description}
 				alt={name}
 				tags={tags}
 			/>

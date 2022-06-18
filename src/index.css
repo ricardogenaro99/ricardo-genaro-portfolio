@@ -37,10 +37,10 @@
 	--max-width-explorer: 300px;
 	--min-width-explorer: 220px;
 
-	--padding-global: 40px 8%;
+	--padding-global: 40px 4%;
 	--padding-page-inicio: 40px 7% 90px 7%;
 
-	--padding-work-station: 20px;
+	--padding-work-station: 3%;
 
 	--transition-time: 0.18s;
 	--transition: ease var(--transition-time);

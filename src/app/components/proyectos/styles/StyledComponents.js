@@ -8,10 +8,12 @@ export const ContainerCardProyecto = styled.article`
 	max-width: ${(props) => props.maxWidth};
 	width: 100%;
 	display: grid;
+	grid-template-rows: auto 1fr;
 	gap: 20px;
 
 	.name-project {
 		color: var(--secondary-color-purple);
+		font-size: 1.1em;
 	}
 `;
 
@@ -41,14 +43,16 @@ export const CardModelStyle = styled.div`
 			}
 		}
 		.img-project {
-			height: 140px;
+			height: 190px;
 			width: 100%;
-			object-fit: cover;
+			object-fit:  cover;
+			object-position: top;
 		}
 	}
 
 	.body-card {
 		display: grid;
+		grid-template-rows: 1fr auto;
 		gap: ${gapPadding};
 		padding: ${gapPadding} 0;
 		> * {

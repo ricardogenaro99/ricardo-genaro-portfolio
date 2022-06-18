@@ -1,11 +1,5 @@
-import React, { useState } from "react";
-import {
-	RiAngularjsFill,
-	RiCss3Fill,
-	RiHtml5Fill,
-	RiReactjsFill,
-	RiVuejsFill
-} from "react-icons/ri";
+import { useState } from "react";
+import { RiAngularjsFill, RiReactjsFill, RiVuejsFill } from "react-icons/ri";
 import { v4 as uuid } from "uuid";
 import {
 	CardProyecto,
@@ -21,6 +15,8 @@ import {
 	GridAutoFitTemplate,
 	WorkStationSectionTemplate
 } from "../templates/Templates";
+
+import { quenaImage, todoImage } from "../assets/proyectos/";
 
 const initialFilters = [
 	{
@@ -39,20 +35,6 @@ const initialFilters = [
 	},
 	{
 		id: uuid(),
-		name: "html",
-		label: "HTML",
-		active: true,
-		logo: <RiHtml5Fill />,
-	},
-	{
-		id: uuid(),
-		name: "css",
-		label: "CSS",
-		active: true,
-		logo: <RiCss3Fill />,
-	},
-	{
-		id: uuid(),
 		name: "vue",
 		label: "Vue",
 		active: true,
@@ -63,35 +45,28 @@ const initialFilters = [
 const initialProjects = [
 	{
 		id: uuid(),
-		name: "proyecto 1",
+		name: "_quena",
 		linkProject: "https://www.instagram.com/ricardogenaro99/",
-		linkImage:
-			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
-		tags: ["react", "html", "css"],
+		linkImage: quenaImage,
+		tags: ["angular"],
+		description: "Aplicación Angular consumiendo servicios de AWS",
 	},
 	{
 		id: uuid(),
-		name: "proyecto 2",
+		name: "_workfast",
 		linkProject: "https://www.instagram.com/ricardogenaro99/",
 		linkImage:
 			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
-		tags: ["angular", "html", "css"],
+		tags: ["react"],
+		description: "Aplicación MERN Stack con arquitectura API-REST",
 	},
 	{
 		id: uuid(),
-		name: "proyecto 3",
-		linkProject: "https://www.instagram.com/ricardogenaro99/",
-		linkImage:
-			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
-		tags: ["css", "html"],
-	},
-	{
-		id: uuid(),
-		name: "proyecto 4",
-		linkProject: "https://www.instagram.com/ricardogenaro99/",
-		linkImage:
-			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
-		tags: ["vue", "html", "css"],
+		name: "_todo",
+		linkProject: "https://todo-frontendmentor-challenge.herokuapp.com/",
+		linkImage: todoImage,
+		tags: ["react"],
+		description: "Lista de tareas usando LocalStorage",
 	},
 ];
 
@@ -162,6 +137,7 @@ const Proyectos = () => {
 									name={project.name}
 									srcImage={project.linkImage}
 									linkProject={project.linkProject}
+									description={project.description}
 									tags={project.tags}
 								/>
 							))}
