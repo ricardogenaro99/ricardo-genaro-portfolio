@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { ComentMultiple } from "../../../shared/components";
 import { removeAccents } from "../../../shared/utils/Funtions";
 import { ContainerItemSectionPage } from "../styles/StyledComponents";

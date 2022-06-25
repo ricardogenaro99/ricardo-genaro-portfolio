@@ -5,6 +5,7 @@ import {
 	RiReactjsFill,
 	RiVuejsFill
 } from "react-icons/ri";
+import { inProcessImage } from "../../../assets/proyectos";
 import { ButtonGray } from "../../../shared/components";
 import {
 	CardModelStyle,
@@ -53,7 +54,7 @@ const CardModel = ({ srcImage, linkProject, description, alt, tags = [] }) => {
 				</span>
 				<img
 					className="img-project"
-					src={srcImage}
+					src={srcImage || inProcessImage}
 					alt={alt}
 					loading="eager"
 				/>

@@ -1,4 +1,3 @@
-import React from "react";
 import { validateInputWhitName } from "../../../shared/validators/ValidationsForm";
 import { LabelTextAreaInputContainer } from "../styles/StyledComponents";
 import LabelErrorContainer from "./LabelErrorContainer";
