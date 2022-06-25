@@ -48,7 +48,12 @@ export const pathNameLink = [
 		items: [
 			{
 				itemName: "formación_academica",
-				contentItem: [],
+				contentItem: [
+					{
+						titulo: "INGENIERÍA DE SISTEMAS - UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS",
+						cuerpo: "Estudiante de 9no ciclo de la carrera de Ingeniería de Sistemas de la Universidad Nacional Mayor de San Marcos, con conocimientos en gestion, diseño y desarrollo de sistemas.",
+					},
+				],
 			},
 			{
 				itemName: "experiencia_laboral",
@@ -59,7 +64,7 @@ export const pathNameLink = [
 					},
 					{
 						titulo: "SOPORTE TECH - CHAZKI (Mayo 2022)",
-						cuerpo: "Solución de incidencias a usuarios del sistema interactuando con DB y desarrollo Fullstack.",
+						cuerpo: "Solución de incidencias a usuarios del sistema interactuando con DB y desarrollo Full-Stack.",
 					},
 				],
 			},

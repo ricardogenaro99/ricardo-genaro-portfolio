@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { RiMenuFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 import {
 	ButtonMenu,
 	HeaderContainer,
@@ -16,7 +17,10 @@ const Header = () => {
 		<HeaderContainer>
 			<div className="container-header">
 				<div className="name-portfolio">
-					<h1>ricardo-genaro</h1>
+					<Link to="/">
+						<h1>ricardo-genaro</h1>
+					</Link>
+
 					<ButtonMenu onClick={clickItemButtonMenu}>
 						<RiMenuFill size={sizeButtonMenu} />
 					</ButtonMenu>
