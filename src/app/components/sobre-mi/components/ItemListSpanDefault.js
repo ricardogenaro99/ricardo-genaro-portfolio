@@ -1,7 +1,4 @@
-import React from "react";
-import {
-    RiMarkdownFill
-} from "react-icons/ri";
+import { RiMarkdownFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { removeAccents } from "../../../shared/utils/Funtions";
 

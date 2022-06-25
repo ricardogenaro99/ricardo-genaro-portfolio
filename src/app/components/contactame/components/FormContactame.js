@@ -1,9 +1,8 @@
-import React from "react";
 import { ButtonGray } from "../../../shared/components";
 import { FormContactameContainer } from "../styles/StyledComponents";
 import { LabelInput, LabelTextArea } from "./LabelTextAreaInput";
 
-const FormContactame = ({ form, onChange, onSubmit,  onBlur }) => {
+const FormContactame = ({ form, onChange, onSubmit, onBlur }) => {
 	return (
 		<FormContactameContainer onSubmit={onSubmit} noValidate>
 			<LabelInput
@@ -27,7 +26,11 @@ const FormContactame = ({ form, onChange, onSubmit,  onBlur }) => {
 				rows={5}
 			/>
 			<div>
-				<ButtonGray onClick={onSubmit} className="button-a-form-project" type="submit">
+				<ButtonGray
+					onClick={onSubmit}
+					type="submit"
+					id="sendBtn"
+				>
 					enviar-mensaje
 				</ButtonGray>
 			</div>

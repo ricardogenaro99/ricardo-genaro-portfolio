@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const ButtonGrayContainer = styled.button`
@@ -17,9 +16,11 @@ const ButtonGrayContainer = styled.button`
 	}
 `;
 
-const ButtonGray = ({ children, onClick }) => {
+const ButtonGray = ({ children, onClick, type, id }) => {
 	return (
-		<ButtonGrayContainer onClick={onClick}>{children}</ButtonGrayContainer>
+		<ButtonGrayContainer id={id} type={type || "button"} onClick={onClick}>
+			{children}
+		</ButtonGrayContainer>
 	);
 };
 

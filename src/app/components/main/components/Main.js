@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Contactame, Error404, Hola, Proyectos, SobreMi } from "../../../pages";
 import { MainContainer } from "../styles/StyledComponents";

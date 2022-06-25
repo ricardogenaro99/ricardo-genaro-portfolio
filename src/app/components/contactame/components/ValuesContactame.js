@@ -1,4 +1,3 @@
-import React from "react";
 import { Enumeracion } from "../../../shared/components";
 import { CodeStyleContainer } from "../../../shared/styles/CodeStyle";
 import { ContainerOneColumnGapTemplate } from "../../../templates/Templates";

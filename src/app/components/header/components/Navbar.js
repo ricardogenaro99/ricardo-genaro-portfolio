@@ -1,4 +1,3 @@
-import React from "react";
 import { Nav } from "../styles/StyledComponents";
 import NavLinkComponent from "./NavLinkComponent";
 

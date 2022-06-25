@@ -1,4 +1,3 @@
-import React from "react";
 import { pathNameLink } from "../pathNameLink";
 import { getItems } from "../util";
 import ModelContentSobreMi from "./ModelContentSobreMi";

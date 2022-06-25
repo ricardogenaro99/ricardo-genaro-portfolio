@@ -55,8 +55,6 @@ const initialProjects = [
 		id: uuid(),
 		name: "_workfast",
 		linkProject: "https://www.instagram.com/ricardogenaro99/",
-		linkImage:
-			"https://payload.cargocollective.com/1/6/198372/13590127/Captura-de-pantalla-2018-07-21-a-las-22.51.13_670.png",
 		tags: ["react"],
 		description: "Aplicación MERN Stack con arquitectura API-REST",
 	},

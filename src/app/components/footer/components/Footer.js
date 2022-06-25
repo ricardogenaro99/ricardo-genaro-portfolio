@@ -1,4 +1,3 @@
-import React from "react";
 import { RiGithubFill, RiInstagramFill, RiLinkedinFill } from "react-icons/ri";
 import { FooterContainer } from "../styles/StyledComponents";
 

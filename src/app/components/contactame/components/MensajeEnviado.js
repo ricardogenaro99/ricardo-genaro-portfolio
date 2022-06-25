@@ -1,4 +1,3 @@
-import React from "react";
 import emoji from "../../../assets/hand-emoji.png";
 import { ButtonGray } from "../../../shared/components";
 import { MensajeEnviadoContainer } from "../styles/StyledComponents";

@@ -1,4 +1,3 @@
-import React from "react";
 import { ComentMultiple } from "../../../shared/components";
 
 const SobreMiIndex = () => {

@@ -2,7 +2,7 @@ import {
 	CAMPO_EMAIL,
 	CAMPO_LETRAS_ESPACIOS,
 	CAMPO_MAX_CARACTERES,
-	CAMPO_REQUERIDO,
+	CAMPO_REQUERIDO
 } from "./Messages";
 
 const regexNombre = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
