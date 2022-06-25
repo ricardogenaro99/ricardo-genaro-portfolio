@@ -29,6 +29,7 @@ const ModelContentSobreMi = ({ items, paramLink }) => {
 						<br />
 					</ContainerItemSectionPage>
 					<br />
+					<br />
 				</Fragment>
 			))}
 		</Fragment>

@@ -1,8 +1,7 @@
 import { HashRouter } from "react-router-dom";
 import "./App.css";
-import { Footer } from "./app/components/footer";
-import { Header } from "./app/components/header";
 import { Main } from "./app/components/main";
+import { Footer, Header } from "./app/shared/components";
 
 function App() {
 	return (
