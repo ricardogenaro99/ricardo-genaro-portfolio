@@ -1,21 +1,23 @@
-import React, { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
+import { valuePx } from "../../styles/Breakpoints";
 import "./Accordion.css";
 import Chevron from "./Chevron";
 
 const Accordion = (props) => {
 	const content = useRef(null);
 
-	const [active, setActiveState] = useState("active_accordion");
-	const [height, setHeightState] = useState(`600px`);
-	const [rotate, setRotateState] = useState("accordion__icon rotate");
+	const [active, setActiveState] = useState("");
+	const [height, setHeightState] = useState("0px");
+	const [rotate, setRotateState] = useState("accordion__icon");
 
-	// const accordionRDInitial = () => {
-	// 	console.log(window.innerWidth, valuePx.tabletS);
-	// };
+	const { widthWindow } = useWindowDimensions();
 
-	// useEffect(() => {
-	// 	window.addEventListener("resize", accordionRDInitial);
-	// }, []);
+	useEffect(() => {
+		if (widthWindow > valuePx.tabletS && active === "") {
+			toggleAccordion();
+		}
+	}, []);
 
 	const toggleAccordion = () => {
 		setActiveState(active === "" ? "active_accordion" : "");
