@@ -39,12 +39,12 @@ export const sectionsExplorer = (changeParam) => [
 			<SectionExplorerSobreMi>
 				<span className="section_explorer-flex item-list-span">
 					<RiMailFill />
-					<a href={URL_MAIL}>mandame_un_correo</a>
+					<a href={URL_MAIL}>mándame_un_correo</a>
 				</span>
 				<span className="section_explorer-flex item-list-span">
 					<RiWhatsappFill />
 					<a href={URL_WSP} target="_blank" rel="noopener noreferrer">
-						mandame_un_whatsapp
+						mándame_un_whatsapp
 					</a>
 				</span>
 			</SectionExplorerSobreMi>

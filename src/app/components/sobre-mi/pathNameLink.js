@@ -18,7 +18,7 @@ export const pathNameLink = [
 				contentItem: [
 					{
 						titulo: "",
-						cuerpo: "Al ser curioso, encontrar el porque de algo con soluciones que suelen salir de lo comun es parte de mis pasiones",
+						cuerpo: "Al ser curioso, encontrar el porque de algo con soluciones que suelen salir de lo comun es parte de mis pasiones.",
 					},
 				],
 			},

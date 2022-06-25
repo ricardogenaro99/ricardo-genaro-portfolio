@@ -4,7 +4,6 @@ export const valuePx = {
 	mobileL: 463,
 	tabletS: 750,
 	tablet: 830,
-	// laptop: 1024,
 	laptop: 1124,
 	laptopM: 1248,
 	laptopL: 1440,

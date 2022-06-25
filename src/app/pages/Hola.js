@@ -17,11 +17,11 @@ const Hola = () => {
 				</div>
 				<div className="section-left-code">
 					<Coment>
-						{"// piensa, relájate, inspíate y"}{" "}
+						{"// piensa, relájate, inspírate y"}{" "}
 						<b>{"<Codealo/>"}</b>
 					</Coment>
 					<Coment>
-						{"// apoyate de mi código en mi página de Github"}
+						{"// apóyate de mi código en mi página de Github"}
 					</Coment>
 					<CodeStyleContainer>
 						<span className="code-purple">const</span>
