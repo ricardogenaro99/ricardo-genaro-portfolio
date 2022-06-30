@@ -6,11 +6,7 @@ const ItemListSpanDefault = ({ path, name, changeParam }) => {
 	return (
 		<span className="item-list-span">
 			<Link
-				to={
-					removeAccents(path) === "index"
-						? ""
-						: `${removeAccents(path)}#${removeAccents(name)}`
-				}
+				to={removeAccents(path) === "index" ? "" : removeAccents(path)}
 				onClick={() => changeParam(name)}
 			>
 				<span className="section_explorer-flex">
