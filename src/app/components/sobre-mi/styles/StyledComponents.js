@@ -58,7 +58,7 @@ export const ContentSobreMi = styled.div`
 		outline: var(--outline);
 	}
 
-	@media ${device.laptop} {
+	@media ${device.laptopS} {
 		grid-template-columns: 1fr;
 	}
 `;

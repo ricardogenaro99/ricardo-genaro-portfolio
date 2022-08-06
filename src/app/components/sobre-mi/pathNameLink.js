@@ -54,7 +54,7 @@ export const pathNameLink = [
 						cuerpo: "Desarrollo y mantenimiento de las aplicaciones web usadas en el entorno financiero por entidades como (UNIBANCA, CAJA CUSCO, MÁXIMO, etc), aportando  dinámicamente al equipo al desarrollo, mejoras y optimización de los sistemas desarrollados.",
 					},
 					{
-						titulo: "SOPORTE TECH - CHAZKI (Mayo 2022)",
+						titulo: "ANALISTA DE SOPORTE PARA TI - CHAZKI (Mayo 2022)",
 						cuerpo: "Solución de incidencias a usuarios del sistema interactuando con DB y desarrollo Full-Stack.",
 					},
 				],

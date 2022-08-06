@@ -21,14 +21,14 @@ const Container = styled.aside`
 		font-size: var(--size-labels) !important;
 	}
 
-	@media ${device.tabletS} {
+	@media ${device.tabletM} {
 		> div {
 			position: relative;
 			width: 100%;
-			@media ${device.tabletS} {
+			
 				display: flex;
 				flex-direction: column;
-			}
+			
 		}
 	}
 `;
