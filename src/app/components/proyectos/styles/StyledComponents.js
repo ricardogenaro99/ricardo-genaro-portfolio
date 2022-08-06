@@ -122,13 +122,13 @@ export const ContentProyectos = styled.div`
 		outline: var(--outline);
 	}
 
-	@media ${device.laptop} {
+	@media ${device.laptopS} {
 		grid-template-columns: 1fr;
 	}
 `;
 
 export const ContainerProyectos = styled.div`
-	max-width: ${device.laptop};
+	max-width: ${device.laptopS};
 	width: 100%;
 	display: flex;
 	justify-content: center;

@@ -9,9 +9,7 @@ import {
 import { Enumeracion, Explorer } from "../shared/components";
 import { removeAccents } from "../shared/utils/Funtions";
 import {
-	ContainerExplorerAndContentTemplate,
-	ContentGridTemplate,
-	WorkStationSectionTemplate
+	ContainerExplorerAndContentTemplate, WorkStationSectionTemplate
 } from "../templates/Templates";
 import Error404 from "./Error404";
 
@@ -25,45 +23,43 @@ const SobreMi = () => {
 	return (
 		<ContainerExplorerAndContentTemplate>
 			<Explorer sections={sectionsExplorer(changeParam)} />
-			<ContentGridTemplate>
-				<WorkStationSectionTemplate>
-					<Enumeracion>
-						<Routes>
-							<Route path="/">
-								<Route index element={<SobreMiIndex />} />
-								<Route
-									path="/aptitudes"
-									element={
-										<SobreMiAptitudes
-											paramLink={paramLink}
-										/>
-									}
-								/>
-								<Route
-									path="/formacion-experiencia"
-									element={
-										<SobreMiFormacionExperiencia
-											paramLink={paramLink}
-										/>
-									}
-								/>
-							</Route>
+			{/* <ContentGridTemplate> */}
+			<WorkStationSectionTemplate>
+				<Enumeracion>
+					<Routes>
+						<Route path="/">
+							<Route index element={<SobreMiIndex />} />
 							<Route
-								path="*"
+								path="/aptitudes"
 								element={
-									<Error404 message="Seleccione un archivo." />
+									<SobreMiAptitudes paramLink={paramLink} />
 								}
 							/>
-						</Routes>
-					</Enumeracion>
-				</WorkStationSectionTemplate>
-				<WorkStationSectionTemplate>
+							<Route
+								path="/formacion-experiencia"
+								element={
+									<SobreMiFormacionExperiencia
+										paramLink={paramLink}
+									/>
+								}
+							/>
+						</Route>
+						<Route
+							path="*"
+							element={
+								<Error404 message="Seleccione un archivo." />
+							}
+						/>
+					</Routes>
+				</Enumeracion>
+			</WorkStationSectionTemplate>
+			{/* <WorkStationSectionTemplate>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Libero blanditiis nulla odio voluptas ex, vero voluptatum
 					excepturi labore ipsa ut quia doloribus ullam. Numquam
 					voluptatem sunt modi quod ipsum voluptatum.
-				</WorkStationSectionTemplate>
-			</ContentGridTemplate>
+				</WorkStationSectionTemplate> 
+			</ContentGridTemplate> */}
 		</ContainerExplorerAndContentTemplate>
 	);
 };

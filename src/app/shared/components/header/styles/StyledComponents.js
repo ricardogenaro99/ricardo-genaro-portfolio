@@ -29,7 +29,7 @@ export const HeaderContainer = styled.div`
 			color: var(--secondary-color-gray);
 		}
 
-		@media ${device.tablet} {
+		@media ${device.tabletM} {
 			display: flex;
 		}
 	}
@@ -40,7 +40,7 @@ export const sizeButtonMenu = "30px";
 export const ButtonMenu = styled.button`
 	display: none;
 
-	@media ${device.tablet} {
+	@media ${device.tabletM} {
 		background: transparent;
 		width: ${sizeButtonMenu};
 		height: ${sizeButtonMenu};
@@ -71,7 +71,7 @@ export const Nav = styled.nav`
 			outline: var(--outline);
 		}
 	}
-	@media ${device.tablet} {
+	@media ${device.tabletM} {
 		flex-direction: column;
 		justify-content: start;
 		position: absolute;
@@ -104,7 +104,7 @@ export const NavLinkStyle = styled(NavLink)`
 		color: var(--secondary-color-white);
 	}
 
-	@media ${device.tablet} {
+	@media ${device.tabletM} {
 		width: 100vw;
 		&.active {
 			border-bottom: none;

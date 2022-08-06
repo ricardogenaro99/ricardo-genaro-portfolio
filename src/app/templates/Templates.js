@@ -11,7 +11,7 @@ export const ContainerExplorerAndContentTemplate = styled.div`
 		outline: var(--outline);
 	}
 
-	@media ${device.tabletS} {
+	@media ${device.tabletM} {
 		grid-template-columns: 1fr;
 		grid-template-rows: auto 1fr;
 	}
@@ -26,7 +26,7 @@ export const WorkStationSectionTemplate = styled.section`
 		line-height: var(--line-height-work-station);
 	}
 
-	@media ${device.laptop} {
+	@media ${device.laptopS} {
 		max-height: none;
 	}
 `;
@@ -70,7 +70,7 @@ export const ContentGridTemplate = styled.div`
 		outline: var(--outline);
 	}
 
-	@media ${device.laptop} {
+	@media ${device.laptopS} {
 		grid-template-columns: 1fr;
 	}
 `;
