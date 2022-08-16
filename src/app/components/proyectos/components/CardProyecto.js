@@ -37,7 +37,7 @@ const iconsTech = {
 	},
 };
 
-const CardModel = ({ srcImage, linkProject, description, alt, tags = [] }) => {
+const CardModel = ({ linkImage, linkProject, description, alt, tags = [] }) => {
 	return (
 		<CardModelStyle>
 			<div className="img-project-container">
@@ -54,7 +54,7 @@ const CardModel = ({ srcImage, linkProject, description, alt, tags = [] }) => {
 				</span>
 				<img
 					className="img-project"
-					src={srcImage || inProcessImage}
+					src={linkImage || inProcessImage}
 					alt={alt}
 					loading="eager"
 				/>
@@ -75,19 +75,13 @@ const CardModel = ({ srcImage, linkProject, description, alt, tags = [] }) => {
 	);
 };
 
-const CardProyecto = ({
-	name,
-	srcImage,
-	linkProject,
-	maxWidth,
-	tags,
-	description,
-}) => {
+const CardProyecto = ({ maxWidth, project }) => {
+	const { name, linkImage, linkProject, tags, description } = project;
 	return (
 		<ContainerCardProyecto maxWidth={maxWidth}>
 			<h3 className="name-project">{name}</h3>
 			<CardModel
-				srcImage={srcImage}
+				linkImage={linkImage}
 				linkProject={linkProject}
 				description={description}
 				alt={name}
