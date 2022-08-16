@@ -18,25 +18,29 @@ const ModelContentSobreMi = ({ items, paramLink }) => {
 					<ContainerItemSectionPage
 						id={removeAccents(item.itemName)}
 						className={
-							removeAccents(item.itemName) ===
-							removeAccents(paramLink)
+							removeAccents(item.itemName) === removeAccents(paramLink)
 								? "active-item-page"
 								: ""
 						}
 						key={i}
 					>
+						&nbsp;
 						<br />
 						<h3 className="itemName">_{item.itemName}</h3>
 						{item.contentItem.map((e, j) => (
 							<Fragment key={j}>
+								&nbsp;
 								<br />
 								{e.titulo && <h4>{`// ${e.titulo}`}</h4>}
 								<ComentMultiple>{e.cuerpo}</ComentMultiple>
 							</Fragment>
 						))}
+						&nbsp;
 						<br />
 					</ContainerItemSectionPage>
+					&nbsp;
 					<br />
+					&nbsp;
 					<br />
 				</Fragment>
 			))}

@@ -88,8 +88,8 @@ const Proyectos = () => {
 		const filtersActive = filters.filter((filter) => filter.active);
 		const projectsActive = initialProjects.filter((project) => {
 			let count = 0;
-			for (let index = 0; index < filtersActive.length; index++) {
-				if (project.tags.includes(filtersActive[index].name)) {
+			for (const element of filtersActive) {
+				if (project.tags.includes(element.name)) {
 					count++;
 				}
 			}
@@ -132,11 +132,7 @@ const Proyectos = () => {
 								<CardProyecto
 									key={project.id}
 									maxWidth={convertSizeCss(maxWidth)}
-									name={project.name}
-									srcImage={project.linkImage}
-									linkProject={project.linkProject}
-									description={project.description}
-									tags={project.tags}
+									project={project}
 								/>
 							))}
 						</GridAutoFitTemplate>
