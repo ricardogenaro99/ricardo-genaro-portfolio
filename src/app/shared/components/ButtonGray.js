@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ButtonGrayContainer = styled.button`
+export const ButtonGrayContainer = styled.button`
 	cursor: pointer;
 	padding: 10px;
 	background: var(--button-gray);
@@ -11,14 +11,19 @@ const ButtonGrayContainer = styled.button`
 	justify-content: center;
 	align-items: center;
 
-	&:hover {
+	&:not(.disabled):hover {
 		background: var(--button-gray-hover);
 	}
 `;
 
-const ButtonGray = ({ children, onClick, type, id }) => {
+const ButtonGray = ({ children, onClick, type, id, disabled }) => {
 	return (
-		<ButtonGrayContainer id={id} type={type || "button"} onClick={onClick}>
+		<ButtonGrayContainer
+			id={id}
+			type={type || "button"}
+			onClick={onClick}
+			disabled={disabled}
+		>
 			{children}
 		</ButtonGrayContainer>
 	);

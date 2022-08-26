@@ -3,16 +3,21 @@ import {
 	RiCss3Fill,
 	RiHtml5Fill,
 	RiReactjsFill,
-	RiVuejsFill
+	RiVuejsFill,
 } from "react-icons/ri";
+import styled from "styled-components";
 import { inProcessImage } from "../../../assets/proyectos";
-import { ButtonGray } from "../../../shared/components";
+import { ButtonGrayContainer } from "../../../shared/components";
 import {
 	CardModelStyle,
-	ContainerCardProyecto
+	ContainerCardProyecto,
 } from "../styles/StyledComponents";
 
 const sizeIconTech = 30;
+
+const RefButtonGray = styled(ButtonGrayContainer).attrs({
+	as: "a",
+})``;
 
 const iconsTech = {
 	react: {
@@ -37,12 +42,12 @@ const iconsTech = {
 	},
 };
 
-const CardModel = ({ linkImage, linkProject, description, alt, tags = [] }) => {
+const CardModel = ({ project }) => {
 	return (
 		<CardModelStyle>
 			<div className="img-project-container">
 				<span className="icons-tag">
-					{tags.map((tag, i) => (
+					{project.tags.map((tag, i) => (
 						<span
 							key={i}
 							className={`icon-tag`}
@@ -54,21 +59,27 @@ const CardModel = ({ linkImage, linkProject, description, alt, tags = [] }) => {
 				</span>
 				<img
 					className="img-project"
-					src={linkImage || inProcessImage}
-					alt={alt}
+					src={project.linkImage || inProcessImage}
+					alt={project.alt}
 					loading="eager"
 				/>
 			</div>
 			<section className="body-card">
-				<p>{description}</p>
+				<p>{project.description}</p>
 				<div>
-					<a
-						href={linkProject}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<ButtonGray>ver-proyecto</ButtonGray>
-					</a>
+					{project.prod ? (
+						<RefButtonGray
+							href={project.linkProject}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							ver-proyecto
+						</RefButtonGray>
+					) : (
+						<ButtonGrayContainer disabled={true} className="disabled">
+							ver-proyecto
+						</ButtonGrayContainer>
+					)}
 				</div>
 			</section>
 		</CardModelStyle>
@@ -76,17 +87,10 @@ const CardModel = ({ linkImage, linkProject, description, alt, tags = [] }) => {
 };
 
 const CardProyecto = ({ maxWidth, project }) => {
-	const { name, linkImage, linkProject, tags, description } = project;
 	return (
 		<ContainerCardProyecto maxWidth={maxWidth}>
-			<h3 className="name-project">{name}</h3>
-			<CardModel
-				linkImage={linkImage}
-				linkProject={linkProject}
-				description={description}
-				alt={name}
-				tags={tags}
-			/>
+			<h3 className="name-project">{project.name}</h3>
+			<CardModel project={project} />
 		</ContainerCardProyecto>
 	);
 };

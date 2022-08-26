@@ -102,6 +102,11 @@ button {
 	cursor: pointer;
 }
 
+.disabled{
+	opacity: .5;
+	cursor: initial !important;
+}
+
 ul {
 	list-style: none;
 }
