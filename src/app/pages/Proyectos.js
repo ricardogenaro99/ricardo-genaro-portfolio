@@ -6,17 +6,17 @@ import {
 	ContainerProyectos,
 	ContentProyectos,
 	ItemCheckSpanDefault,
-	SectionExplorerProyectos
+	SectionExplorerProyectos,
 } from "../components/proyectos";
 import { Explorer } from "../shared/components";
 import { convertSizeCss } from "../shared/utils/Funtions";
 import {
 	ContainerExplorerAndContentTemplate,
 	GridAutoFitTemplate,
-	WorkStationSectionTemplate
+	WorkStationSectionTemplate,
 } from "../templates/Templates";
 
-import { quenaImage, todoImage } from "../assets/proyectos/";
+import { quenaImage, todoImage, workfast } from "../assets/proyectos/";
 
 const initialFilters = [
 	{
@@ -46,17 +46,22 @@ const initialProjects = [
 	{
 		id: uuid(),
 		name: "_quena",
-		linkProject: "https://www.instagram.com/ricardogenaro99/",
+		linkProject: "",
 		linkImage: quenaImage,
 		tags: ["angular"],
-		description: "Aplicación Angular consumiendo servicios de AWS",
+		description:
+			"Aplicación Angular consumiendo servicios de AWS, la cual tiene como objetivo, el matching entre estrellas, fans y hosts",
+		prod: false,
 	},
 	{
 		id: uuid(),
 		name: "_workfast",
-		linkProject: "https://www.instagram.com/ricardogenaro99/",
+		linkImage: workfast,
+		linkProject: "https://workfast-landing.vercel.app/",
 		tags: ["react"],
-		description: "Aplicación MERN Stack con arquitectura API-REST",
+		description:
+			"Aplicación MERN Stack con arquitectura API-REST, la cual tiene como objetivo la busqueda de empleos",
+		prod: true,
 	},
 	{
 		id: uuid(),
@@ -64,7 +69,8 @@ const initialProjects = [
 		linkProject: "https://todo-frontendmentor-challenge.herokuapp.com/",
 		linkImage: todoImage,
 		tags: ["react"],
-		description: "Lista de tareas usando LocalStorage",
+		description: "Lista de tareas con almacenamiento en LocalStorage",
+		prod: true,
 	},
 ];
 
@@ -125,9 +131,7 @@ const Proyectos = () => {
 			<ContentProyectos>
 				<WorkStationSectionTemplate>
 					<ContainerProyectos>
-						<GridAutoFitTemplate
-							minmax={convertSizeCss(maxWidth - 100)}
-						>
+						<GridAutoFitTemplate minmax={convertSizeCss(maxWidth - 100)}>
 							{projects.map((project) => (
 								<CardProyecto
 									key={project.id}
