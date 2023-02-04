@@ -6,17 +6,21 @@ import {
 	ContainerProyectos,
 	ContentProyectos,
 	ItemCheckSpanDefault,
-	SectionExplorerProyectos,
+	SectionExplorerProyectos
 } from "../components/proyectos";
 import { Explorer } from "../shared/components";
 import { convertSizeCss } from "../shared/utils/Funtions";
 import {
 	ContainerExplorerAndContentTemplate,
 	GridAutoFitTemplate,
-	WorkStationSectionTemplate,
+	WorkStationSectionTemplate
 } from "../templates/Templates";
 
-import { quenaImage, todoImage, workfast } from "../assets/proyectos/";
+import {
+	inicipImage, quenaImage,
+	todoImage,
+	workfast
+} from "../assets/proyectos/";
 
 const initialFilters = [
 	{
@@ -24,6 +28,7 @@ const initialFilters = [
 		name: "react",
 		label: "React",
 		active: true,
+		visible: true,
 		logo: <RiReactjsFill />,
 	},
 	{
@@ -31,6 +36,7 @@ const initialFilters = [
 		name: "angular",
 		label: "Angular",
 		active: true,
+		visible: false,
 		logo: <RiAngularjsFill />,
 	},
 	{
@@ -38,6 +44,7 @@ const initialFilters = [
 		name: "vue",
 		label: "Vue",
 		active: true,
+		visible: false,
 		logo: <RiVuejsFill />,
 	},
 ];
@@ -46,12 +53,12 @@ const initialProjects = [
 	{
 		id: uuid(),
 		name: "_quena",
-		linkProject: "",
+		linkProject: "https://quena.pe/",
 		linkImage: quenaImage,
-		tags: ["angular"],
+		tags: ["react"],
 		description:
 			"Aplicación Angular consumiendo servicios de AWS, la cual tiene como objetivo, el matching entre estrellas, fans y hosts",
-		prod: false,
+		prod: true,
 	},
 	{
 		id: uuid(),
@@ -65,17 +72,28 @@ const initialProjects = [
 	},
 	{
 		id: uuid(),
-		name: "_todo",
-		linkProject: "https://todo-frontendmentor-challenge.herokuapp.com/",
+		name: "_todo-app",
+		linkProject: "https://todo-app-challenge-ricardogenaro.vercel.app/",
 		linkImage: todoImage,
 		tags: ["react"],
 		description: "Lista de tareas con almacenamiento en LocalStorage",
 		prod: true,
 	},
+	{
+		id: uuid(),
+		name: "_inicip",
+		linkProject: "https://inicip-escpograpnp.com/",
+		linkImage: inicipImage,
+		tags: ["react"],
+		description: "El INICIP, forma parte de la Escuela de Posgrado de la PNP",
+		prod: true,
+	},
 ];
 
 const Proyectos = () => {
-	const [filters, setFilters] = useState(initialFilters);
+	const [filters, setFilters] = useState(
+		initialFilters.filter((e) => e.visible === true),
+	);
 	const [projects, setProjects] = useState(initialProjects);
 	const maxWidth = 400;
 
