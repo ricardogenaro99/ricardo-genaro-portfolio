@@ -1,9 +1,11 @@
 import { Fragment, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { ComentMultiple } from "../../../shared/components";
 import { removeAccents } from "../../../shared/utils/Funtions";
 import { ContainerItemSectionPage } from "../styles/StyledComponents";
 
 const ModelContentSobreMi = ({ items, paramLink }) => {
+	const location = useLocation();
 	useEffect(() => {
 		const item = document.getElementById(removeAccents(paramLink));
 		if (item) {
@@ -13,11 +15,13 @@ const ModelContentSobreMi = ({ items, paramLink }) => {
 
 	return (
 		<Fragment>
-			<ComentMultiple>
-				Capacidad de análisis tanto inferencial como creativo, juicio crítico
-				para la solución de problemas, aprendizaje rápido, actitud positiva y
-				proactividad
-			</ComentMultiple>
+			{location.pathname === "/sobre-mi/aptitudes" && (
+				<ComentMultiple>
+					Capacidad de análisis tanto inferencial como creativo, juicio crítico
+					para la solución de problemas, aprendizaje rápido, actitud positiva y
+					proactividad
+				</ComentMultiple>
+			)}
 			<br />
 			{items.map((item, i) => (
 				<Fragment key={i}>
