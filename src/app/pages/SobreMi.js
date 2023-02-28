@@ -23,7 +23,6 @@ const SobreMi = () => {
 	return (
 		<ContainerExplorerAndContentTemplate>
 			<Explorer sections={sectionsExplorer(changeParam)} />
-			{/* <ContentGridTemplate> */}
 			<WorkStationSectionTemplate>
 				<Enumeracion>
 					<Routes>
@@ -53,13 +52,6 @@ const SobreMi = () => {
 					</Routes>
 				</Enumeracion>
 			</WorkStationSectionTemplate>
-			{/* <WorkStationSectionTemplate>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Libero blanditiis nulla odio voluptas ex, vero voluptatum
-					excepturi labore ipsa ut quia doloribus ullam. Numquam
-					voluptatem sunt modi quod ipsum voluptatum.
-				</WorkStationSectionTemplate> 
-			</ContentGridTemplate> */}
 		</ContainerExplorerAndContentTemplate>
 	);
 };

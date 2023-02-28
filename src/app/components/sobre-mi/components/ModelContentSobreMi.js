@@ -13,6 +13,12 @@ const ModelContentSobreMi = ({ items, paramLink }) => {
 
 	return (
 		<Fragment>
+			<ComentMultiple>
+				Capacidad de análisis tanto inferencial como creativo, juicio crítico
+				para la solución de problemas, aprendizaje rápido, actitud positiva y
+				proactividad
+			</ComentMultiple>
+			<br />
 			{items.map((item, i) => (
 				<Fragment key={i}>
 					<ContainerItemSectionPage
