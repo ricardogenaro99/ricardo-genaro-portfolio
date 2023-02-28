@@ -13,7 +13,7 @@ const Hola = () => {
 				<div className="section-left-intro">
 					<span>Hola a todos, soy</span>
 					<h1>Ricardo Genaro</h1>
-					<h2> {">"} Front-end developer</h2>
+					<h2> {">"} Full-stack developer</h2>
 				</div>
 				<div className="section-left-code">
 					<Coment>

@@ -17,15 +17,15 @@ export const pathNameLink = [
 				itemName: "experiencia_laboral",
 				contentItem: [
 					{
+						titulo: "ANALISTA DE SOPORTE PARA TI - CHAZKI (Mayo 2022)",
+						cuerpo:
+							"Como analista de incidentes, me responsabilice en detectar y solucionar problemas de las plataformas operativas, del mismo modo, usar mis capacidades como fullstack para planificar y desarrollar soluciones semi-aumatizadas, optimizando el tiempo de solución de incidentes de todo el equipo. Actualmente cumplo la labor de líder el equipo de soporte, asignando actividades, proponiendo soluciones que generen impacto en las labores operativas de la organización.",
+					},
+					{
 						titulo:
 							"ANALISTA PROGRAMADOR FULL STACK - ODYBANK (Septiembre 2021 – Marzo 2022)",
 						cuerpo:
 							"Desarrollo y mantenimiento de las aplicaciones web usadas en el entorno financiero por entidades como (UNIBANCA, CAJA CUSCO, MÁXIMO, etc), aportando  dinámicamente al equipo al desarrollo, mejoras y optimización de los sistemas desarrollados.",
-					},
-					{
-						titulo: "ANALISTA DE SOPORTE PARA TI - CHAZKI (Mayo 2022)",
-						cuerpo:
-							"Solución de incidencias a usuarios del sistema interactuando con DB y desarrollo Full-Stack.",
 					},
 				],
 			},
@@ -36,7 +36,7 @@ export const pathNameLink = [
 						titulo:
 							"INGENIERÍA DE SISTEMAS - UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS",
 						cuerpo:
-							"Estudiante de 9no ciclo de la carrera de Ingeniería de Sistemas de la Universidad Nacional Mayor de San Marcos, con conocimientos en gestion, diseño y desarrollo de sistemas.",
+							"Estudiante de 10mp ciclo de la carrera de Ingeniería de Sistemas de la Universidad Nacional Mayor de San Marcos, con conocimientos en gestion, diseño y desarrollo de sistemas.",
 					},
 				],
 			},
