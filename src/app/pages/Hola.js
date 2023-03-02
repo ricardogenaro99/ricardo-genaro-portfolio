@@ -4,7 +4,7 @@ import { CardAvatar } from "../components/hola";
 import { HolaContainer } from "../components/hola/styles/StyledComponents";
 import { Coment } from "../shared/components";
 import { CodeStyleContainer } from "../shared/styles/CodeStyle";
-import { URL_GITHUB, URL_GITHUB_PORTFOLIO } from "../shared/utils/Urls";
+import { URL_GITHUB } from "../shared/utils/Urls";
 
 const Hola = () => {
 	return (
@@ -17,12 +17,9 @@ const Hola = () => {
 				</div>
 				<div className="section-left-code">
 					<Coment>
-						{"// piensa, relájate, inspírate y"}{" "}
-						<b>{"<Codealo/>"}</b>
+						{"// piensa, relájate, inspírate y"} <b>{"<Codealo/>"}</b>
 					</Coment>
-					<Coment>
-						{"// apóyate de mi código en mi página de Github"}
-					</Coment>
+					<Coment>{"// apóyate de mis proyectos en Github"}</Coment>
 					<CodeStyleContainer>
 						<span className="code-purple">const</span>
 						<span className="code-green">githubLink</span>
@@ -31,7 +28,8 @@ const Hola = () => {
 						<span className="code-simb">{"=>"}</span>
 						<a
 							className="code-url code-cream"
-							href={URL_GITHUB + URL_GITHUB_PORTFOLIO}
+							// href={URL_GITHUB + URL_GITHUB_PORTFOLIO}
+							href={URL_GITHUB}
 							target="_blank"
 							rel="noopener noreferrer"
 						>

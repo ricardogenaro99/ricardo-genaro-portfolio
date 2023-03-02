@@ -13,6 +13,7 @@ export const HolaContainer = styled.div`
 	}
 
 	.section-left {
+		z-index: 1;
 		display: grid;
 		gap: 3.3em;
 		div {
@@ -48,6 +49,7 @@ export const HolaContainer = styled.div`
 	}
 
 	.section-right {
+		z-index: 2;
 		display: flex;
 		justify-content: center;
 		align-items: center;
