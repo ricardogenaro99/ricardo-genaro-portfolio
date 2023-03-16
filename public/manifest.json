@@ -11,6 +11,11 @@
 			"src": "avatar_192.png",
 			"type": "image/png",
 			"sizes": "192x212"
+		},
+		{
+			"src": "portada.png",
+			"type": "image/png",
+			"sizes": "1672x744"
 		}
 	],
 	"start_url": ".",
