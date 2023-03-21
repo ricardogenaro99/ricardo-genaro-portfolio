@@ -1,116 +1,116 @@
 @import-normalize;
 
 :root {
-	--lines-color: #1e2d3d;
+  --lines-color: #1e2d3d;
 
-	--gradients-color-purple: #4d5bce;
-	--gradients-color-green: #43d9ad;
+  --gradients-color-purple: #4d5bce;
+  --gradients-color-green: #43d9ad;
 
-	--primary-color-black: #01080e;
-	--primary-color-blue: #011627;
-	/* --primary-color-blue-active: #011221; */
-	--primary-color-blue-active: #01111ff3;
+  --primary-color-black: #01080e;
+  --primary-color-blue: #011627;
+  /* --primary-color-blue-active: #011221; */
+  --primary-color-blue-active: #01111ff3;
 
-	--secondary-color-gray: #607b96;
-	--secondary-color-gray-hover-item: #8da0b3;
-	--secondary-color-green: #3c9d93;
-	--secondary-color-purple: #5b69d6;
-	--secondary-color-white: #e5e9f0;
-	--secondary-color-yellow: #ffd900;
+  --secondary-color-gray: #607b96;
+  --secondary-color-gray-hover-item: #8da0b3;
+  --secondary-color-green: #3c9d93;
+  --secondary-color-purple: #5b69d6;
+  --secondary-color-white: #e5e9f0;
+  --secondary-color-yellow: #ffd900;
 
-	--accent-color-orange: #fea55f;
-	--accent-color-green: #43d9ad;
-	--accent-color-dark-purple: #3a49a4;
-	--accent-color-cream: #e99287;
-	--accent-color-purple: #c98bdf;
-	--accent-color-error: #cc6767;
+  --accent-color-orange: #fea55f;
+  --accent-color-green: #43d9ad;
+  --accent-color-dark-purple: #3a49a4;
+  --accent-color-cream: #e99287;
+  --accent-color-purple: #c98bdf;
+  --accent-color-error: #cc6767;
 
-	--button-gray: #192735;
-	--button-gray-hover: #243241;
+  --button-gray: #192735;
+  --button-gray-hover: #243241;
 
-	--size-headline: 64px;
-	--size-subheadline: 32px;
-	--size-body: 16px;
-	--size-labels: 15px;
-	--size-code: 14px;
+  --size-headline: 64px;
+  --size-subheadline: 32px;
+  --size-body: 16px;
+  --size-labels: 15px;
+  --size-code: 14px;
 
-	--max-width-explorer: 300px;
-	--min-width-explorer: 220px;
+  --max-width-explorer: 300px;
+  --min-width-explorer: 220px;
 
-	--padding-global: 40px 4%;
-	--padding-page-inicio: 40px 7% 90px 7%;
+  --padding-global: 40px 4%;
+  --padding-page-inicio: 40px 7% 90px 7%;
 
-	--padding-work-station: 3%;
+  --padding-work-station: 3%;
 
-	--transition-time: 0.18s;
-	--transition: ease var(--transition-time);
+  --transition-time: 0.18s;
+  --transition: ease var(--transition-time);
 
-	--outline: 1px solid var(--lines-color);
+  --outline: 1px solid var(--lines-color);
 
-	--height-header: 56px;
-	--height-footer: 50px;
+  --height-header: 56px;
+  --height-footer: 50px;
 
-	--height-main: calc(100vh - var(--height-header) - var(--height-footer));
+  --height-main: calc(100vh - var(--height-header) - var(--height-footer));
 
-	--line-height-work-station: 28px;
+  --line-height-work-station: 28px;
 
-	--border-radius-card: 12px;
+  --border-radius-card: 12px;
 }
 
 body {
-	/* background: linear-gradient(
+  /* background: linear-gradient(
 		20deg,
 		var(--primary-color-black) 0%,
 		var(--primary-color-blue) 17%
 	); */
-	background: var(--primary-color-blue);
+  background: var(--primary-color-blue);
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	font-family: "Fira Code", monospace;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Fira Code", monospace;
 
-	transition: all var(--transition);
+  transition: all var(--transition);
 }
 
 *::-webkit-scrollbar {
-	width: 12px;
-	height: 12px;
+  width: 12px;
+  height: 12px;
 }
 
 *::-webkit-scrollbar-thumb {
-	background: var(--secondary-color-gray);
-	border-radius: 1px;
+  background: var(--secondary-color-gray);
+  border-radius: 1px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 *::-webkit-scrollbar-track {
-	background: var(--primary-color-blue);
-	outline: var(--outline);
+  background: var(--primary-color-blue);
+  outline: var(--outline);
 }
 
 button {
-	border: none;
-	outline: none;
-	cursor: pointer;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
-.disabled{
-	opacity: .5;
-	cursor: initial !important;
+.disabled {
+  opacity: 0.5;
+  cursor: initial !important;
 }
 
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }

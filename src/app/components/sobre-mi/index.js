@@ -3,16 +3,15 @@ import SobreMiFormacionExperiencia from "./components/SobreMiFormacionExperienci
 import SobreMiIndex from "./components/SobreMiIndex";
 import { sectionsExplorer } from "./sectionsExplorer";
 import {
-	ContentSobreMi,
-	SectionExplorerSobreMi
+  ContentSobreMi,
+  SectionExplorerSobreMi,
 } from "./styles/StyledComponents";
 
 export {
-	SobreMiAptitudes,
-	SobreMiFormacionExperiencia,
-	SobreMiIndex,
-	ContentSobreMi,
-	SectionExplorerSobreMi,
-	sectionsExplorer,
+  SobreMiAptitudes,
+  SobreMiFormacionExperiencia,
+  SobreMiIndex,
+  ContentSobreMi,
+  SectionExplorerSobreMi,
+  sectionsExplorer,
 };
-
