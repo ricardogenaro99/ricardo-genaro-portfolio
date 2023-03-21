@@ -1,11 +1,10 @@
-import { removeAccents } from "../../shared/utils/Funtions";
+import { removeAccents } from "../../shared/utils/globalFuntions";
 
 export const getItems = (pathNameLink = [], sectionName = "") => {
-	return (
-		pathNameLink.filter(
-			(section) =>
-				removeAccents(section.sectionName) ===
-				removeAccents(sectionName),
-		)[0].items || []
-	);
+  return (
+    pathNameLink.filter(
+      (section) =>
+        removeAccents(section.sectionName) === removeAccents(sectionName)
+    )[0].items || []
+  );
 };

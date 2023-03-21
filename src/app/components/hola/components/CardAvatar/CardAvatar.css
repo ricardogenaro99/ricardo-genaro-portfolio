@@ -1,68 +1,68 @@
 /* From uiverse.io by @Codewithvinay */
 .box {
-	--skewx: -15deg;
-	--transition-transform-time: 0.4s;
-	--border-radius: 8px;
-	position: relative;
-	max-width: 380px;
-	width: 90%;
-	height: auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: var(--transition-transform-time);
-	z-index: 1;
+  --skewx: -15deg;
+  --transition-transform-time: 0.4s;
+  --border-radius: 8px;
+  position: relative;
+  max-width: 380px;
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition-transform-time);
+  z-index: 1;
 }
 
 .box:before,
 .box:after {
-	content: " ";
-	position: absolute;
-	width: 50%;
-	height: 130%;
-	text-decoration: none;
-	background: #ffffff;
-	border-radius: var(--border-radius);
-	transform: skewX(var(--skewx));
-	transition: var(--transition-transform-time);
+  content: " ";
+  position: absolute;
+  width: 50%;
+  height: 130%;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: var(--border-radius);
+  transform: skewX(var(--skewx));
+  transition: var(--transition-transform-time);
 
-	background: linear-gradient(
-		315deg,
-		var(--gradients-color-purple),
-		var(--gradients-color-green)
-	);
+  background: linear-gradient(
+    315deg,
+    var(--gradients-color-purple),
+    var(--gradients-color-green)
+  );
 }
 
 .box::after {
-	content: " ";
-	filter: blur(80px);
-	transform-style: preserve-3d;
+  content: " ";
+  filter: blur(80px);
+  transform-style: preserve-3d;
 }
 
 .box:hover:before,
 .box:hover:after {
-	transform: skewX(0deg) scaleX(1.6);
+  transform: skewX(0deg) scaleX(1.6);
 }
 
 .box .content {
-	position: relative;
-	width: 90%;
-	height: 90%;
-	padding: 16% 15px;
-	background: rgba(255, 255, 255, 0.05);
-	backdrop-filter: blur(10px);
-	box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.3);
-	border-radius: var(--border-radius);
-	z-index: 1;
-	transform: var(--transition-transform-time);
-	color: #ffffff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  position: relative;
+  width: 90%;
+  height: 90%;
+  padding: 16% 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.3);
+  border-radius: var(--border-radius);
+  z-index: 1;
+  transform: var(--transition-transform-time);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .box .content h2 {
-	font-size: 20px;
-	color: #fff;
-	margin-bottom: 10px;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 10px;
 }

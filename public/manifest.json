@@ -1,25 +1,25 @@
 {
-	"short_name": "Ricardo Genaro",
-	"name": "Portafolio - Ricardo Genaro",
-	"icons": [
-		{
-			"src": "favicon.ico",
-			"sizes": "64x72 32x36 24x27 16x18",
-			"type": "image/x-icon"
-		},
-		{
-			"src": "avatar_192.png",
-			"type": "image/png",
-			"sizes": "192x212"
-		},
-		{
-			"src": "portada.png",
-			"type": "image/png",
-			"sizes": "1672x744"
-		}
-	],
-	"start_url": ".",
-	"display": "standalone",
-	"theme_color": "#000000",
-	"background_color": "#ffffff"
+  "short_name": "Ricardo Genaro",
+  "name": "Portafolio - Ricardo Genaro",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x72 32x36 24x27 16x18",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "avatar_192.png",
+      "type": "image/png",
+      "sizes": "192x212"
+    },
+    {
+      "src": "portada.png",
+      "type": "image/png",
+      "sizes": "1672x744"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }

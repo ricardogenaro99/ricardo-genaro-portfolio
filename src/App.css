@@ -1,8 +1,8 @@
 .App {
-	min-height: 100vh;
-	font-size: var(--size-lables);
-	color: var(--secondary-color-gray);
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: var(--height-header) 1fr var(--height-footer);
+  min-height: 100vh;
+  font-size: var(--size-lables);
+  color: var(--secondary-color-gray);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: var(--height-header) 1fr var(--height-footer);
 }
