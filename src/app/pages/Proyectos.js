@@ -21,7 +21,7 @@ const Proyectos = () => {
     ICONS_TECH.filter((e) => e.visible === true)
   );
   const [projects, setProjects] = useState(PROJECTS);
-  const maxWidth = 400;
+  const maxWidth = 405;
 
   const setFiltersParams = (data) => {
     const array = filters.map((element) => {

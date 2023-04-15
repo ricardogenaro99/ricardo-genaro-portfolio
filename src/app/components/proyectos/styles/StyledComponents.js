@@ -65,6 +65,11 @@ export const CardModelStyle = styled.div`
     div {
       display: flex;
     }
+
+    .container-buttons {
+      gap: 10px;
+      flex-wrap: wrap;
+    }
   }
 
   width: 100%;

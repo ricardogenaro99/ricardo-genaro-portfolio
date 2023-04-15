@@ -41,21 +41,23 @@ const CardModel = ({ project }) => {
       </div>
       <section className="body-card">
         <p>{project.description}</p>
-        <div>
-          {project.prod ? (
-            <ButtonGrayContainer
-              as="a"
-              href={project.linkProject}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ver-proyecto
-            </ButtonGrayContainer>
-          ) : (
-            <ButtonGrayContainer disabled={true} className="disabled">
-              ver-proyecto
-            </ButtonGrayContainer>
-          )}
+        <div className="container-buttons">
+          {project.projects.map((e, i) => {
+            const props = e.prod
+              ? {
+                  as: "a",
+                  href: e.linkProject,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                }
+              : { disabled: true, className: "disabled" };
+
+            return (
+              <ButtonGrayContainer key={i} {...props}>
+                {e.alias || "ver-proyecto"}
+              </ButtonGrayContainer>
+            );
+          })}
         </div>
       </section>
     </CardModelStyle>
