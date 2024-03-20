@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ButtonGrayContainer = styled.button`
   cursor: pointer;
-  padding: 10px;
+  padding: 8px 10px;
   background: var(--button-gray);
   text-decoration: none;
   border-radius: 8px;

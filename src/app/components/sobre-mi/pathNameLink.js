@@ -17,7 +17,12 @@ export const pathNameLink = [
         itemName: "experiencia_laboral",
         contentItem: [
           {
-            titulo: "ANALISTA DE INCIDENTES - CHAZKI (Mayo 2022)",
+            titulo: "ANALISTA TÉCNICO BACKEND PLENO SSR - INDRA (Junio 2023)",
+            cuerpo:
+              "Como Analista Técnico Backend Pleno SSR en INDRA, lidero el desarrollo de soluciones tecnológicas escalables y eficientes para el proyecto de Rimac Seguros, empleando principalmente AWS y Node.js. Con experiencia en bases de datos relacionales y no relacionales, garantizo un almacenamiento y recuperación óptimos de datos. Mi dominio de servicios AWS como Lambda, S3, DynamoDB y otros, junto con mi habilidad en metodologías ágiles como Scrum y el uso de Jira, aseguran la entrega exitosa de proyectos adaptativos y de alta calidad.",
+          },
+          {
+            titulo: "ANALISTA DE INCIDENTES - CHAZKI (Mayo 2022 - Junio 2023)",
             cuerpo:
               "Como analista de incidentes, me responsabilice en detectar y solucionar problemas de las plataformas operativas, del mismo modo, usar mis capacidades como fullstack para planificar y desarrollar soluciones semi-aumatizadas, optimizando el tiempo de solución de incidentes de todo el equipo. Actualmente cumplo la labor de líder el equipo de soporte, asignando actividades, proponiendo soluciones que generen impacto en las labores operativas de la organización.",
           },
