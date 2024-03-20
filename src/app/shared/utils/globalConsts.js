@@ -145,8 +145,19 @@ export const PROJECTS = [
     description:
       "Aplicación MERN Stack con arquitectura API-REST, la cual tiene como objetivo la busqueda de empleos",
     projects: [
+      // {
+      //   alias: "ver-workfast-landing",
+      //   linkProject: "https://workfast-landing.vercel.app/",
+      //   prod: true,
+      // },
       {
-        linkProject: "https://workfast-landing.vercel.app/",
+        alias: "ver-workfast-postulate",
+        linkProject: "https://workfast-postulate.vercel.app/",
+        prod: true,
+      },
+      {
+        alias: "ver-workfast-recruiter",
+        linkProject: "https://workfast-recruiter.vercel.app/",
         prod: true,
       },
     ],
