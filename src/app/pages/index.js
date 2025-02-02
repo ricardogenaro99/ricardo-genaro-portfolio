@@ -4,4 +4,5 @@ import Hola from "./Hola";
 import Proyectos from "./Proyectos";
 import SobreMi from "./SobreMi";
 
-export { SobreMi, Proyectos, Hola, Error404, Contactame };
+export { Contactame, Error404, Hola, Proyectos, SobreMi };
+

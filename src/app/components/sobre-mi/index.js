@@ -8,10 +8,10 @@ import {
 } from "./styles/StyledComponents";
 
 export {
-  SobreMiAptitudes,
-  SobreMiFormacionExperiencia,
-  SobreMiIndex,
   ContentSobreMi,
   SectionExplorerSobreMi,
-  sectionsExplorer,
+  sectionsExplorer, SobreMiAptitudes,
+  SobreMiFormacionExperiencia,
+  SobreMiIndex
 };
+
