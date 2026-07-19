@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ComentMultiple } from "../../../shared/components";
+import { ComentMultiple } from "app/shared/components";
 
 const Container = styled.div`
   display: grid;
@@ -11,38 +11,39 @@ const SobreMiIndex = () => {
     <ComentMultiple>
       <Container>
         <p>
-          Soy un apasionado desarrollador fullstack con una amplia experiencia
-          en la creación de aplicaciones web de alto rendimiento y soluciones
-          escalables. Mi experiencia se extiende desde el desarrollo front-end
-          utilizando tecnologías como HTML, CSS, JavaScript, Angular y React
-          hasta el back-end utilizando Node.js, Java y bases de datos SQL y
-          NoSQL.
+          Soy un apasionado Líder Técnico y Backend Developer Specialist con más
+          de 5 años de experiencia en el desarrollo de soluciones altamente
+          escalables, robustas y de alta disponibilidad. Especializado en el
+          diseño de arquitecturas de microservicios y plataformas resilientes
+          para sectores de alta exigencia como Seguros y Banca/Fintech.
         </p>
         <p>
-          Me apasiona trabajar en proyectos innovadores y desafiantes, y siempre
-          estoy buscando formas de mejorar mis habilidades y aprender nuevas
-          tecnologías. Me enorgullezco de mi capacidad para colaborar con
-          equipos multidisciplinarios y crear soluciones eficaces que cumplan
-          con los objetivos del negocio y las necesidades de los usuarios.
+          Mi experiencia técnica se centra principalmente en el backend usando
+          Node.js, TypeScript y Java (Spring Boot), con un profundo dominio del
+          ecosistema AWS (CDK, EKS, Step Functions, EventBridge, Lambda, RDS,
+          DynamoDB, SQS, Cognito, etc.). Además, cuento con conocimientos
+          sólidos en la automatización de procesos de negocio empleando
+          herramientas BPM (Camunda 7) y en la optimización de desarrollos
+          mediante IA.
         </p>
         <p>
-          Soy una persona apasionada, autodirigida y enfocada en resultados. Me
-          gusta trabajar en entornos dinámicos y de ritmo acelerado, donde puedo
-          aplicar mis habilidades y conocimientos para resolver problemas
-          complejos y enfrentar nuevos desafíos.
+          A lo largo de mi trayectoria de más de 3 años coliderando y liderando
+          equipos técnicos, me he enfocado en lograr un balance óptimo entre el
+          time-to-market y la excelencia técnica. Defino estándares de calidad,
+          estrategias de pruebas robustas (Unit, Integration, E2E) e implemento
+          estrategias de resiliencia como Circuit Breakers y Fallbacks.
         </p>
         <p>
-          Además, tengo habilidades en la gestión de proyectos, el diseño de
-          interfaces de usuario y la optimización del rendimiento, lo que me
-          permite tomar decisiones bien informadas y proporcionar soluciones
-          efectivas para mejorar la experiencia del usuario.
+          Me destaco por mi capacidad analítica y crítica para prevenir
+          escenarios de error, mi visión estratégica de negocio y mi liderazgo
+          colaborativo en equipos multidisciplinarios bajo metodologías ágiles
+          (Scrum).
         </p>
         <p>
-          Estoy interesado en oportunidades desafiantes en el campo del
-          desarrollo web fullstack, donde pueda aplicar mis habilidades y
-          conocimientos para crear soluciones innovadoras y efectivas para los
-          clientes. Si desea discutir cómo podemos trabajar juntos, ¡no dude en
-          ponerse en contacto conmigo!
+          Estoy siempre en la búsqueda de oportunidades y retos complejos que me
+          permitan diseñar soluciones de gran envergadura, optimizar procesos y
+          guiar a equipos hacia el éxito técnico. Si deseas conversar sobre cómo
+          puedo sumar valor a tu equipo, ¡no dudes en contactarme!
         </p>
       </Container>
     </ComentMultiple>

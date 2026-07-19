@@ -5,8 +5,8 @@ import ModelContentSobreMi from "./ModelContentSobreMi";
 
 const items = getItems(pathNameLink, "aptitudes");
 
-const SobreMiAptitudes = ({ paramLink }) => {
-  return <ModelContentSobreMi items={items} paramLink={paramLink} />;
+const SobreMiAptitudes = () => {
+  return <ModelContentSobreMi items={items} />;
 };
 
 export default memo(SobreMiAptitudes);

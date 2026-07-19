@@ -28,6 +28,9 @@ export const ComentMultipleStyle = styled.div`
         }
       }
     }
+    .text {
+      white-space: pre-wrap;
+    }
   }
 
   .last-comment {

@@ -1,24 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import {
   CardProyecto,
   ContainerProyectos,
-  ContentProyectos,
   ItemCheckSpanDefault,
   SectionExplorerProyectos,
-} from "../components/proyectos";
-import { Explorer } from "../shared/components";
-import { convertSizeCss } from "../shared/utils/globalFuntions";
+} from "app/components/proyectos";
+import { Explorer, EditorTabBar } from "app/shared/components";
+import { convertSizeCss } from "app/shared/utils/globalFuntions";
 import {
   ContainerExplorerAndContentTemplate,
   GridAutoFitTemplate,
   WorkStationSectionTemplate,
-} from "../templates/Templates";
+  EditorPaneTemplate,
+} from "app/templates/Templates";
 
-import { ICONS_TECH, PROJECTS } from "../shared/utils/globalConsts";
+import { ICONS_TECH, PROJECTS } from "app/shared/utils/globalConsts";
 
 const Proyectos = () => {
   const [filters, setFilters] = useState(
-    ICONS_TECH.filter((e) => e.visible === true)
+    ICONS_TECH.filter((e) => e.visible === true).map((e) => ({ ...e, active: true }))
   );
   const [projects, setProjects] = useState(PROJECTS);
   const maxWidth = 405;
@@ -35,18 +36,22 @@ const Proyectos = () => {
   };
 
   const reloadProjects = () => {
-    const filtersActive = filters.filter((filter) => filter.active);
-    const projectsActive = PROJECTS.filter((project) => {
-      let count = 0;
-      for (const element of filtersActive) {
-        if (project.tags.includes(element.name)) {
-          count++;
-        }
-      }
-      return count > 0;
-    });
+    const activeFilterNames = new Set(
+      filters.filter((filter) => filter.active).map((filter) => filter.name)
+    );
+
+    if (activeFilterNames.size === 0) {
+      setProjects(PROJECTS);
+      return;
+    }
+
+    const projectsActive = PROJECTS.filter((project) =>
+      project.tags.some((tag) => activeFilterNames.has(tag))
+    );
     setProjects(projectsActive);
   };
+
+
 
   const SectionsExplorer = [
     {
@@ -69,24 +74,37 @@ const Proyectos = () => {
     },
   ];
 
+  const proyectosTabs = [{ name: "proyectos.json", path: "/proyectos" }];
+  const location = useLocation();
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = 0;
+    }
+  }, [location.pathname]);
+
   return (
     <ContainerExplorerAndContentTemplate>
       <Explorer sections={SectionsExplorer} />
-      <ContentProyectos>
-        <WorkStationSectionTemplate>
+      <EditorPaneTemplate>
+        <EditorTabBar tabs={proyectosTabs} />
+        <WorkStationSectionTemplate ref={scrollRef}>
           <ContainerProyectos>
             <GridAutoFitTemplate minmax={convertSizeCss(maxWidth - 100)}>
-              {projects.map((project) => (
-                <CardProyecto
-                  key={project.id}
-                  maxWidth={convertSizeCss(maxWidth)}
-                  project={project}
-                />
-              ))}
+              {projects.length === 0
+                ? "No se encontraron proyectos"
+                : projects.map((project) => (
+                    <CardProyecto
+                      key={project.id}
+                      maxWidth={convertSizeCss(maxWidth)}
+                      project={project}
+                    />
+                  ))}
             </GridAutoFitTemplate>
           </ContainerProyectos>
         </WorkStationSectionTemplate>
-      </ContentProyectos>
+      </EditorPaneTemplate>
     </ContainerExplorerAndContentTemplate>
   );
 };

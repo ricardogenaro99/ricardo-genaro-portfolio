@@ -6,14 +6,19 @@ const checkSize = "15px";
 
 const CheckedContainer = styled.label`
   border: 2px solid var(--secondary-color-gray);
-  background: var(--primary-color-dark-blue);
+  background: var(--primary-color-blue-active);
   border-radius: 4px;
   transform: translate3d(0, 0, 0);
   cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--secondary-color-gray-hover-item);
+  }
 
   .flip {
     display: block;
-    transition: all 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     transform-style: preserve-3d;
     position: relative;
     width: ${checkSize};
@@ -44,7 +49,7 @@ const CheckedContainer = styled.label`
   }
 
   .front {
-    background: var(--primary-color-dark-blue);
+    background: var(--primary-color-blue-active);
     z-index: 1;
   }
 

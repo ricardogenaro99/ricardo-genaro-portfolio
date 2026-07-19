@@ -41,8 +41,14 @@ export const FooterContainer = styled.div`
         background: var(--primary-color-blue);
         text-decoration: none;
         color: var(--secondary-color-gray);
+        transition: background-color 0.2s ease, color 0.2s ease;
+        outline: none;
         &:hover {
           background: var(--primary-color-blue-active);
+          color: var(--secondary-color-white);
+        }
+        &:focus-visible {
+          outline: 2px inset var(--accent-color-orange);
         }
       }
       > * {

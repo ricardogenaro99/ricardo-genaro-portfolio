@@ -1,10 +1,10 @@
 import { RiFolder3Fill, RiMailFill, RiWhatsappFill } from "react-icons/ri";
-import { URL_MAIL, URL_WSP } from "../../shared/utils/globalConsts";
+import { URL_MAIL, URL_WSP } from "app/shared/utils/globalConsts";
 import ItemListSpanDefault from "./components/ItemListSpanDefault";
 import { pathNameLink } from "./pathNameLink";
 import { SectionExplorerSobreMi } from "./styles/StyledComponents";
 
-export const sectionsExplorer = (changeParam) => [
+export const sectionsExplorer = () => [
   {
     title: "información-personal",
     content: (
@@ -19,7 +19,6 @@ export const sectionsExplorer = (changeParam) => [
               {section.items.map((item, j) => (
                 <li key={j}>
                   <ItemListSpanDefault
-                    changeParam={changeParam}
                     name={item.itemName}
                     path={section.sectionName}
                   />

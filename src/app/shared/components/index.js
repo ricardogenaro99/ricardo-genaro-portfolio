@@ -11,6 +11,9 @@ import Explorer from "./Explorer";
 import { Footer } from "./footer";
 import { Header } from "./header";
 import Loader from "./loader/Loader";
+import ImageWithSkeleton from "./ImageWithSkeleton";
+import TechIcon from "./TechIcon";
+import EditorTabBar from "./EditorTabBar";
 
 export {
   Header,
@@ -25,4 +28,7 @@ export {
   ButtonGray,
   Loader,
   ButtonGrayContainer,
+  ImageWithSkeleton,
+  TechIcon,
+  EditorTabBar,
 };

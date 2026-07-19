@@ -1,13 +1,3 @@
-import { FaNodeJs } from "react-icons/fa";
-import {
-  RiAmazonFill,
-  RiAngularjsFill,
-  RiCss3Fill,
-  RiHtml5Fill,
-  RiReactjsFill,
-  RiVuejsFill,
-} from "react-icons/ri";
-import { SiSpringboot } from "react-icons/si";
 import { v4 as uuid } from "uuid";
 
 const sizeIconTech = 30;
@@ -26,7 +16,7 @@ export const ICONS_TECH = [
     active: true,
     visible: true,
     bgColor: "#86E1F9",
-    logo: <RiReactjsFill />,
+    logo: "react",
     propsStyleLogo: {
       size: sizeIconTech,
       color: "#000000",
@@ -38,7 +28,7 @@ export const ICONS_TECH = [
     active: true,
     visible: false,
     bgColor: "#B9213A",
-    logo: <RiAngularjsFill />,
+    logo: "angular",
     propsStyleLogo: {
       size: sizeIconTech,
       color: "#EFE5E1",
@@ -50,7 +40,7 @@ export const ICONS_TECH = [
     active: true,
     visible: false,
     bgColor: "#E44D25",
-    logo: <RiHtml5Fill />,
+    logo: "html",
     propsStyleLogo: {
       size: sizeIconTech,
       color: "#FFFFFF",
@@ -62,7 +52,7 @@ export const ICONS_TECH = [
     active: true,
     visible: false,
     bgColor: "#369AD6",
-    logo: <RiCss3Fill />,
+    logo: "css",
     propsStyleLogo: {
       size: sizeIconTech,
       color: "#FFFFFF",
@@ -74,7 +64,7 @@ export const ICONS_TECH = [
     active: true,
     visible: false,
     bgColor: "#00C180",
-    logo: <RiVuejsFill />,
+    logo: "vue",
     propsStyleLogo: {
       size: sizeIconTech,
       color: "#33475F",
@@ -86,7 +76,7 @@ export const ICONS_TECH = [
     active: true,
     visible: true,
     bgColor: "#FF9900",
-    logo: <RiAmazonFill />,
+    logo: "aws",
     propsStyleLogo: {
       size: sizeIconTech,
       color: "#000000",
@@ -98,7 +88,7 @@ export const ICONS_TECH = [
     active: true,
     visible: true,
     bgColor: "#303030",
-    logo: <FaNodeJs />,
+    logo: "node",
     propsStyleLogo: {
       size: sizeIconTech,
       color: "#68A066",
@@ -110,7 +100,7 @@ export const ICONS_TECH = [
     active: true,
     visible: true,
     bgColor: "#6DB33F",
-    logo: <SiSpringboot />,
+    logo: "springBoot",
     propsStyleLogo: {
       size: sizeIconTech,
       color: "#FFFFFF",
@@ -123,6 +113,11 @@ export const PROJECTS = [
     name: "_quena",
     linkImage: "/static/media/quena.aafc22b3e138586a5875.png",
     tags: ["react", "aws", "node"],
+    metadata: {
+      rol: "Full Stack Developer",
+      tipo: "Aplicación Web",
+      categoria: "Social & Entertainment",
+    },
     description:
       "Aplicación Angular consumiendo servicios de AWS, la cual tiene como objetivo, el matching entre estrellas, fans y hosts",
     projects: [
@@ -142,6 +137,11 @@ export const PROJECTS = [
     name: "_workfast",
     linkImage: "/static/media/workfast.d697bd03ff8c69738844.png",
     tags: ["react", "node"],
+    metadata: {
+      rol: "Full Stack Developer",
+      tipo: "Plataforma MERN",
+      categoria: "Recruiting & Jobs",
+    },
     description:
       "Aplicación MERN Stack con arquitectura API-REST, la cual tiene como objetivo la busqueda de empleos",
     projects: [
@@ -166,6 +166,11 @@ export const PROJECTS = [
     name: "_todo-app",
     linkImage: "/static/media/todo.53933cc1cde0b6d86f84.png",
     tags: ["react"],
+    metadata: {
+      rol: "Frontend Developer",
+      tipo: "Single Page App",
+      categoria: "Productivity",
+    },
     description: "Lista de tareas con almacenamiento en LocalStorage",
     projects: [
       {
@@ -178,6 +183,11 @@ export const PROJECTS = [
     name: "_challenge-cart",
     linkImage: "/static/media/challenge_cart.33a5958aae480ff528d0.png",
     tags: ["react", "springBoot"],
+    metadata: {
+      rol: "Full Stack Developer",
+      tipo: "E-Commerce Frontend/API",
+      categoria: "Technical Challenge",
+    },
     description:
       "Desarrollo de un carrito de compras para la prueba de ingeniero de software para XcaleConsulting. Este proyecto es una interfaz de comercio electrónico hecha con React que se conecta a una API Spring Boot.",
     projects: [
@@ -191,6 +201,11 @@ export const PROJECTS = [
     name: "_inicip",
     linkImage: "/static/media/inicip.ab2994458f81a57413b9.png",
     tags: ["react"],
+    metadata: {
+      rol: "Frontend Developer",
+      tipo: "Portal Institucional",
+      categoria: "Education",
+    },
     description: "El INICIP, forma parte de la Escuela de Posgrado de la PNP",
     projects: [
       {
@@ -202,7 +217,7 @@ export const PROJECTS = [
 ].map(addId);
 
 export const URL_WSP =
-  "https://api.whatsapp.com/send?phone=51933124563&text=Hola,%20estoy%20interesado%20en%20tu%20trabajo...";
+  "https://api.whatsapp.com/send?phone=51933124563&text=Hola,%20estoy%20interesado%20en%20tu%20trabajo…";
 
 export const URL_MAIL =
   "mailto:genaro.choquehuanca.palli@gmail.com?Subject=SERVICIO%20DESARROLLO%20WEB";

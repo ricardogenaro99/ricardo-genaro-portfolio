@@ -1,5 +1,5 @@
-import emoji from "../../../assets/hand-emoji.png";
-import { ButtonGray } from "../../../shared/components";
+import emoji from "app/assets/hand-emoji.png";
+import { ButtonGray } from "app/shared/components";
 import { MensajeEnviadoContainer } from "../styles/StyledComponents";
 const MensajeEnviado = ({ clickNuevoMensaje }) => {
   return (

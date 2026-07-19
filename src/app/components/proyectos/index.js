@@ -4,6 +4,7 @@ import {
   ContainerProyectos,
   ContentProyectos,
   SectionExplorerProyectos,
+  TechOverlay,
 } from "./styles/StyledComponents";
 
 export {
@@ -12,4 +13,5 @@ export {
   ContentProyectos,
   ContainerProyectos,
   ItemCheckSpanDefault,
+  TechOverlay,
 };

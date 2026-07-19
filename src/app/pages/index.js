@@ -5,4 +5,3 @@ import Proyectos from "./Proyectos";
 import SobreMi from "./SobreMi";
 
 export { Contactame, Error404, Hola, Proyectos, SobreMi };
-

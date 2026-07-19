@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { RiExternalLinkFill, RiMailFill, RiWhatsappFill } from "react-icons/ri";
-import { FormContactame, MensajeEnviado } from "../components/contactame";
-import ValuesContactame from "../components/contactame/components/ValuesContactame";
-import { SectionExplorerSobreMi } from "../components/sobre-mi";
-import { useForm } from "../hooks/useForm";
-import { Explorer, Loader } from "../shared/components";
-import { URL_MAIL, URL_WSP } from "../shared/utils/globalConsts";
-import { validationsForm } from "../shared/validators/ValidationsForm";
+import { FormContactame, MensajeEnviado } from "app/components/contactame";
+import ValuesContactame from "app/components/contactame/components/ValuesContactame";
+import { SectionExplorerSobreMi } from "app/components/sobre-mi";
+import { useForm } from "app/hooks/useForm";
+import { Explorer, Loader, EditorTabBar } from "app/shared/components";
+import { URL_MAIL, URL_WSP } from "app/shared/utils/globalConsts";
+import { validationsForm } from "app/shared/validators/ValidationsForm";
 import {
   ContainerCenterTemplate,
   ContainerExplorerAndContentTemplate,
   ContentGridTemplate,
   WorkStationSectionTemplate,
-} from "../templates/Templates";
+  EditorPaneTemplate,
+} from "app/templates/Templates";
 
 const SectionsExplorer = [
   {
@@ -70,29 +72,43 @@ const initialForm = {
 const Contactame = () => {
   const { form, loading, response, handleChange, handleSubmit, resetForm } =
     useForm(initialForm, validationsForm);
+
+  const contactameTabs = [{ name: "contactame.js", path: "/contactame" }];
+  const location = useLocation();
+  const scrollRef1 = useRef(null);
+  const scrollRef2 = useRef(null);
+
+  useEffect(() => {
+    if (scrollRef1.current) scrollRef1.current.scrollTop = 0;
+    if (scrollRef2.current) scrollRef2.current.scrollTop = 0;
+  }, [location.pathname]);
+
   return (
     <ContainerExplorerAndContentTemplate>
       <Explorer sections={SectionsExplorer} />
-      <ContentGridTemplate gridTemplateColumns="1fr 1fr">
-        <WorkStationSectionTemplate>
-          <ContainerCenterTemplate>
-            {!loading && !response && (
-              <FormContactame
-                onChange={handleChange}
-                onSubmit={handleSubmit}
-                form={form}
-              />
-            )}
-            {loading && <Loader />}
-            {response && <MensajeEnviado clickNuevoMensaje={resetForm} />}
-          </ContainerCenterTemplate>
-        </WorkStationSectionTemplate>
-        <WorkStationSectionTemplate>
-          <ContainerCenterTemplate>
-            <ValuesContactame form={form} />
-          </ContainerCenterTemplate>
-        </WorkStationSectionTemplate>
-      </ContentGridTemplate>
+      <EditorPaneTemplate>
+        <EditorTabBar tabs={contactameTabs} />
+        <ContentGridTemplate gridTemplateColumns="1fr 1fr">
+          <WorkStationSectionTemplate ref={scrollRef1}>
+            <ContainerCenterTemplate>
+              {!loading && !response && (
+                <FormContactame
+                  onChange={handleChange}
+                  onSubmit={handleSubmit}
+                  form={form}
+                />
+              )}
+              {loading && <Loader />}
+              {response && <MensajeEnviado clickNuevoMensaje={resetForm} />}
+            </ContainerCenterTemplate>
+          </WorkStationSectionTemplate>
+          <WorkStationSectionTemplate ref={scrollRef2}>
+            <ContainerCenterTemplate>
+              <ValuesContactame form={form} />
+            </ContainerCenterTemplate>
+          </WorkStationSectionTemplate>
+        </ContentGridTemplate>
+      </EditorPaneTemplate>
     </ContainerExplorerAndContentTemplate>
   );
 };

@@ -6,20 +6,26 @@
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-  /* background-color: var(--primary-color-blue); */
   background: transparent;
   color: var(--secondary-color-gray);
   cursor: pointer;
   padding: 18px;
   display: flex;
   align-items: center;
-  transition: background-color var(--transition);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border-bottom: 1px solid var(--lines-color);
+  outline: none;
+}
+
+.accordion:focus-visible {
+  outline: 2px inset var(--accent-color-orange);
 }
 
 /* Add a background color to the button if it is clicked on (add the .active_accordion class with JS), and when you move the mouse over it (hover) */
 .accordion:hover,
 .active_accordion {
   background-color: var(--primary-color-blue-active);
+  color: var(--secondary-color-white);
 }
 
 /* Style the accordion content title */
@@ -27,6 +33,7 @@
   font-weight: 600;
   font-size: var(--size-labels);
   text-align: left;
+  transition: color 0.2s ease;
 }
 
 /* Style the accordion chevron icon */
