@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../../../shared/styles/Breakpoints";
+import { device } from "app/shared/styles/Breakpoints";
 
 export const SectionExplorerSobreMi = styled.div`
   display: grid;
@@ -73,11 +73,16 @@ export const ContainerItemSectionPage = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  transition: var(--transition);
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease, outline 0.3s ease;
   width: 97%;
+  border: 1px solid transparent;
+
   &.active-item-page {
     background: var(--primary-color-blue-active);
-    outline-width: 2.7px;
+    border-color: rgba(77, 91, 206, 0.45);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 15px rgba(77, 91, 206, 0.08);
+    outline: none;
   }
 
   .itemName {

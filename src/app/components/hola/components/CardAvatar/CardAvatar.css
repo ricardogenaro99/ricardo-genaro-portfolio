@@ -1,8 +1,8 @@
-/* From uiverse.io by @Codewithvinay */
+/* From uiverse.io by @Codewithvinay - Enhanced for Premium Aesthetics */
 .box {
-  --skewx: -15deg;
-  --transition-transform-time: 0.4s;
-  --border-radius: 8px;
+  --skewx: -12deg;
+  --transition-transform-time: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --border-radius: 12px;
   position: relative;
   max-width: 380px;
   width: 90%;
@@ -10,7 +10,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: var(--transition-transform-time);
+  transition: transform var(--transition-transform-time),
+    box-shadow var(--transition-transform-time);
   z-index: 1;
 }
 
@@ -24,7 +25,8 @@
   background: #ffffff;
   border-radius: var(--border-radius);
   transform: skewX(var(--skewx));
-  transition: var(--transition-transform-time);
+  transition: transform var(--transition-transform-time),
+    filter var(--transition-transform-time);
 
   background: linear-gradient(
     315deg,
@@ -35,30 +37,51 @@
 
 .box::after {
   content: " ";
-  filter: blur(80px);
+  filter: blur(60px);
   transform-style: preserve-3d;
+  opacity: 0.75;
 }
 
 .box:hover:before,
 .box:hover:after {
-  transform: skewX(0deg) scaleX(1.6);
+  transform: skewX(0deg) scaleX(1.4);
+  filter: blur(0px);
+}
+
+.box:hover::after {
+  filter: blur(90px);
+  opacity: 0.95;
+}
+
+.box:hover {
+  transform: translateY(-8px) scale(1.02);
 }
 
 .box .content {
   position: relative;
-  width: 90%;
-  height: 90%;
-  padding: 16% 15px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.3);
+  width: 92%;
+  height: 92%;
+  padding: 12% 15px;
+  background: rgba(1, 22, 39, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--border-radius);
-  z-index: 1;
-  transform: var(--transition-transform-time);
+  z-index: 2;
+  transition: background-color var(--transition-transform-time),
+    border-color var(--transition-transform-time),
+    box-shadow var(--transition-transform-time);
   color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.box:hover .content {
+  background: rgba(1, 22, 39, 0.85);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(77, 91, 206, 0.15);
 }
 
 .box .content h2 {

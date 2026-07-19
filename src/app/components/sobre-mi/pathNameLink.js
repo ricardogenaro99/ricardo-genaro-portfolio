@@ -17,26 +17,29 @@ export const pathNameLink = [
         itemName: "experiencia_laboral",
         contentItem: [
           {
-            "titulo": "TECH LEAD BACKEND DEVELOPER SPECIALIST - RIMAC SEGUROS Y REASEGUROS (Enero 2025 - Actualidad)",
-            "cuerpo": 
-              "Como Tech Lead Backend Developer Specialist en Rimac Seguros, lidero la arquitectura y desarrollo de soluciones backend, optimizando procesos clave mediante el uso de Camunda, External Tasks y AWS. Especializado en la automatización de flujos BPM, dirijo la migración de procesos a tecnologías modernas, asegurando eficiencia y escalabilidad. Analizo y defino las actividades del equipo según sus capacidades y expertises, garantizando la entrega de soluciones óptimas, eficientes y rápidas. Mi capacidad para prevenir posibles escenarios de error y mi enfoque en buenas prácticas aseguran sistemas robustos y de alto rendimiento.Trabajo en estrecha colaboración con equipos multidisciplinarios, aplicando metodologías ágiles como Scrum y utilizando Jira para la gestión efectiva de proyectos."
-          },
-          {
-            titulo: "ANALISTA TÉCNICO BACKEND PLENO SSR - INDRA (Junio 2023 - Diciembre 2024)",
+            titulo:
+              "TECH LEAD BACKEND DEVELOPER SPECIALIST - RIMAC SEGUROS Y REASEGUROS (Enero 2025 - Presente)",
             cuerpo:
-              "Como Analista Técnico Backend Pleno SSR en INDRA, lidero el desarrollo de soluciones tecnológicas escalables y eficientes para el proyecto de Rimac Seguros, empleando principalmente AWS y Node.js. Con experiencia en bases de datos relacionales y no relacionales, garantizo un almacenamiento y recuperación óptimos de datos. Mi dominio de servicios AWS como Lambda, S3, DynamoDB y otros, junto con mi habilidad en metodologías ágiles como Scrum y el uso de Jira, aseguran la entrega exitosa de proyectos adaptativos y de alta calidad.",
-          },
-          {
-            titulo: "ANALISTA DE INCIDENTES - CHAZKI (Mayo 2022 - Junio 2023)",
-            cuerpo:
-              "Como analista de incidentes, me responsabilice en detectar y solucionar problemas de las plataformas operativas, del mismo modo, usar mis capacidades como fullstack para planificar y desarrollar soluciones semi-aumatizadas, optimizando el tiempo de solución de incidentes de todo el equipo. Actualmente cumplo la labor de líder el equipo de soporte, asignando actividades, proponiendo soluciones que generen impacto en las labores operativas de la organización.",
+              "• Lidero equipos de ingeniería backend responsables de construir y mantener plataformas empresariales de alta disponibilidad.\n• Defino la arquitectura técnica y guío la implementación de soluciones basadas en microservicios y AWS CDK (EKS, Step Functions).\n• Gestión y definición de actividades: Responsable de la definición de tareas y requerimientos técnicos, asegurando el aterrizaje funcional de las necesidades de negocio.\n• Documentación y Estimación: Elaboro documentación técnica detallada y realizo la estimación de tiempos de desarrollo, optimizando los recursos para cumplir con el time-to-market.\n• Defino estándares de desarrollo, buenas prácticas y lineamientos de arquitectura, integrando estrategias de resiliencia (Circuit Breaker, Fallbacks).\n• Coordino múltiples frentes de desarrollo asegurando el cumplimiento de entregables y la máxima calidad técnica.\n• Participo en la toma de decisiones críticas y apoyo la optimización de procesos mediante herramientas BPM (Camunda) y el uso de IA para optimizar desarrollos manuales.",
           },
           {
             titulo:
-              "ANALISTA PROGRAMADOR FULL STACK - ODYBANK (Septiembre 2021 - Marzo 2022)",
+              "ANALISTA TÉCNICO BACKEND SSR - INDRA (Julio 2023 - Diciembre 2024)",
             cuerpo:
-              "Desarrollo y mantenimiento de las aplicaciones web usadas en el entorno financiero por entidades como (UNIBANCA, CAJA CUSCO, MÁXIMO, etc), aportando  dinámicamente al equipo al desarrollo, mejoras y optimización de los sistemas desarrollados.",
-          }
+              "• Desarrollo de servicios backend utilizando Node.js, TypeScript y AWS (APIGW, EventBridge, SQS).\n• Diseño de APIs e integración de múltiples servicios cloud y herramientas de seguridad (Cognito).\n• Trabajo con bases de datos relacionales (RDS) y NoSQL (DynamoDB, Redis) para garantizar rendimiento.\n• Participación en equipos ágiles Scrum gestionando tareas mediante Jira.",
+          },
+          {
+            titulo:
+              "ANALISTA DE INCIDENTES / FULLSTACK DEVELOPER - CHAZKI (Mayo 2022 - Julio 2023)",
+            cuerpo:
+              "• Coordinación técnica del equipo de soporte y asignación de tareas (1 año liderando el frente operativo).\n• Análisis y resolución de incidentes en plataformas operativas, implementando monitoreo proactivo.\n• Desarrollo de herramientas de automatización para mejorar tiempos de resolución.\n• Uso de tecnologías como React, Node.js, PostgreSQL, MongoDB y Google Cloud.",
+          },
+          {
+            titulo:
+              "ANALISTA PROGRAMADOR FULL STACK - ODYBANK (Octubre 2021 - Marzo 2022)",
+            cuerpo:
+              "• Desarrollo de aplicaciones para el sector financiero y pasarelas de pago (Cliente: UNIBANCA).\n• Gestión de lógica compleja en transacciones, abonos y seguimiento de demoras operativas.\n• Trabajo con Java Spring Boot, Angular y bases de datos SQL para optimizar flujos de negocio.",
+          },
         ],
       },
       {
@@ -46,7 +49,7 @@ export const pathNameLink = [
             titulo:
               "INGENIERÍA DE SISTEMAS - UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS",
             cuerpo:
-              "Egresado carrera de Ingeniería de Sistemas de la Universidad Nacional Mayor de San Marcos, con conocimientos en gestion, diseño y desarrollo de sistemas.",
+              "Bachiller en Ingeniería de Sistemas por la Universidad Nacional Mayor de San Marcos (UNMSM). Egresado de la carrera con conocimientos sólidos en gestión, diseño y desarrollo de sistemas de información.",
           },
         ],
       },

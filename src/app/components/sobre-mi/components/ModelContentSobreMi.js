@@ -1,37 +1,37 @@
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { useLocation } from "react-router-dom";
-import { ComentMultiple } from "../../../shared/components";
-import { removeAccents } from "../../../shared/utils/globalFuntions";
+import { ComentMultiple } from "app/shared/components";
+import { removeAccents } from "app/shared/utils/globalFuntions";
 import { ContainerItemSectionPage } from "../styles/StyledComponents";
 
-const ModelContentSobreMi = ({ items, paramLink }) => {
+const ModelContentSobreMi = ({ items }) => {
   const location = useLocation();
-  useEffect(() => {
-    const item = document.getElementById(removeAccents(paramLink));
-    if (item) {
-      item.scrollIntoView({ block: "center", behavior: "smooth" });
-    }
-  }, [paramLink]);
+
+  // Find the active item name from the hash
+  const activeHash = location.hash ? decodeURIComponent(location.hash.slice(1)) : null;
+
+  // Filter items based on active hash, or default to first item
+  const filteredItems = activeHash
+    ? items.filter((item) => removeAccents(item.itemName) === activeHash)
+    : [items[0]];
+
+  const itemsToRender = filteredItems.length > 0 ? filteredItems : [items[0]];
 
   return (
     <Fragment>
-      {location.pathname === "/sobre-mi/aptitudes" && (
+      {location.pathname === "/sobre-mi/aptitudes" ? (
         <ComentMultiple>
           Capacidad de análisis tanto inferencial como creativo, juicio crítico
           para la solución de problemas, aprendizaje rápido, actitud positiva y
           proactividad
         </ComentMultiple>
-      )}
+      ) : null}
       <br />
-      {items.map((item, i) => (
+      {itemsToRender.map((item, i) => (
         <Fragment key={i}>
           <ContainerItemSectionPage
             id={removeAccents(item.itemName)}
-            className={
-              removeAccents(item.itemName) === removeAccents(paramLink)
-                ? "active-item-page"
-                : ""
-            }
+            className="active-item-page"
             key={i}
           >
             &nbsp;
@@ -48,8 +48,6 @@ const ModelContentSobreMi = ({ items, paramLink }) => {
             &nbsp;
             <br />
           </ContainerItemSectionPage>
-          &nbsp;
-          <br />
           &nbsp;
           <br />
         </Fragment>

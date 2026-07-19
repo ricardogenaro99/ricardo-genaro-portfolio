@@ -1,6 +1,6 @@
-import { Enumeracion } from "../../../shared/components";
-import { CodeStyleContainer } from "../../../shared/styles/CodeStyle";
-import { ContainerOneColumnGapTemplate } from "../../../templates/Templates";
+import { Enumeracion } from "app/shared/components";
+import { CodeStyleContainer } from "app/shared/styles/CodeStyle";
+import { ContainerOneColumnGapTemplate } from "app/templates/Templates";
 
 const gapPadding = "25px";
 const gapCode = "0 0.5em";

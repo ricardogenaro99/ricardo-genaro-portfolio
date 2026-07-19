@@ -95,13 +95,26 @@ export const NavLinkStyle = styled(NavLink)`
   justify-content: center;
   align-items: center;
   padding: 0 25px;
+  position: relative;
+  outline: none;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+
   &:hover {
     background: var(--primary-color-blue-active);
+    color: var(--secondary-color-gray-hover-item);
   }
+
+  &:focus-visible {
+    outline: 2px inset var(--accent-color-orange);
+  }
+
   &.active {
     border-bottom: 2px solid var(--accent-color-orange);
+    box-shadow: inset 0 -2px 0 var(--accent-color-orange);
     background: var(--primary-color-blue-active);
     color: var(--secondary-color-white);
+    text-shadow: 0 0 8px rgba(254, 165, 95, 0.2);
   }
 
   @media ${device.tabletM} {
@@ -109,8 +122,10 @@ export const NavLinkStyle = styled(NavLink)`
     &.active {
       border-bottom: none;
       border-left: 2px solid var(--accent-color-orange);
+      box-shadow: inset 2px 0 0 var(--accent-color-orange);
       background: var(--primary-color-blue-active);
       color: var(--secondary-color-white);
+      text-shadow: 0 0 8px rgba(254, 165, 95, 0.2);
     }
   }
 `;

@@ -1,50 +1,66 @@
-import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import {
   sectionsExplorer,
   SobreMiAptitudes,
   SobreMiFormacionExperiencia,
   SobreMiIndex,
-} from "../components/sobre-mi";
-import { Enumeracion, Explorer } from "../shared/components";
-import { removeAccents } from "../shared/utils/globalFuntions";
+} from "app/components/sobre-mi";
+import { Enumeracion, Explorer, EditorTabBar } from "app/shared/components";
 import {
   ContainerExplorerAndContentTemplate,
   WorkStationSectionTemplate,
-} from "../templates/Templates";
+  EditorPaneTemplate,
+} from "app/templates/Templates";
 import Error404 from "./Error404";
 
-const SobreMi = () => {
-  const [paramLink, setParamLink] = useState("");
+const sobreMiTabs = [
+  { name: "SobreMi.md", path: "/sobre-mi", hash: "#index" },
+  { name: "experiencia_laboral.md", path: "/sobre-mi/formacion-experiencia", hash: "#experiencia_laboral" },
+  { name: "formación_academica.md", path: "/sobre-mi/formacion-experiencia", hash: "#formacion_academica" },
+  { name: "creativo.md", path: "/sobre-mi/aptitudes", hash: "#creativo" },
+  { name: "analítico.md", path: "/sobre-mi/aptitudes", hash: "#analitico" },
+];
 
-  const changeParam = (name) => {
-    setParamLink(removeAccents(name));
-  };
+const SobreMi = () => {
+  const location = useLocation();
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = 0;
+    }
+  }, [location.pathname]);
 
   return (
     <ContainerExplorerAndContentTemplate>
-      <Explorer sections={sectionsExplorer(changeParam)} />
-      <WorkStationSectionTemplate>
-        <Enumeracion>
-          <Routes>
-            <Route path="/">
-              <Route index element={<SobreMiIndex />} />
-              <Route
-                path="/aptitudes"
-                element={<SobreMiAptitudes paramLink={paramLink} />}
-              />
-              <Route
-                path="/formacion-experiencia"
-                element={<SobreMiFormacionExperiencia paramLink={paramLink} />}
-              />
-            </Route>
-            <Route
-              path="*"
-              element={<Error404 message="Seleccione un archivo." />}
-            />
-          </Routes>
-        </Enumeracion>
-      </WorkStationSectionTemplate>
+      <Explorer sections={sectionsExplorer()} />
+      <EditorPaneTemplate>
+        <EditorTabBar tabs={sobreMiTabs} />
+        <WorkStationSectionTemplate ref={scrollRef}>
+          <div style={{ maxWidth: "1100px", width: "100%" }}>
+            <Enumeracion>
+              <Routes>
+                <Route path="/">
+                  <Route index element={<SobreMiIndex />} />
+                  <Route
+                    path="/aptitudes"
+                    element={<SobreMiAptitudes />}
+                  />
+                  <Route
+                    path="/formacion-experiencia"
+                    element={<SobreMiFormacionExperiencia />}
+                  />
+                </Route>
+                <Route
+                  path="*"
+                  element={<Error404 message="Seleccione un archivo." />}
+                />
+              </Routes>
+            </Enumeracion>
+          </div>
+        </WorkStationSectionTemplate>
+      </EditorPaneTemplate>
     </ContainerExplorerAndContentTemplate>
   );
 };

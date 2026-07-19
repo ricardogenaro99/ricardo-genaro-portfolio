@@ -10,8 +10,8 @@ import {
 export {
   ContentSobreMi,
   SectionExplorerSobreMi,
-  sectionsExplorer, SobreMiAptitudes,
+  sectionsExplorer,
+  SobreMiAptitudes,
   SobreMiFormacionExperiencia,
-  SobreMiIndex
+  SobreMiIndex,
 };
-

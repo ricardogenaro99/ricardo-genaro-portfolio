@@ -14,12 +14,14 @@ export const ContainerExplorerAndContentTemplate = styled.div`
   @media ${device.tabletM} {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
+    height: 100%;
   }
 `;
 
 export const WorkStationSectionTemplate = styled.section`
   padding: var(--padding-work-station);
-  max-height: var(--height-main);
+  max-height: 100%;
+  flex: 1;
   overflow-y: auto;
   line-height: var(--line-height-work-station);
   * {
@@ -28,6 +30,7 @@ export const WorkStationSectionTemplate = styled.section`
 
   @media ${device.laptopS} {
     max-height: none;
+    overflow-y: visible;
   }
 `;
 
@@ -69,7 +72,29 @@ export const ContentGridTemplate = styled.div`
     outline: var(--outline);
   }
 
+  /* Desktop flex layouts inside EditorPane */
+  max-height: 100%;
+  overflow: hidden;
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+
   @media ${device.laptopS} {
     grid-template-columns: 1fr;
+    max-height: none;
+    overflow: visible;
+  }
+`;
+
+export const EditorPaneTemplate = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  @media ${device.tabletM} {
+    height: 100%;
+    overflow: visible;
   }
 `;

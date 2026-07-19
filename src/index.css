@@ -58,11 +58,6 @@
 }
 
 body {
-  /* background: linear-gradient(
-		20deg,
-		var(--primary-color-black) 0%,
-		var(--primary-color-blue) 17%
-	); */
   background: var(--primary-color-blue);
 }
 
@@ -73,8 +68,10 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Fira Code", monospace;
+}
 
-  transition: all var(--transition);
+a, button, input, select, textarea {
+  transition: color var(--transition), background-color var(--transition), border-color var(--transition), box-shadow var(--transition), opacity var(--transition);
 }
 
 *::-webkit-scrollbar {
@@ -113,4 +110,65 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+/* Ambient Glowing Orbs */
+@keyframes float-glow-1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, -40px) scale(1.15);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes float-glow-2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-40px, 40px) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: screen;
+}
+
+.ambient-glow.purple {
+  background: radial-gradient(
+    circle,
+    var(--gradients-color-purple) 0%,
+    transparent 70%
+  );
+  width: 450px;
+  height: 450px;
+  top: 10%;
+  left: 5%;
+  animation: float-glow-1 16s infinite ease-in-out;
+}
+
+.ambient-glow.green {
+  background: radial-gradient(
+    circle,
+    var(--gradients-color-green) 0%,
+    transparent 70%
+  );
+  width: 500px;
+  height: 500px;
+  bottom: 5%;
+  right: 5%;
+  animation: float-glow-2 20s infinite ease-in-out;
 }

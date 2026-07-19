@@ -8,6 +8,10 @@ export const HolaContainer = styled.div`
   flex-wrap: wrap;
   gap: 6em 3em;
   padding: var(--padding-global);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: var(--height-main);
   @media ${device.laptopM} {
     padding: var(--padding-page-inicio);
   }

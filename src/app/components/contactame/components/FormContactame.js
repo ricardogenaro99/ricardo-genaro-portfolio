@@ -1,4 +1,4 @@
-import { ButtonGray } from "../../../shared/components";
+import { ButtonGray } from "app/shared/components";
 import { FormContactameContainer } from "../styles/StyledComponents";
 import { LabelInput, LabelTextArea } from "./LabelTextAreaInput";
 

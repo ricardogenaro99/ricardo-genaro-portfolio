@@ -8,25 +8,47 @@ export const LabelTextAreaInputContainer = styled.div`
 
   .error-msg {
     color: var(--accent-color-error);
-    font-size: 0.74em;
+    font-size: 0.76em;
     line-height: 1.2em;
+    font-weight: 500;
+    animation: fadeInError 0.3s ease-out;
+  }
+
+  @keyframes fadeInError {
+    from {
+      opacity: 0;
+      transform: translateY(-3px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   input,
   textarea {
-    border: none;
+    border: 1px solid var(--lines-color);
     width: 100%;
-    background: transparent;
-    outline: var(--outline);
+    background: rgba(1, 17, 31, 0.5);
+    outline: none;
     border-radius: 8px;
-    padding: 12px 18px;
-    color: var(--secondary-color-gray);
+    padding: 14px 18px;
+    color: var(--secondary-color-white);
     resize: none;
-    &:hover,
+    font-family: inherit;
+    transition: border-color 0.25s ease, background-color 0.25s ease,
+      box-shadow 0.25s ease;
+
+    &:hover {
+      background: var(--primary-color-blue-active);
+      border-color: rgba(77, 91, 206, 0.4);
+    }
+
     &:focus {
       background: var(--primary-color-blue-active);
-      color: var(--secondary-color-gray-hover-item);
-      outline-width: 2.7px;
+      border-color: var(--gradients-color-purple);
+      box-shadow: 0 0 12px rgba(77, 91, 206, 0.25);
+      color: var(--secondary-color-white);
     }
   }
 `;
