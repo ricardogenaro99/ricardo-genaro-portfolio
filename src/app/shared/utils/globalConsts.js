@@ -281,3 +281,5 @@ export const URL_MAIL =
 export const URL_GITHUB = "https://github.com/ricardogenaro99";
 
 export const URL_GITHUB_PORTFOLIO = "/ricardo-genaro-portfolio";
+
+export const URL_GENARO_SPACE = "https://genaro.space";

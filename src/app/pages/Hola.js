@@ -5,6 +5,7 @@ import { HolaContainer } from "app/components/hola/styles/StyledComponents";
 import { Coment, ImageWithSkeleton } from "app/shared/components";
 import { CodeStyleContainer } from "app/shared/styles/CodeStyle";
 import {
+  URL_GENARO_SPACE,
   URL_GITHUB,
   URL_GITHUB_PORTFOLIO,
 } from "app/shared/utils/globalConsts";
@@ -41,6 +42,20 @@ const Hola = () => {
               <span className="code-simb">{"${"}</span>
               <span className="code-orange">URL</span>
               <span className="code-simb">{"}"}</span>`
+            </a>
+          </CodeStyleContainer>
+          <Coment>{"// explora mis publicaciones y jardín digital"}</Coment>
+          <CodeStyleContainer>
+            <span className="code-purple">const</span>
+            <span className="code-green">personalSpace</span>
+            <span className="code-simb">{"="}</span>
+            <a
+              className="code-url code-cream"
+              href={URL_GENARO_SPACE}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              "{URL_GENARO_SPACE}"
             </a>
           </CodeStyleContainer>
         </div>

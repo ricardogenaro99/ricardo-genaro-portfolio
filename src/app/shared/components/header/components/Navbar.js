@@ -1,5 +1,6 @@
-import { Nav } from "../styles/StyledComponents";
+import { Nav, NavLinkStyle } from "../styles/StyledComponents";
 import NavLinkComponent from "./NavLinkComponent";
+import { URL_GENARO_SPACE } from "app/shared/utils/globalConsts";
 
 const Navbar = ({ watchMenu, clickItemMenu }) => {
   return (
@@ -16,6 +17,15 @@ const Navbar = ({ watchMenu, clickItemMenu }) => {
           path="/proyectos"
           name="_proyectos"
         />
+        <NavLinkStyle
+          as="a"
+          href={URL_GENARO_SPACE}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={clickItemMenu}
+        >
+          _blog
+        </NavLinkStyle>
       </section>
       <section>
         <NavLinkComponent
