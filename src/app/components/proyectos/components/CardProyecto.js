@@ -1,4 +1,4 @@
-import { useMemo, memo } from "react";
+import { useMemo, memo, useRef, useEffect } from "react";
 import { inProcessImage } from "app/assets/proyectos";
 import { ButtonGrayContainer, ImageWithSkeleton, TechIcon } from "app/shared/components";
 import { ICONS_TECH } from "app/shared/utils/globalConsts";
@@ -9,6 +9,14 @@ import {
 } from "../styles/StyledComponents";
 
 const CardModel = memo(({ project }) => {
+  const descRef = useRef(null);
+
+  useEffect(() => {
+    if (descRef.current) {
+      descRef.current.scrollTop = 0;
+    }
+  }, [project.description]);
+
   const iconsMemo = useMemo(() => {
     return ICONS_TECH.reduce((acc, { name, bgColor, logo, propsStyleLogo }) => {
       acc[name] = {
@@ -86,7 +94,7 @@ const CardModel = memo(({ project }) => {
       </TechOverlay>
 
       <section className="body-card">
-        <p>{project.description}</p>
+        <p ref={descRef}>{project.description}</p>
         <div className="container-buttons">
           {project.projects.map((e, i) => {
             const props = e.prod
@@ -99,7 +107,11 @@ const CardModel = memo(({ project }) => {
               : { disabled: true, className: "disabled" };
 
             return (
-              <ButtonGrayContainer key={i} {...props}>
+              <ButtonGrayContainer
+                key={i}
+                title={e.alias || "ver-proyecto"}
+                {...props}
+              >
                 {e.alias || "ver-proyecto"}
               </ButtonGrayContainer>
             );

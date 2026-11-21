@@ -25,14 +25,15 @@ export const CardModelStyle = styled.div`
   border: 1px solid var(--lines-color);
   background: var(--primary-color-blue-active);
   position: relative;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease,
-    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: border-color 0.2s ease,
+    box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 
   &:hover {
     border-color: rgba(77, 91, 206, 0.45);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45),
-      0 0 15px rgba(77, 91, 206, 0.12);
-    transform: translateY(-4px);
+    box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.5),
+      0 0 15px rgba(77, 91, 206, 0.15);
+    transform: translateY(-3px);
   }
 
   .img-project-container {
@@ -79,14 +80,47 @@ export const CardModelStyle = styled.div`
     > p {
       max-height: 169px;
       overflow-y: auto;
-    }
-    div {
-      display: flex;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--secondary-color-gray);
+      font-family: var(--font-code);
+      scrollbar-width: thin;
+      scrollbar-color: rgba(77, 91, 206, 0.3) transparent;
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: rgba(77, 91, 206, 0.3);
+        border-radius: 4px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgba(77, 91, 206, 0.6);
+      }
     }
 
     .container-buttons {
-      gap: 10px;
-      flex-wrap: wrap;
+      position: relative;
+      z-index: 20;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 8px;
+      width: 100%;
+      margin-top: auto;
+      box-sizing: border-box;
+
+      > * {
+        padding: 8px 12px;
+        font-size: 0.82rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        justify-content: center;
+        min-width: 0;
+      }
     }
   }
 
@@ -164,23 +198,39 @@ export const ContainerProyectos = styled.div`
 
 export const TechOverlay = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: 60px;
   left: 0;
   width: 100%;
-  height: calc(100% - 190px);
+  height: calc(100% - 190px - 60px);
   background: rgba(1, 22, 39, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--lines-color);
+  border-bottom: 1px solid var(--lines-color);
   transform: translateY(101%);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 20px;
+  padding: 16px 20px;
   box-sizing: border-box;
   z-index: 10;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(77, 91, 206, 0.3) transparent;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(77, 91, 206, 0.3);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(77, 91, 206, 0.6);
+  }
 
   ${CardModelStyle}:hover & {
     transform: translateY(0);
@@ -225,7 +275,7 @@ export const TechOverlay = styled.div`
     color: var(--secondary-color-white);
     opacity: 0;
     transform: translateY(8px);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
 
     .tech-logo-wrapper {
       display: flex;
@@ -256,7 +306,7 @@ export const TechOverlay = styled.div`
     font-size: var(--size-labels);
     opacity: 0;
     transform: translateY(8px);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
 
     .metadata-key {
       color: var(--secondary-color-gray);
