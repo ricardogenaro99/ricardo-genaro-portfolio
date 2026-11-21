@@ -50,47 +50,48 @@ const CardModel = memo(({ project }) => {
           width={370}
           height={190}
         />
-        <TechOverlay>
-          <div className="overlay-grid">
+      </div>
+
+      <TechOverlay>
+        <div className="overlay-grid">
+          <div className="overlay-section">
+            <span className="overlay-title">{"// tecnologías"}</span>
+            <div className="tech-list">
+              {project.tags.map((tag, i) => (
+                <div className="tech-item" key={i}>
+                  <span
+                    className="tech-logo-wrapper"
+                    style={{
+                      borderLeft: `2px solid ${
+                        iconsMemo[tag]?.bgColor || "var(--secondary-color-purple)"
+                      }`,
+                    }}
+                  >
+                    <TechIcon name={iconsMemo[tag]?.logo} {...iconsMemo[tag]?.propsStyleLogo} />
+                  </span>
+                  <span>
+                    {ICONS_TECH.find((icon) => icon.name === tag)?.label || tag}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {project.metadata ? (
             <div className="overlay-section">
-              <span className="overlay-title">{"// tecnologías"}</span>
-              <div className="tech-list">
-                {project.tags.map((tag, i) => (
-                  <div className="tech-item" key={i}>
-                    <span
-                      className="tech-logo-wrapper"
-                      style={{
-                        borderLeft: `2px solid ${
-                          iconsMemo[tag]?.bgColor || "var(--secondary-color-purple)"
-                        }`,
-                      }}
-                    >
-                      <TechIcon name={iconsMemo[tag]?.logo} {...iconsMemo[tag]?.propsStyleLogo} />
-                    </span>
-                    <span>
-                      {ICONS_TECH.find((icon) => icon.name === tag)?.label || tag}
-                    </span>
+              <span className="overlay-title">{"// detalles"}</span>
+              <div className="metadata-list">
+                {Object.entries(project.metadata).map(([key, val], i) => (
+                  <div className="metadata-item" key={i}>
+                    <span className="metadata-key">{key}</span>
+                    <span className="metadata-val">{val}</span>
                   </div>
                 ))}
               </div>
             </div>
-
-            {project.metadata ? (
-              <div className="overlay-section">
-                <span className="overlay-title">{"// detalles"}</span>
-                <div className="metadata-list">
-                  {Object.entries(project.metadata).map(([key, val], i) => (
-                    <div className="metadata-item" key={i}>
-                      <span className="metadata-key">{key}</span>
-                      <span className="metadata-val">{val}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ) : null}
-          </div>
-        </TechOverlay>
-      </div>
+          ) : null}
+        </div>
+      </TechOverlay>
 
       <section className="body-card">
         <p ref={descRef}>{project.description}</p>

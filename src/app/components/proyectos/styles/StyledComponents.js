@@ -70,6 +70,7 @@ export const CardModelStyle = styled.div`
   }
 
   .body-card {
+    position: relative;
     display: grid;
     grid-template-rows: 1fr auto;
     gap: ${gapPadding};
@@ -103,7 +104,7 @@ export const CardModelStyle = styled.div`
 
     .container-buttons {
       position: relative;
-      z-index: 20;
+      z-index: 25;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
       gap: 8px;
@@ -201,9 +202,10 @@ export const TechOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(1, 22, 39, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(1, 22, 39, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: inherit;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -212,9 +214,9 @@ export const TechOverlay = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 14px 16px;
+  padding: 24px 20px 75px 20px;
   box-sizing: border-box;
-  z-index: 10;
+  z-index: 20;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(77, 91, 206, 0.3) transparent;
