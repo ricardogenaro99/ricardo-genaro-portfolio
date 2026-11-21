@@ -1,26 +1,28 @@
 import React from "react";
-import { FaNodeJs } from "react-icons/fa";
+import { FaAws } from "react-icons/fa";
 import {
-  RiAmazonFill,
-  RiAngularjsFill,
-  RiCss3Fill,
-  RiHtml5Fill,
-  RiReactjsFill,
-  RiVuejsFill,
-} from "react-icons/ri";
-import { SiAstro, SiObsidian, SiSpringboot } from "react-icons/si";
+  SiAngular,
+  SiAstro,
+  SiCss,
+  SiHtml5,
+  SiNodedotjs,
+  SiObsidian,
+  SiReact,
+  SiSpringboot,
+  SiVuedotjs,
+} from "react-icons/si";
 
 export const AstroIcon = SiAstro;
 export const ObsidianIcon = SiObsidian;
 
 const iconMap = {
-  react: RiReactjsFill,
-  angular: RiAngularjsFill,
-  html: RiHtml5Fill,
-  css: RiCss3Fill,
-  vue: RiVuejsFill,
-  aws: RiAmazonFill,
-  node: FaNodeJs,
+  react: SiReact,
+  angular: SiAngular,
+  html: SiHtml5,
+  css: SiCss,
+  vue: SiVuedotjs,
+  aws: FaAws,
+  node: SiNodedotjs,
   springBoot: SiSpringboot,
   astro: SiAstro,
   obsidian: SiObsidian,

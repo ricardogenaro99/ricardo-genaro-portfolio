@@ -22,7 +22,7 @@ const Proyectos = () => {
     ICONS_TECH.filter((e) => e.visible === true).map((e) => ({ ...e, active: true }))
   );
   const [projects, setProjects] = useState(PROJECTS);
-  const maxWidth = 405;
+  const maxWidth = 420;
 
   const setFiltersParams = (data) => {
     const array = filters.map((element) => {
@@ -91,7 +91,7 @@ const Proyectos = () => {
         <EditorTabBar tabs={proyectosTabs} />
         <WorkStationSectionTemplate ref={scrollRef}>
           <ContainerProyectos>
-            <GridAutoFitTemplate minmax={convertSizeCss(maxWidth - 100)}>
+            <GridAutoFitTemplate minmax="330px">
               {projects.length === 0
                 ? "No se encontraron proyectos"
                 : projects.map((project) => (

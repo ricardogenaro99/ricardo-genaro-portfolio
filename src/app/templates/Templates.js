@@ -37,12 +37,13 @@ export const WorkStationSectionTemplate = styled.section`
 export const GridAutoFitTemplate = styled.div`
   display: grid;
   grid-template-columns: repeat(
-    auto-fit,
-    minmax(${(props) => props.minmax}, 1fr)
+    auto-fill,
+    minmax(${(props) => props.minmax || "330px"}, 1fr)
   );
   grid-auto-rows: 1fr;
   justify-items: center;
   width: 100%;
+  max-width: 1240px;
   gap: 40px 25px;
 
   @media ${device.mobileL} {

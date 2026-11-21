@@ -186,36 +186,33 @@ export const ContentProyectos = styled.div`
 `;
 
 export const ContainerProyectos = styled.div`
-  max-width: ${device.laptopS};
+  max-width: 1240px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
   padding: var(--padding-global);
-  max-width: ${size.laptopL};
 `;
 
 export const TechOverlay = styled.div`
   position: absolute;
-  bottom: 60px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: calc(100% - 190px - 60px);
+  height: 100%;
   background: rgba(1, 22, 39, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid var(--lines-color);
-  border-bottom: 1px solid var(--lines-color);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateY(12px);
-  transition: opacity 0.2s ease-out, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+  transform: translateY(8px);
+  transition: opacity 0.22s ease-out, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 16px 20px;
+  padding: 14px 16px;
   box-sizing: border-box;
   z-index: 10;
   overflow-y: auto;
@@ -245,19 +242,19 @@ export const TechOverlay = styled.div`
   .overlay-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 16px;
     width: 100%;
 
     @media ${device.mobileL} {
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 12px;
     }
   }
 
   .overlay-section {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
   }
 
   .overlay-title {
@@ -270,13 +267,13 @@ export const TechOverlay = styled.div`
   .tech-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
   }
 
   .tech-item {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     font-size: var(--size-labels);
     color: var(--secondary-color-white);
     opacity: 0;
@@ -287,13 +284,13 @@ export const TechOverlay = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 4px;
-      border-radius: 6px;
+      padding: 3px;
+      border-radius: 4px;
       background: rgba(255, 255, 255, 0.06);
 
       svg {
-        width: 18px !important;
-        height: 18px !important;
+        width: 16px !important;
+        height: 16px !important;
         color: inherit !important;
       }
     }
@@ -302,7 +299,7 @@ export const TechOverlay = styled.div`
   .metadata-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
   }
 
   .metadata-item {
@@ -316,7 +313,7 @@ export const TechOverlay = styled.div`
 
     .metadata-key {
       color: var(--secondary-color-gray);
-      font-size: 0.78em;
+      font-size: 0.75em;
       text-transform: uppercase;
       letter-spacing: 0.8px;
     }
