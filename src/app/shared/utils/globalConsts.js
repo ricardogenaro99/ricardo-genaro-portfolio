@@ -1,4 +1,12 @@
 import { v4 as uuid } from "uuid";
+import {
+  quenaImage,
+  workfast,
+  todoImage,
+  challengeCart,
+  inicipImage,
+  inProcessImage,
+} from "app/assets/proyectos";
 
 const sizeIconTech = 30;
 
@@ -135,7 +143,7 @@ export const ICONS_TECH = [
 export const PROJECTS = [
   {
     name: "_genaro_space",
-    linkImage: "/static/media/en_proceso.fbb0d8513235f5824727.jpg",
+    linkImage: inProcessImage,
     tags: ["astro", "obsidian", "react", "node"],
     metadata: {
       rol: "Creator & Software Architect",
@@ -159,31 +167,31 @@ export const PROJECTS = [
   },
   {
     name: "_quena",
-    linkImage: "/static/media/quena.aafc22b3e138586a5875.png",
-    tags: ["react", "aws", "node"],
+    linkImage: quenaImage,
+    tags: ["react", "node"],
     metadata: {
-      rol: "Full Stack Developer",
-      tipo: "Aplicación Web",
-      categoria: "Social & Entertainment",
+      rol: "Creator & Full Stack Architect",
+      tipo: "Plataforma Monorepo Full-Stack",
+      categoria: "Concerts & Music Tech",
     },
     description:
-      "Aplicación Angular consumiendo servicios de AWS, la cual tiene como objetivo, el matching entre estrellas, fans y hosts",
+      "Plataforma integral para conciertos en vivo y gestión de venues musicales. Monorepo full-stack en React 18 y Hono v4 con Neon PostgreSQL Serverless, unificando la landing maestra, el portal de fans y la administración de locales bajo un solo dominio Zero-CORS.",
     projects: [
       {
-        alias: "ver-quena-fans",
-        linkProject: "https://quena-fans-beta.vercel.app/",
+        alias: "ver-proyecto",
+        linkProject: "https://quena.pe",
         prod: true,
       },
       {
-        alias: "ver-quena-locales",
-        linkProject: "https://quena-locales-beta.vercel.app/",
+        alias: "ver-repo",
+        linkProject: "https://github.com/ricardogenaro99/quena",
         prod: true,
       },
     ],
   },
   {
     name: "_workfast",
-    linkImage: "/static/media/workfast.d697bd03ff8c69738844.png",
+    linkImage: workfast,
     tags: ["react", "node"],
     metadata: {
       rol: "Full Stack Developer",
@@ -212,7 +220,7 @@ export const PROJECTS = [
   },
   {
     name: "_todo-app",
-    linkImage: "/static/media/todo.53933cc1cde0b6d86f84.png",
+    linkImage: todoImage,
     tags: ["react"],
     metadata: {
       rol: "Frontend Developer",
@@ -229,7 +237,7 @@ export const PROJECTS = [
   },
   {
     name: "_challenge-cart",
-    linkImage: "/static/media/challenge_cart.33a5958aae480ff528d0.png",
+    linkImage: challengeCart,
     tags: ["react", "springBoot"],
     metadata: {
       rol: "Full Stack Developer",
@@ -247,7 +255,7 @@ export const PROJECTS = [
   },
   {
     name: "_inicip",
-    linkImage: "/static/media/inicip.ab2994458f81a57413b9.png",
+    linkImage: inicipImage,
     tags: ["react"],
     metadata: {
       rol: "Frontend Developer",

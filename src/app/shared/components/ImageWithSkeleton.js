@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
 const shimmer = keyframes`
@@ -53,19 +53,34 @@ const ImageWithSkeleton = ({
   alt,
   className,
   loading = "lazy",
+  onError,
   ...props
 }) => {
   const [loaded, setLoaded] = useState(false);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete && imgRef.current.naturalWidth > 0) {
+      setLoaded(true);
+    }
+  }, [src]);
+
+  const handleError = (e) => {
+    setLoaded(true);
+    if (onError) onError(e);
+  };
 
   return (
     <SkeletonContainer className={className}>
       <Skeleton loaded={loaded} />
       <StyledImage
+        ref={imgRef}
         src={src}
         alt={alt}
         loaded={loaded}
         loading={loading}
         onLoad={() => setLoaded(true)}
+        onError={handleError}
         {...props}
       />
     </SkeletonContainer>

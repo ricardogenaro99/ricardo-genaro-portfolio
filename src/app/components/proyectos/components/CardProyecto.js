@@ -37,7 +37,7 @@ const CardModel = memo(({ project }) => {
         <ImageWithSkeleton
           className="img-project"
           src={project.linkImage || inProcessImage}
-          alt={project.alt}
+          alt={project.alt || project.name}
           loading="eager"
           width={370}
           height={190}
