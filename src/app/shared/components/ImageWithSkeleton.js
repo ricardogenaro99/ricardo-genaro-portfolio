@@ -42,6 +42,8 @@ const Skeleton = styled.div`
 const StyledImage = styled.img`
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: top center;
   opacity: ${(props) => (props.loaded ? 1 : 0)};
   transition: opacity 0.4s ease-in-out;
   z-index: 1;
@@ -60,7 +62,11 @@ const ImageWithSkeleton = ({
   const imgRef = useRef(null);
 
   useEffect(() => {
-    if (imgRef.current && imgRef.current.complete && imgRef.current.naturalWidth > 0) {
+    if (
+      imgRef.current &&
+      imgRef.current.complete &&
+      imgRef.current.naturalWidth > 0
+    ) {
       setLoaded(true);
     }
   }, [src]);
