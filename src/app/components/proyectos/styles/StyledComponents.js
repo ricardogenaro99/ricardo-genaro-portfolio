@@ -207,8 +207,11 @@ export const TechOverlay = styled.div`
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--lines-color);
   border-bottom: 1px solid var(--lines-color);
-  transform: translateY(101%);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.2s ease-out, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -233,6 +236,9 @@ export const TechOverlay = styled.div`
   }
 
   ${CardModelStyle}:hover & {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
     transform: translateY(0);
   }
 
