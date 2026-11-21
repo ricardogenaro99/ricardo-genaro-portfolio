@@ -106,9 +106,57 @@ export const ICONS_TECH = [
       color: "#FFFFFF",
     },
   },
+  {
+    name: "astro",
+    label: "Astro",
+    active: true,
+    visible: true,
+    bgColor: "#FF5D01",
+    logo: "astro",
+    propsStyleLogo: {
+      size: sizeIconTech,
+      color: "#FFFFFF",
+    },
+  },
+  {
+    name: "obsidian",
+    label: "Obsidian",
+    active: true,
+    visible: true,
+    bgColor: "#7C3AED",
+    logo: "obsidian",
+    propsStyleLogo: {
+      size: sizeIconTech,
+      color: "#FFFFFF",
+    },
+  },
 ].map(addId);
 
 export const PROJECTS = [
+  {
+    name: "_genaro_space",
+    linkImage: "/static/media/en_proceso.fbb0d8513235f5824727.jpg",
+    tags: ["astro", "obsidian", "react", "node"],
+    metadata: {
+      rol: "Creator & Software Architect",
+      tipo: "Publicación Editorial & Digital Garden",
+      categoria: "Personal Publishing & AI Engineering",
+    },
+    description:
+      "Jardín digital multimedia y cuaderno editorial de alta gama. Arquitectura SSG estática en Astro 5 ($0.00/mes en Vercel Hobby), motor de sincronización unidireccional sanitizada desde Obsidian Local con Privacy Guard, esquemas polimórficos validados con Zod, búsqueda estática instantánea con Pagefind y entrega de assets optimizados con Sharp y Cloudflare R2.",
+    projects: [
+      {
+        alias: "ver-sitio",
+        linkProject: "https://genaro.space",
+        prod: true,
+      },
+      {
+        alias: "ver-repo",
+        linkProject: "https://github.com/ricardogenaro99/genaro-space",
+        prod: true,
+      },
+    ],
+  },
   {
     name: "_quena",
     linkImage: "/static/media/quena.aafc22b3e138586a5875.png",
