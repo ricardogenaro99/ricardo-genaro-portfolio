@@ -2,6 +2,7 @@
   "name": "ricardo-genaro-portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
@@ -10,23 +11,17 @@
     "react-dom": "^18.1.0",
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
     "format": "npx prettier --write ."
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -41,6 +36,15 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^2.8.0"
+    "@vitejs/plugin-react": "^4.3.4",
+    "babel-plugin-styled-components": "^2.1.4",
+    "jsdom": "^25.0.1",
+    "prettier": "^2.8.0",
+    "vite": "^5.4.14",
+    "vite-jsconfig-paths": "^2.0.1",
+    "vitest": "^2.1.8"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true
   }
 }
