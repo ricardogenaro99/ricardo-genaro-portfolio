@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { device, size } from "app/shared/styles/Breakpoints";
+import { device } from "app/shared/styles/Breakpoints";
 
-const gapPadding = "20px";
 const iconTagSize = "30px";
 
 export const ContainerCardProyecto = styled.article`
@@ -18,13 +17,15 @@ export const ContainerCardProyecto = styled.article`
 `;
 
 export const CardModelStyle = styled.div`
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-direction: column;
   border-radius: var(--border-radius-card);
   overflow: hidden;
   border: 1px solid var(--lines-color);
   background: var(--primary-color-blue-active);
   position: relative;
+  height: 100%;
+  width: 100%;
   transition: border-color 0.2s ease,
     box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -34,6 +35,14 @@ export const CardModelStyle = styled.div`
     box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.5),
       0 0 15px rgba(77, 91, 206, 0.15);
     transform: translateY(-3px);
+  }
+
+  .card-top-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
 
   .img-project-container {
@@ -69,22 +78,18 @@ export const CardModelStyle = styled.div`
     }
   }
 
-  .body-card {
-    position: relative;
-    display: grid;
-    grid-template-rows: 1fr auto;
-    gap: ${gapPadding};
-    padding: ${gapPadding} 0;
-    > * {
-      padding: 0 ${gapPadding};
-    }
-    > p {
-      max-height: 169px;
-      overflow-y: auto;
+  .card-desc-container {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    p {
       font-size: 0.88rem;
       line-height: 1.55;
       color: var(--secondary-color-gray);
       font-family: var(--font-code);
+      overflow-y: auto;
+      max-height: 169px;
       scrollbar-width: thin;
       scrollbar-color: rgba(77, 91, 206, 0.3) transparent;
       &::-webkit-scrollbar {
@@ -101,32 +106,32 @@ export const CardModelStyle = styled.div`
         background: rgba(77, 91, 206, 0.6);
       }
     }
-
-    .container-buttons {
-      position: relative;
-      z-index: 25;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-      gap: 8px;
-      width: 100%;
-      margin-top: auto;
-      box-sizing: border-box;
-
-      > * {
-        padding: 8px 12px;
-        font-size: 0.82rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-align: center;
-        justify-content: center;
-        min-width: 0;
-      }
-    }
   }
 
-  width: 100%;
-  height: 100%;
+  .container-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 8px;
+    width: 100%;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    border-top: 1px solid var(--lines-color);
+    background: rgba(1, 18, 33, 0.6);
+    position: relative;
+    z-index: 5;
+    margin-top: auto;
+
+    > * {
+      padding: 8px 12px;
+      font-size: 0.82rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+      justify-content: center;
+      min-width: 0;
+    }
+  }
 `;
 
 export const SectionExplorerProyectos = styled.div`
@@ -202,10 +207,9 @@ export const TechOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(1, 22, 39, 0.94);
+  background: rgba(1, 22, 39, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-radius: inherit;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -214,9 +218,9 @@ export const TechOverlay = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 24px 20px 75px 20px;
+  padding: 20px;
   box-sizing: border-box;
-  z-index: 20;
+  z-index: 10;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(77, 91, 206, 0.3) transparent;
